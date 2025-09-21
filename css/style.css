@@ -82,9 +82,9 @@ nav li:hover a {
 /* ======== CARROSSEL ======== */
 .carousel {
   position: relative;
-  width: min(900px, 100%);   /* limita a largura, mas é responsivo */
+  width: min(1037px, 100%);   /* limita a largura, mas é responsivo */
   aspect-ratio: 16 / 9;      /* mantém proporção */
-  margin: 20px auto;
+  margin: 2px auto;
   overflow: hidden;
   border-radius: 10px;
   background: #000;          /* fundo enquanto imagens carregam */
@@ -179,7 +179,7 @@ nav li:hover a {
 /* ======== CONTEÚDO PRINCIPAL ======== */
 main, .extra {
     max-width: 1000px;
-    margin: 20px auto;
+    margin: 3px auto;
     padding: 20px;
     border-radius: 20px;
     background-color: white;
