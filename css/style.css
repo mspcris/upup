@@ -126,18 +126,15 @@ nav li:hover a {
   height: 100%;
   display: block;
 }
-
 .carousel .slides img {
   width: 100%;       /* imagem ocupa todo o espaço do link */
   height: 100%;
-  object-fit: cover; /* mantém proporção sem distorcer */
+  object-fit: fill; /*mantém proporção sem distorcer*/
 }
-
 /* Esconde apenas os radios do carrossel */
 .carousel input[type="radio"] {
   display: none;
 }
-
 /* Pontinhos de navegação */
 .carousel .navigation {
   position: absolute;
@@ -148,7 +145,6 @@ nav li:hover a {
   gap: 10px;
   z-index: 2;
 }
-
 .carousel .bar {
   width: 12px;
   height: 12px;
