@@ -52,12 +52,19 @@ header {
     margin: 0;
     font-family: "Bebas Neue", sans-serif;
 }
+header h6{
+padding: 0;
+margin: 0;
+border: none;
+box-shadow: none;
+}
 
 /* ======== MENU ======== */
 nav {
-    background-image: linear-gradient(var(--cor3),var(--cor2), var(--cor1), var(--cor0));
+    background-image: linear-gradient(var(--cor3)50%,var(--cor2), var(--cor1), var(--cor0));
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.315);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.315); */
+    box-shadow: none;
     margin: 0px;
     padding: 0px;
 }
@@ -74,11 +81,13 @@ nav a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
+    
 }
 nav li:hover a {
     color: yellow;
     text-decoration: underline;
-    background-color: var(--cor3);
+    background-color: var(--cor5);
+    box-shadow: 0 2px 4px var(--cor5 0.315);
 }
 
 
@@ -101,13 +110,27 @@ nav li:hover a {
   transition: transform 0.6s ease;  /* animação suave */
 }
 
-/* Cada imagem ocupa 25% do trilho */
+/*Cada imagem ocupa 25% do trilho
 .carousel .slides img {
   flex: 0 0 25%;             /* cada imagem ocupa 25% */
+/*  width: 25%;
+/*  height: 100%;
+/*  object-fit: cover;         /* preenche sem distorcer */
+/*  display: block;
+}*/
+
+.carousel .slides a,
+.carousel .slides img {
+  flex: 0 0 25%;
   width: 25%;
   height: 100%;
-  object-fit: cover;         /* preenche sem distorcer */
   display: block;
+}
+
+.carousel .slides img {
+  width: 100%;       /* imagem ocupa todo o espaço do link */
+  height: 100%;
+  object-fit: cover; /* mantém proporção sem distorcer */
 }
 
 /* Esconde apenas os radios do carrossel */
