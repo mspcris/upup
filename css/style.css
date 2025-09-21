@@ -432,11 +432,11 @@ iframe {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
   }
 
   .extra ul {
-    column-count: 1; /* apenas uma coluna no celular */
+    column-count: 2; /* apenas uma coluna no celular */
   }
 
   main,
