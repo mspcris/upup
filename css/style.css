@@ -433,6 +433,7 @@ iframe {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    font-size: 0.7em;
   }
 
   .extra ul {
