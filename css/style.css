@@ -34,10 +34,21 @@
   --cor3: #F2B705;
   --cor4: #F29985;
   --cor5: #D91A2A;
+  --cor6: #7e690b;
+  --cor7: #221c02;
 
   --font-padrao: Arial, Verdana, Helvetica, sans-serif;
   --font-destaque: 'Baloo 2', cursive;
   --font-subtitulos: 'Barlow Condensed', cursive;
+
+        --bg:#0f172a;        /* slate-900 */
+      --card:#111827;      /* gray-900 */
+      --muted:#94a3b8;     /* slate-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --accent:#22d3ee;    /* cyan-400 */
+      --accent-2:#a78bfa;  /* violet-400 */
+      --ok:#34d399;        /* emerald-400 */
+    
 }
 
 /* =============================
@@ -255,6 +266,8 @@ nav li:hover a {
 }
 
 
+
+
 /* =============================
    CONTEÚDO PRINCIPAL
    ============================= */
@@ -363,42 +376,29 @@ iframe {
    ============================= */
 #copyright {
   text-align: center;
-  background: #111;
-  color: #eee;
+  background: var(--cor7);
+  color: var(--cor3);
   padding: 10px;
   font-size: 0.9em;
+  font-family: (var(--font-destaque));
 }
 
 #copyright p {
   display: inline-block;
   text-align: center;
   text-indent: 0;
+  font-family: (var(--font-destaque));
 }
 
 #copyright a {
-  color: lightgreen;
+  color: var(--cor1);
   text-decoration: none;
+  font-family: (var(--font-destaque));
 }
 
 #copyright a:hover {
   text-decoration: underline;
 }
-/* Bolinhas – estilo suave/translúcido */
-.carousel .bar{
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.18);     /* base bem translúcida */
-  border: 2px solid rgba(255,255,255,.35);
-  opacity: 1;                             /* não use opacity muito baixo + hover */
-  transition: background .25s, border-color .25s, box-shadow .25s, transform .25s;
-}
-
-.carousel .bar:hover{
-  background: rgba(255,255,255,.28);
-  border-color: rgba(255,255,255,.55);
-}
-
 
 
 
@@ -436,12 +436,6 @@ iframe {
     margin: 10px;
     padding: 15px;
   }
-
-  #copyright p {
-    display: inline-block;
-    text-align: center;
-    text-indent: 0;
-    padding: 0;
-    margin: 0;
-  }
 }
+
+
