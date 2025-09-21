@@ -101,6 +101,15 @@ nav {
   padding: 0;
 }
 
+.menu {
+  background: rgba(255, 255, 255, 0.2); /* branco transparente */
+  backdrop-filter: blur(8px); /* efeito de vidro fosco */
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
+
 nav ul {
   list-style: none;
   margin: 0;
@@ -119,11 +128,18 @@ nav a {
 }
 
 nav li:hover a {
-  color: yellow;
-  text-decoration: underline;
+  /* color: yellow; */
   background-color: var(--cor5);
+  text-decoration: underline;
   box-shadow: 0 2px 4px var(--cor5 0.315);
+  background: rgba(255, 255, 255, 0.2); /* branco transparente */
+  backdrop-filter: blur(50px); /* efeito de vidro fosco */
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 30px 60px;
+  border-radius: 12px; 
 }
+
 
 /* =============================
    CARROSSEL
