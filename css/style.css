@@ -33,8 +33,8 @@ body {
 /* ======== HEADER ======== */
 header {
     color: white;
-    background-image: linear-gradient(var(--cor1), var(--cor2), var(--cor3), var(--cor4),var(--cor5));
-    padding: 10px;
+    background-image: linear-gradient(var(--cor0),var(--cor1), var(--cor2), var(--cor3));
+    padding: -3px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
@@ -55,8 +55,11 @@ header {
 
 /* ======== MENU ======== */
 nav {
-    background-color: var(--cor5);
+    background-image: linear-gradient(var(--cor3),var(--cor2), var(--cor1), var(--cor0));
+    padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.315);
+    margin: 0px;
+    padding: 0px;
 }
 nav ul {
     list-style: none;
