@@ -152,6 +152,28 @@ nav li:hover a {
   transform: translateX(-75%);
 }
 
+/* Animação automática */
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }
+
+  25%  { transform: translateX(-25%); }
+  45%  { transform: translateX(-25%); }
+
+  50%  { transform: translateX(-50%); }
+  70%  { transform: translateX(-50%); }
+
+  75%  { transform: translateX(-75%); }
+  95%  { transform: translateX(-75%); }
+
+  100% { transform: translateX(0%); }
+}
+
+/* aplica a animação no trilho */
+.carousel .slides {
+  animation: slide 16s infinite; /* 16s = 4 imagens, 4s cada */
+}
+
 
 
 /* ======== CONTEÚDO PRINCIPAL ======== */
