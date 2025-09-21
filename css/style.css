@@ -124,11 +124,11 @@ nav li:hover a {
   text-decoration: underline;
   box-shadow: 0 2px 4px var(--cor5 0.315);
   background: rgba(255, 255, 255, 0.2); /* branco transparente */
-  backdrop-filter: blur(50px); /* efeito de vidro fosco */
+  backdrop-filter: blur(20px); /* efeito de vidro fosco */
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
-  padding: 30px 60px;
-  border-radius: 12px; 
+  padding: 5px 10px;
+  border-radius: 6px; 
 }
 
 /* =============================
