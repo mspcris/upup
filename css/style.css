@@ -1,160 +1,161 @@
 @charset "UTF-8";
 
-/* Importação de fontes */
+/* =============================
+   FONTES
+   ============================= */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500;700&display=swap');
-
-@font-face {
-    font-family: 'idroid';
-    src: url('fontes/idroid.otf') format(opentype);
-    font-weight: normal;
-    font-style: normal;
-}
-:root{
-    --cor0:#F2F2F2;
-    --cor1:#e4ce61;
-    --cor2:#F2CB05;
-    --cor3:#F2B705; 
-    --cor4:#F29985;
-    --cor5:#D91A2A;
-
-    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
-    --fonte-destaque: "Bebas Neue", cursive;
-    --fonte-android: 'idroid', cursive;
-}
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-/* ======== BASE ======== */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--cor0);
-    margin: 0;
+@font-face {
+  font-family: 'idroid';
+  src: url('fontes/idroid.otf') format(opentype);
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* ======== HEADER ======== */
+/* =============================
+   VARIÁVEIS
+   ============================= */
+:root {
+  --cor0: #F2F2F2;
+  --cor1: #e4ce61;
+  --cor2: #F2CB05;
+  --cor3: #F2B705;
+  --cor4: #F29985;
+  --cor5: #D91A2A;
+
+  --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+  --fonte-destaque: "Bebas Neue", cursive;
+  --fonte-android: 'idroid', cursive;
+}
+
+/* =============================
+   BASE
+   ============================= */
+body {
+  font-family: var(--fonte-padrao);
+  background-color: var(--cor0);
+  margin: 0;
+}
+
+/* =============================
+   HEADER
+   ============================= */
 header {
-    color: white;
-    background-image: linear-gradient(var(--cor0),var(--cor1), var(--cor2), var(--cor3));
-    padding: -3px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: white;
+  background-image: linear-gradient(var(--cor0), var(--cor1), var(--cor2), var(--cor3));
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #h1_reader {
-    margin: 10px 0;
-    font-size: 2em;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--cor0);
-    text-shadow: 2px 2px 2px var(--cor5); /*Sombra*/
-}
-#h4_1_reader, #h4_2_reader {
-    margin: 0;
-    font-family: "Bebas Neue", sans-serif;
-}
-header h6{
-padding: 0;
-margin: 0;
-border: none;
-box-shadow: none;
+  margin: 10px 0;
+  font-size: 2em;
+  font-family: var(--fonte-destaque);
+  font-weight: 400;
+  color: var(--cor0);
+  text-shadow: 2px 2px 2px var(--cor5);
 }
 
-/* ======== MENU ======== */
+#h4_1_reader,
+#h4_2_reader {
+  margin: 0;
+  font-family: var(--fonte-destaque);
+}
+
+header h6 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* =============================
+   MENU DE NAVEGAÇÃO
+   ============================= */
 nav {
-    background-image: linear-gradient(var(--cor3)50%,var(--cor2), var(--cor1), var(--cor0));
-    padding: 10px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.315); */
-    box-shadow: none;
-    margin: 0px;
-    padding: 0px;
+  background-image: linear-gradient(var(--cor3) 50%, var(--cor2), var(--cor1), var(--cor0));
+  margin: 0;
+  padding: 0;
 }
+
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
 nav a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 500;
-    
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
 }
+
 nav li:hover a {
-    color: yellow;
-    text-decoration: underline;
-    background-color: var(--cor5);
-    box-shadow: 0 2px 4px var(--cor5 0.315);
+  color: yellow;
+  text-decoration: underline;
+  background-color: var(--cor5);
+  box-shadow: 0 2px 4px var(--cor5 0.315);
 }
 
-
-/* ======== CARROSSEL ======== */
+/* =============================
+   CARROSSEL
+   ============================= */
 .carousel {
   position: relative;
-  width: min(1037px, 100%);   /* limita a largura, mas é responsivo */
-  aspect-ratio: 16 / 9;      /* mantém proporção */
+  width: min(1037px, 100%); /* largura máxima do carrossel */
+  aspect-ratio: 16 / 9;     /* mantém proporção widescreen */
   margin: 2px auto;
   overflow: hidden;
   border-radius: 10px;
-  background: #000;          /* fundo enquanto imagens carregam */
+  background: #000;         /* cor de fundo padrão */
 }
 
 /* Trilho dos slides */
 .carousel .slides {
-  display: flex;             /* organiza imagens lado a lado */
-  width: 400%;               /* 4 imagens = 400% */
+  display: flex;            
+  width: 400%;              /* 4 imagens = 400% */
   height: 100%;
-  transition: transform 0.6s ease;  /* animação suave */
+  transition: transform 0.8s ease; /* animação suave */
+  animation: slide 16s infinite;   /* animação automática */
 }
 
-/*Cada imagem ocupa 25% do trilho
-.carousel .slides img {
-  flex: 0 0 25%;             /* cada imagem ocupa 25% */
-/*  width: 25%;
-/*  height: 100%;
-/*  object-fit: cover;         /* preenche sem distorcer */
-/*  display: block;
-}*/
-
+/* Links e imagens dentro do carrossel */
 .carousel .slides a,
 .carousel .slides img {
-  flex: 0 0 25%;
+  flex: 0 0 25%;  /* cada imagem ocupa 25% */
   width: 25%;
   height: 100%;
   display: block;
 }
+
 .carousel .slides img {
-  width: 100%;       /* imagem ocupa todo o espaço do link */
+  width: 100%;
   height: 100%;
-  object-fit: fill; /*mantém proporção sem distorcer*/
+  object-fit: fill; /* ajusta imagem para caber */
 }
-/* Esconde apenas os radios do carrossel */
+
+/* Radios (controle invisível) */
 .carousel input[type="radio"] {
   display: none;
 }
-/* Pontinhos de navegação */
+
+/* Navegação (bolinhas) */
 .carousel .navigation {
   position: absolute;
   bottom: 10px;
-  left: 50%;
+  left: 50%;                 /* centraliza horizontalmente */
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
   z-index: 2;
 }
-/* .carousel .bar {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid #333;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: background 0.3s;
-} */
+
+/* Estilo padrão das bolinhas */
 .carousel .bar {
   width: 12px;
   height: 12px;
@@ -162,16 +163,17 @@ nav li:hover a {
   background: #fff;
   border: 2px solid #333;
   cursor: pointer;
-  opacity: 0.3; /* estava 0.8, reduzi para 0.3 */
-  transition: background 0.3s, opacity 0.3s;
+  opacity: 0.3;
+  transition: background 0.3s, opacity 0.3s, transform 0.3s;
 }
-
 
 .carousel .bar:hover {
   background: #999;
 }
 
-/* Lógica dos radios */
+/* =============================
+   LÓGICA DOS RADIOS (Slides)
+   ============================= */
 #radio1:checked ~ .slides {
   transform: translateX(0%);
 }
@@ -183,6 +185,16 @@ nav li:hover a {
 }
 #radio4:checked ~ .slides {
   transform: translateX(-75%);
+}
+
+/* Destaque da bolinha ativa */
+#radio1:checked ~ .navigation label[for="radio1"],
+#radio2:checked ~ .navigation label[for="radio2"],
+#radio3:checked ~ .navigation label[for="radio3"],
+#radio4:checked ~ .navigation label[for="radio4"] {
+  background: #fff;
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 /* Animação automática */
@@ -202,135 +214,162 @@ nav li:hover a {
   100% { transform: translateX(0%); }
 }
 
-/* aplica a animação no trilho */
-.carousel .slides {
-  animation: slide 16s infinite; /* 16s = 4 imagens, 4s cada */
-}
-
-
-
-/* ======== CONTEÚDO PRINCIPAL ======== */
-main, .extra {
-    max-width: 1000px;
-    margin: 3px auto;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: white;
-}
-h1 {
-    font-family: 'idroid', sans-serif;
-    color: green;
-}
-.subtitulos {
-    font-family: 'idroid';
-    color: green;
-    background-image: linear-gradient(to right, #9cd19c, #d8f5d8, #fff);
-    padding: 5px;
-    border-radius: 5px;
-}
-p {
-    text-indent: 30px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* ======== IMAGENS E VÍDEOS ======== */
-img, iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-}
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-    border-radius: 10px;
-}
-.video-container iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* ======== SEÇÃO EXTRA ======== */
+/* =============================
+   CONTEÚDO PRINCIPAL
+   ============================= */
+main,
 .extra {
-    background-color: rgb(129, 211, 154);
-}
-#extrah2 {
-    color: white;
-    background-color: rgba(19, 107, 38, 0.9);
-    border-radius: 12px 12px 0 0;
-    margin: -20px -20px 20px -20px;
-    padding: 10px;
-}
-.extra ul {
-    column-count: 2;
-    column-gap: 40px;
-    list-style: none;
-    padding: 0;
-}
-.extra ul li {
-    margin-bottom: 8px;
-}
-.extra ul li span {
-    margin-right: 5px;
-    color: black;
-}
-.extra ul li a {
-    text-decoration: underline;
-    color: black;
-}
-/* ======== COPYRIGHT ======== */
-#copyright {
-    text-align: center;
-    background: #111;
-    color: #eee;
-    padding: 10px;
-    font-size: 0.9em;
-}
-#copyright p{
-    display: inline-block;   /* faz o <p> respeitar alinhamento horizontal */
-    text-align: center;
-    text-indent: 0px;
-}
-#copyright a {
-    color: lightgreen;
-    text-decoration: none;
-}
-#copyright a:hover {
-    text-decoration: underline;
+  max-width: 1000px;
+  margin: 3px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
 }
 
-/* ======== RESPONSIVIDADE PARA TELAS PEQUENAS (CELULARES)======== */
-@media (max-width: 768px) {
-    #h1_reader {
-        font-size: 2em;
-    }
-    h1, h2 {
-        text-align: center;
-        font-size: 1.4em;
-    }
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    .extra ul {
-        column-count: 1; /* apenas uma coluna no celular */
-    }
-    main, .extra {
-        margin: 10px;
-        padding: 15px;
-    }
-    #copyright p{
-    display: inline-block;   /* faz o <p> respeitar alinhamento horizontal */
-    text-align: center;
-    text-indent: 0px;
-    padding: 0px;
-    margin:0px;
+h1 {
+  font-family: var(--fonte-android);
+  color: green;
 }
+
+.subtitulos {
+  font-family: var(--fonte-android);
+  color: green;
+  background-image: linear-gradient(to right, #9cd19c, #d8f5d8, #fff);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+p {
+  text-indent: 30px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =============================
+   MÍDIAS (IMAGENS E VÍDEOS)
+   ============================= */
+img,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =============================
+   SEÇÃO EXTRA
+   ============================= */
+.extra {
+  background-color: rgb(129, 211, 154);
+}
+
+#extrah2 {
+  color: white;
+  background-color: rgba(19, 107, 38, 0.9);
+  border-radius: 12px 12px 0 0;
+  margin: -20px -20px 20px -20px;
+  padding: 10px;
+}
+
+.extra ul {
+  column-count: 2;
+  column-gap: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.extra ul li {
+  margin-bottom: 8px;
+}
+
+.extra ul li span {
+  margin-right: 5px;
+  color: black;
+}
+
+.extra ul li a {
+  text-decoration: underline;
+  color: black;
+}
+
+/* =============================
+   COPYRIGHT
+   ============================= */
+#copyright {
+  text-align: center;
+  background: #111;
+  color: #eee;
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+#copyright p {
+  display: inline-block;
+  text-align: center;
+  text-indent: 0;
+}
+
+#copyright a {
+  color: lightgreen;
+  text-decoration: none;
+}
+
+#copyright a:hover {
+  text-decoration: underline;
+}
+
+/* =============================
+   RESPONSIVIDADE (CELULAR)
+   ============================= */
+@media (max-width: 768px) {
+  #h1_reader {
+    font-size: 2em;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+    font-size: 1.4em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .extra ul {
+    column-count: 1; /* apenas uma coluna no celular */
+  }
+
+  main,
+  .extra {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  #copyright p {
+    display: inline-block;
+    text-align: center;
+    text-indent: 0;
+    padding: 0;
+    margin: 0;
+  }
 }
