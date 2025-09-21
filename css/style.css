@@ -10,12 +10,12 @@
     font-style: normal;
 }
 :root{
-    --cor0:#ebe5c5;
-    --cor1:#83e1ad;
-    --cor2:#3ddc84;
-    --cor3:#2fa866;
-    --cor4:#1a5c37;
-    --cor5:#063d1e;
+    --cor0:#F2F2F2;
+    --cor1:#e4ce61;
+    --cor2:#F2CB05;
+    --cor3:#F2B705; 
+    --cor4:#F29985;
+    --cor5:#D91A2A;
 
     --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
     --fonte-destaque: "Bebas Neue", cursive;
