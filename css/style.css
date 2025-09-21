@@ -1,0 +1,281 @@
+@charset "UTF-8";
+
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500;700&display=swap');
+
+@font-face {
+    font-family: 'idroid';
+    src: url('fontes/idroid.otf') format(opentype);
+    font-weight: normal;
+    font-style: normal;
+}
+:root{
+    --cor0:#ebe5c5;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: "Bebas Neue", cursive;
+    --fonte-android: 'idroid', cursive;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* ======== BASE ======== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor0);
+    margin: 0;
+}
+
+/* ======== HEADER ======== */
+header {
+    color: white;
+    background-image: linear-gradient(var(--cor1), var(--cor2), var(--cor3), var(--cor4),var(--cor5));
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#h1_reader {
+    margin: 10px 0;
+    font-size: 2em;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--cor0);
+    text-shadow: 2px 2px 2px var(--cor5); /*Sombra*/
+}
+#h4_1_reader, #h4_2_reader {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+/* ======== MENU ======== */
+nav {
+    background-color: var(--cor5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.315);
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+nav li:hover a {
+    color: yellow;
+    text-decoration: underline;
+    background-color: var(--cor3);
+}
+
+
+/* ======== CARROSSEL ======== */
+.carousel {
+  position: relative;
+  width: min(900px, 100%);   /* limita a largura, mas é responsivo */
+  aspect-ratio: 16 / 9;      /* mantém proporção */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;          /* fundo enquanto imagens carregam */
+}
+
+/* Trilho dos slides */
+.carousel .slides {
+  display: flex;             /* organiza imagens lado a lado */
+  width: 400%;               /* 4 imagens = 400% */
+  height: 100%;
+  transition: transform 0.6s ease;  /* animação suave */
+}
+
+/* Cada imagem ocupa 25% do trilho */
+.carousel .slides img {
+  flex: 0 0 25%;             /* cada imagem ocupa 25% */
+  width: 25%;
+  height: 100%;
+  object-fit: cover;         /* preenche sem distorcer */
+  display: block;
+}
+
+/* Esconde apenas os radios do carrossel */
+.carousel input[type="radio"] {
+  display: none;
+}
+
+/* Pontinhos de navegação */
+.carousel .navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.carousel .bar {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #333;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: background 0.3s;
+}
+
+.carousel .bar:hover {
+  background: #999;
+}
+
+/* Lógica dos radios */
+#radio1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#radio2:checked ~ .slides {
+  transform: translateX(-25%);
+}
+#radio3:checked ~ .slides {
+  transform: translateX(-50%);
+}
+#radio4:checked ~ .slides {
+  transform: translateX(-75%);
+}
+
+
+
+/* ======== CONTEÚDO PRINCIPAL ======== */
+main, .extra {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+h1 {
+    font-family: 'idroid', sans-serif;
+    color: green;
+}
+.subtitulos {
+    font-family: 'idroid';
+    color: green;
+    background-image: linear-gradient(to right, #9cd19c, #d8f5d8, #fff);
+    padding: 5px;
+    border-radius: 5px;
+}
+p {
+    text-indent: 30px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ======== IMAGENS E VÍDEOS ======== */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ======== SEÇÃO EXTRA ======== */
+.extra {
+    background-color: rgb(129, 211, 154);
+}
+#extrah2 {
+    color: white;
+    background-color: rgba(19, 107, 38, 0.9);
+    border-radius: 12px 12px 0 0;
+    margin: -20px -20px 20px -20px;
+    padding: 10px;
+}
+.extra ul {
+    column-count: 2;
+    column-gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+.extra ul li {
+    margin-bottom: 8px;
+}
+.extra ul li span {
+    margin-right: 5px;
+    color: black;
+}
+.extra ul li a {
+    text-decoration: underline;
+    color: black;
+}
+/* ======== COPYRIGHT ======== */
+#copyright {
+    text-align: center;
+    background: #111;
+    color: #eee;
+    padding: 10px;
+    font-size: 0.9em;
+}
+#copyright p{
+    display: inline-block;   /* faz o <p> respeitar alinhamento horizontal */
+    text-align: center;
+    text-indent: 0px;
+}
+#copyright a {
+    color: lightgreen;
+    text-decoration: none;
+}
+#copyright a:hover {
+    text-decoration: underline;
+}
+
+/* ======== RESPONSIVIDADE PARA TELAS PEQUENAS (CELULARES)======== */
+@media (max-width: 768px) {
+    #h1_reader {
+        font-size: 2em;
+    }
+    h1, h2 {
+        text-align: center;
+        font-size: 1.4em;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .extra ul {
+        column-count: 1; /* apenas uma coluna no celular */
+    }
+    main, .extra {
+        margin: 10px;
+        padding: 15px;
+    }
+    #copyright p{
+    display: inline-block;   /* faz o <p> respeitar alinhamento horizontal */
+    text-align: center;
+    text-indent: 0px;
+    padding: 0px;
+    margin:0px;
+}
+}
