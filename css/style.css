@@ -294,10 +294,6 @@ main,
 
 }
 
-/* h2{
-    #
-} */
-
 .subtitulos {
   font-family: var(--font-destaque);
   color: var(var(--cor5));
@@ -345,12 +341,13 @@ iframe {
    SEÇÃO EXTRA
    ============================= */
 .extra {
-  background-color: rgb(129, 211, 154);
+  background-color: var(--cor1);
 }
 
 #extrah2 {
-  color: white;
-  background-color: rgba(19, 107, 38, 0.9);
+  font-family: var(--font-destaque);
+  color: var(--cor7);
+  background-color: var(--cor3);
   border-radius: 12px 12px 0 0;
   margin: -20px -20px 20px -20px;
   padding: 10px;
