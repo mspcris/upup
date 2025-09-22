@@ -40,7 +40,7 @@
 
   --font-padrao: 'Barlow Condensed', cursive;
   --font-destaque: 'Baloo 2', cursive;
-  /* --font-subtitulos: 'Barlow Condensed', cursive; */
+  --font-subtitulos: 'Barlow Condensed', cursive; 
 
         --bg:#0f172a;        /* slate-900 */
       --card:#111827;      /* gray-900 */
