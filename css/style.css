@@ -473,28 +473,74 @@ iframe {
   text-decoration: underline;
 }
 
-/* BASE — não colore, deixa a cor vir das variações */
-.cta a.btn,
-.cta a.btn:link,
-.cta a.btn:visited {
+
+
+
+
+/* === Botões das redes (força borda e cor fixas) === */
+.cta { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* Base neutra (não decide cor) */
+.cta a.btn {
   display:inline-flex; align-items:center; gap:10px;
   padding:12px 16px; border-radius:12px;
-  border:1px solid currentColor;        /* <<< borda usa a cor do texto */
+  border:1px solid #d9dde3;               /* cinza leve de base */
   background:rgba(255,255,255,.04);
-  color:#e5e7eb;                         /* cor padrão se não houver variação */
+  color:#1f2937;                           /* texto base; as variações abaixo vão sobrescrever */
   text-decoration:none;
   transition:background .2s, color .2s, border-color .2s;
 }
-.cta a.btn:hover { background:rgba(255,255,255,.07); }
+.cta a.btn:hover { background:rgba(0,0,0,.04); }
 
-/* VARIAÇÕES — mesma especificidade e VÊM DEPOIS da base */
-.cta a.btn--ig, .cta a.btn--ig:visited   { color:#E4405F; }    /* Instagram */
-.cta a.btn--fb, .cta a.btn--fb:visited   { color:#1877F2; }    /* Facebook  */
-.cta a.btn--wa, .cta a.btn--wa:visited   { color:#25D366; }    /* WhatsApp  */
-.cta a.btn--mail, .cta a.btn--mail:visited { color:#EA4335; }  /* E-mail    */
+/* Instagram */
+.cta a.btn--ig,
+.cta a.btn--ig:link,
+.cta a.btn--ig:visited,
+.cta a.btn--ig:hover,
+.cta a.btn--ig:active {
+  color:#E4405F !important;
+  border:1px solid rgba(228,64,95,.35) !important;
+}
 
-/* pílula herda a cor do botão */
-.cta .btn .pill { color:inherit;}
+/* Facebook */
+.cta a.btn--fb,
+.cta a.btn--fb:link,
+.cta a.btn--fb:visited,
+.cta a.btn--fb:hover,
+.cta a.btn--fb:active {
+  color:#1877F2 !important;
+  border:1px solid rgba(24,119,242,.35) !important;
+}
+
+/* WhatsApp */
+.cta a.btn--wa,
+.cta a.btn--wa:link,
+.cta a.btn--wa:visited,
+.cta a.btn--wa:hover,
+.cta a.btn--wa:active {
+  color:#25D366 !important;
+  border:1px solid rgba(37,211,102,.35) !important;
+}
+
+/* E-mail */
+.cta a.btn--mail,
+.cta a.btn--mail:link,
+.cta a.btn--mail:visited,
+.cta a.btn--mail:hover,
+.cta a.btn--mail:active {
+  color:#EA4335 !important;
+  border:1px solid rgba(234,67,53,.35) !important;
+}
+
+/* A “pill” herda a cor do botão */
+.cta .btn .pill { color:inherit; opacity:.9; }
+
+
+
+
+
+
+
 
 
 
