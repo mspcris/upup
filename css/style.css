@@ -29,6 +29,7 @@
    ============================= */
 :root {
   --cor0: #F2F2F2;
+  --cor01: #e6e5bf;
   --cor1: #e4ce61;
   --cor2: #F2CB05;
   --cor3: #F2B705;
@@ -56,7 +57,7 @@
    ============================= */
 body {
   font-family: var(--fonte-padrao);
-  background-color: var(--cor0);
+  background-color: var(--cor01);
   margin: 0;
 }
 
@@ -108,6 +109,15 @@ body { font-family: var(--font-padrao); }
 .h1main, .subtitulos {
   font-family: var(--font-destaque);
 }
+
+.card{
+  max-width: 1000px;
+  margin: 3px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+
 
 header h6 {
   margin: 0;
