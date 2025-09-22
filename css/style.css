@@ -338,7 +338,7 @@ main,
   background-color: white;
 }
 .subpag{
-      /* font-family: var(--font-destaque); */
+      font-family: var(--font-destaque);
   color: var(var(--cor5));
   background-image: linear-gradient(to bottom, var(--cor3), var(--cor2), var(--cor1), var(--cor0));
   padding: 5px;
@@ -354,7 +354,7 @@ main,
 }
 
 .subtitulos {
-  font-family: var(--font-destaque);
+  /* font-family: var(--font-destaque); */
   color: var(var(--cor5));
   background-image: linear-gradient(to right, var(--cor3), var(--cor2), var(--cor1), var(--cor0));
   padding: 5px;
