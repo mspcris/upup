@@ -85,6 +85,17 @@ header {
   font-family: var(--font-destaque);
 }
 
+
+/* ESTOU USANDO A class="subtitulos" PARA H2 DAS SUB-PÁGINAS */
+.subh2{
+  font-family: var(--font-destaque);
+  color: var(--cor7);
+  background-image: linear-gradient(to left, var(--cor0), var(--cor1), var(--cor2), var(--cor3));
+  border-radius: 12px 12px 0 0;
+  margin: -20px -20px 20px -20px;
+  padding: 10px;
+}
+
 header h6 {
   margin: 0;
   padding: 0;
@@ -426,11 +437,17 @@ iframe {
   text-decoration: underline;
   color: black;
 }
+/* =============================
+ PRERODAPÉ
+   ============================= */
+.prerodape{
+    text-align: center;
+}
 
 /* =============================
-   COPYRIGHT
+   COPYRIGHT - RODAPÉ
    ============================= */
-#copyright {
+.copyright {
   text-align: center;
   background: var(--cor7);
   color: var(--cor3);
@@ -439,20 +456,20 @@ iframe {
   font-family: (var(--font-destaque));
 }
 
-#copyright p {
+.copyright p {
   display: inline-block;
   text-align: center;
   text-indent: 0;
   font-family: (var(--font-destaque));
 }
 
-#copyright a {
+.copyright a {
   color: var(--cor1);
   text-decoration: none;
   font-family: (var(--font-destaque));
 }
 
-#copyright a:hover {
+.copyright a:hover {
   text-decoration: underline;
 }
 
@@ -517,6 +534,7 @@ iframe {
   h2 {
     text-align: center;
     font-size: 1.4em;
+    
   }
 
   nav ul {
