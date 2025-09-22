@@ -326,8 +326,15 @@ main,
   border-radius: 20px;
   background-color: white;
 }
+.subpag{
+      font-family: var(--font-destaque);
+  color: var(var(--cor5));
+  background-image: linear-gradient(to bottom, var(--cor3), var(--cor2), var(--cor1), var(--cor0));
+  padding: 5px;
+  border-radius: 5px;
+}
 
-#h1main{
+.h1main{
   font-family: var(--font-destaque);
   color: var(--cor3);
   text-align: left;
