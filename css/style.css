@@ -488,6 +488,7 @@ iframe {
   text-decoration: none;
   color: inherit;                  /* <<< importante: herda da variação (wa/fb/ig) */
   transition: background .2s, border-color .2s, color .2s, transform .06s;
+  font-size: 0.8em;
 }
 .cta a.btn:hover { background: rgba(255,255,255,.07); }
 .cta a.btn:active { transform: translateY(1px); }
@@ -508,16 +509,16 @@ iframe {
   border-color: rgba(228,64,95,.35);
   color: #E4405F;
 }
-
-/* a “pill” herda a cor do botão (deixa de ficar cinza) */
-.cta .btn .pill { color: inherit; opacity: .9; }
-
 /* E-mail (tom do Gmail) */
 .cta a.btn--mail,
 .cta a.btn--mail:visited {
   color: #EA4335;                    /* vermelho Gmail */
   border-color: rgba(234, 67, 53, .35);
 }
+/* a “pill” herda a cor do botão (deixa de ficar cinza) */
+.cta .btn .pill { color: inherit; opacity: .9; }
+
+
 
 
 
