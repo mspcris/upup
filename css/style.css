@@ -308,7 +308,12 @@ p {
   text-align: justify;
   font-family: var(--font-subtitulos);
 }
-
+main p {
+  text-indent: 30px;
+  line-height: 1.6;
+  text-align: justify;
+  font-family: var(--font-subtitulos);
+}
 /* =============================
    MÍDIAS (IMAGENS E VÍDEOS)
    ============================= */
