@@ -512,6 +512,14 @@ iframe {
 /* a “pill” herda a cor do botão (deixa de ficar cinza) */
 .cta .btn .pill { color: inherit; opacity: .9; }
 
+/* E-mail (tom do Gmail) */
+.cta a.btn--mail,
+.cta a.btn--mail:visited {
+  color: #EA4335;                    /* vermelho Gmail */
+  border-color: rgba(234, 67, 53, .35);
+}
+
+
 
 
 

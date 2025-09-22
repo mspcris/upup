@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP - Unidos por um Propósito</title>
+    <link rel="shortcut icon" href="images/upup_logomarca_somente_nome_up_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Baloo 2 -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Fredoka (opção) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Nunito Rounded (opção) -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Rounded:wght@800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1 id="h1_reader">UPUP - Unidos Por Um Propósito</h1>
+        <H4 id="h4_1_reader">"Tudo posso naquele que me fortalece"</H4>
+        <h6>Filipenses 4:13</h6>
+    </header>
+    <nav>
+        <ul>
+            <li id="li1">
+                <a href="https://www.instagram.com/upupoficial/" target="_blank">
+                    <img src="images/instagram_30x30.png" alt="instagram.com">/upupoficial</a>
+            </li>
+
+            <li id="li2">
+                <a href="https://www.facebook.com/sandrasantospaz" target="_blank">
+                    <img src="images/Facebook_logo_30x.png" alt="facebook.com">/sandrasantospaz</a>
+            </li>
+            <li id="li3">
+                <a href="https://www.instagram.com/pastorasandra.nat/" target="_blank">
+                    <img src="images/instagram_30x30.png" alt="instagram.com">/pastorasandra.nat</a>
+            </li>
+            <li id="li4">
+                <a href="https://api.whatsapp.com/send?phone=5522998626059" target="_blank">
+                    <img src="images/icon_Whatsapp_30x30.png" alt="instagram.com">/(22)99862-6059</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="submenu">
+        <ul>
+            <li><a href="quemsomos_leiamais.html">Quem somos</a></li>
+            <li><a href="porquenatividade.html">Por que Natividade?</a></li>
+            <li><a href="missaovisaovalores.html">Missão</a></li>
+            <li><a href="courses/index_cursos.html">Cursos</a></li>
+        </ul>
+
+    </div>
+
+
+
+    <!-- ======== CARROSSEL ======== -->
+    <div class="carousel" aria-label="Galeria UPUP">
+        <!-- 1) CONTROLES (radios). Precisam ficar como irmãos de .slides e .navigation -->
+        <input type="radio" name="radio-btn" id="radio1" checked>
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+
+        <!-- 2) TRILHO DOS SLIDES -->
+        <div class="slides">
+            <a href="courses/upupcursobombeiromirim.html">
+                <img src="images/upup_curso_bombeiro_mirim_16x9_res_40_876x574px.png" alt="Curso Bombeiro Mirim - UPUP">
+            </a>
+            <a href="#">
+                <img src="images/upup_curso_preparatorio_tjrj_16x9_1037x583_res_40.png"
+                    alt="Curso Preparatório TJ-RJ - UPUP">
+            </a>
+            <a href="passeata.html">
+                <img src="images/upup_cursos_ingles_16x9.png" alt="Curso Inglês - UPUP">
+            </a>
+            <a href="https://www.instagram.com/p/C_tYlRUB63i/?img_index=1">
+                <img src="images/upup_evento_passeata_16x9_1037x583.png" alt="Passeata Centro de Natividade - UPUP">
+            </a>
+        </div>
+
+        <!-- 3) NAVEGAÇÃO (bolinhas). Cada label aponta para um rádio -->
+        <div class="navigation">
+            <label for="radio1" class="bar" aria-label="Slide 1"></label>
+            <label for="radio2" class="bar" aria-label="Slide 2"></label>
+            <label for="radio3" class="bar" aria-label="Slide 3"></label>
+            <label for="radio4" class="bar" aria-label="Slide 4"></label>
+        </div>
+    </div>
+
+    <!-- AUTO-PLAY por rádios: mantém a bolinha correta -->
+    <script>
+        (function () {
+            const radios = Array.from(document.querySelectorAll('.carousel input[name="radio-btn"]'));
+            if (!radios.length) return;
+            let i = radios.findIndex(r => r.checked);
+            setInterval(() => {
+                i = (i + 1) % radios.length;
+                radios[i].checked = true; // isto dispara suas regras CSS (#radioX:checked ~ .slides ...)
+            }, 4000); // 4s por slide
+        })();
+    </script>
+
+
+    <main>
+        <h1 class="h1main">História da UPUP</h1>
+        <p><strong>Ontem</strong> — quando o amor virou caminho
+
+            A UPUP nasceu no Rio de Janeiro, de mãos dadas com quem decidiu cuidar: ouvir, acolher, estar presente.
+            Começamos em vielas e praças, movidos por doações e pelo trabalho voluntário. Levamos alimento, carinho e
+            cursos que abriram portas para emprego e renda. Vimos crianças bem cuidadas, famílias recomeçando — e muitos
+            que receberam apoio voltaram para amar junto, mantendo a roda girando.
+
+        <p><strong>Hoje</strong> — propósito em movimento
+
+            Hoje a UPUP caminha com os bairros mais vulneráveis de Natividade–RJ. A cada ação,
+            transformamos afeto em
+            oportunidade: campanhas solidárias, encontros com as famílias, atividades para as crianças e formações que
+            geram trabalho e dignidade. Nossa rede de voluntários e doadores segue firme; cada contribuição vira cuidado
+            concreto — material escolar, cestas, aulas, escuta. Amar, aqui, é verbo diário.
+        </p>
+        <p><strong>Amanhã</strong> — quando o cuidado floresce
+
+            O futuro nos chama a cuidar ainda mais: ampliar cursos e mentorias, fortalecer parcerias locais, formar
+            novos voluntários e lideranças da própria comunidade. Queremos que mais crianças sejam protegidas, mais
+            jovens encontrem seu lugar, mais famílias tenham renda sustentável. Faremos isso com transparência, pés no
+            território e coração aberto — porque amar é o norte e a rota.</p>
+
+        <p>
+            Se o seu coração também pulsa por propósito, venha com a gente. Quando a gente cuida, a vida floresce —
+            ontem, hoje e amanhã.
+        </p>
+        </p>
+        <h2 class="subtitulos">Quem somos?</h2>
+        <p>A UPUP – Unidos Por Um Propósito atua desde 2016 com iniciativas socioeducativas e ações solidárias em
+            comunidades, mobilizando voluntários, parceiros e doadores para levar acolhimento, valores cristãos e
+            oportunidades a crianças, adolescentes e famílias. <a href="quemsomos_leiamais.html">Leia mais.</a></p>
+        <picture>
+            <source media="(max-width: 750px)" srcset="images/upup_festa_dias_criancas_750px.jpg" type="image/jpg">
+            <source media="(max-width: 1050px)" srcset="images/upup_festa_dias_criancas.jpg" type="image/jpg">
+            <img src="images/upup_festa_dias_criancas.jpg"
+                alt="Festa dia das crianças na quadra do Cantinho Fiorello em Natividade-RJ">
+            <h2 class="subtitulos">Por que Natividade?</h2>
+            <p>
+                Natividade nos acolheu com sua beleza natural e a força do seu povo.
+                Apesar das riquezas culturais e do espírito comunitário, a cidade ainda enfrenta
+                desafios sociais importantes, principalmente em bairros como o <strong>Cantinho Fiorello</strong>,
+                onde há famílias em situação de vulnerabilidade e carência de oportunidades.
+            </p>
+            <p>
+                Escolhemos estar aqui porque acreditamos que é neste cenário que nosso trabalho pode gerar
+                maior impacto: aproximando pessoas, oferecendo acolhimento e criando caminhos de esperança
+                e transformação junto à comunidade local. <a href="porquenatividade.html">Leia mais.</a>
+
+            </p>
+            </div>
+            <aside class="extra">
+                <h2 id="extrah2">Quer aprender mais sobre os nossos eventos?</h2>
+                <p>
+                    Veja nossa lista de eventos fixos. Participe conosco dos eventos. Seja voluntário, amigo ou
+                    participante. O importante é você estar conosco.
+                </p>
+                <ul>
+                    <li><span>✔ <a href="https://www.instagram.com/p/C09_oo5uUxA/" target="_blank">Janeiro</a></span> -
+                        Férias
+                        escolares</a>
+                    </li>
+                    <li><span>✔ <a href="https://www.instagram.com/p/DIq09shupP2/" target="_blank">Abril</a> -
+                            Páscoa</a></span>
+                    </li>
+                    <li><span>✔ <a href="https://www.instagram.com/p/DJ300Eng5Zj/?img_index=1"
+                                target="_blank">Maio</a></span> - Dia das
+                        mães!</a></li>
+                    <li><span>✔ <a href="https://www.instagram.com/p/DI9TLQEO9t-/?img_index=1"
+                                target="_blank">Outubro</a></span> - Dia
+                        das
+                        crianças</a></li>
+                    <li><span>✔ <a href="https://www.instagram.com/p/C09zVgyOYIm/" target="_blank">Dezembro</a></span> -
+                        Natal Solidário</a></li>
+                </ul>
+
+                </ul>
+                <p>Temos inúmeros eventos não fixos, além de oficinas, cursos, distribuição de cestas básicas e muito
+                    mais. Venha participar com UPUP</p>
+            </aside>
+
+
+    </main>
+
+    <P class="prerodape">A UPUP está localizada na Rua Dr. Antônio de Carvalho Cavalcanti, 248 Bairro Cantinho Fiorello
+        Natividade
+        – RJ CEP: 28380-000. Venha nos visitar!
+    <footer class="copyright">
+        <p>UPUP é mais que um projeto social: é uma família unida por um propósito — Amar e
+            servir.</p>
+        <br>
+        © <span class="y"></span>UPUP CNPJ 48.211.513/0001-78 – Unidos Por Um Propósito. Todos os direitos reservados.
+        <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+        </br>
+    </footer>
+</body>
+
+</html>
