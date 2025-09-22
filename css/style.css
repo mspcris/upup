@@ -132,6 +132,47 @@ nav li:hover a {
 }
 
 /* =============================
+   SUBMENU DE NAVEGAÇÃO
+   ============================= */
+.submenu {
+  background-image: linear-gradient(var(--cor0),var(--cor1), var(--cor2), var(--cor3), var(--cor4));
+  margin: 0;
+  padding: 0;
+}
+
+.submenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-family: var(--font-destaque)
+}
+
+.submenu li:hover a {
+  /* color: yellow; */
+  background-color: var(--cor5);
+  text-decoration: underline;
+  box-shadow: 0 2px 4px var(--cor5 0.315);
+  background: rgba(255, 255, 255, 0.2); /* branco transparente */
+  backdrop-filter: blur(20px); /* efeito de vidro fosco */
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px; 
+}
+
+
+
+/* =============================
    CARROSSEL
    ============================= */
 .carousel {
