@@ -848,6 +848,19 @@ iframe {
 /* “Pílula” herda a cor do botão */
 .cta .btn .pill { color: inherit; opacity: .9; }
 
+.cta {
+  display: flex;
+  justify-content: center; /* centraliza na horizontal */
+  flex-wrap: wrap;         /* permite quebrar linha em telas menores */
+  gap: 10px;
+}
+
+.cta a.btn {
+  flex: 0 1 200px;   /* largura flexível */
+  text-align: center;
+}
+
+
 /********************************************
 #                                              #
 #         Botões de doação Pix                 #
@@ -885,6 +898,8 @@ iframe {
   background: linear-gradient(135deg, var(--cor4), var(--cor5));
   color: #fff;
 }
+
+
 
 
 
