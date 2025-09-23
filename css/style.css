@@ -788,49 +788,39 @@ iframe {
 #                                              #
 ********************************************/
 
-
-
-
-
-
-
-
-
-
-
-/* .cta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-} */
- .cta {
+.cta {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;   /* permite quebrar no mobile */
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 25px; /* espaço entre os ícones */
 }
-
-/* Base neutra */
-/* .cta a.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 12px 16px; border-radius: 12px;
-  border: 1px solid #d9dde3;
-  background: rgba(255,255,255,.04);
-  color: #1f2937;
-  text-decoration: none;
-  transition: background .2s, color .2s, border-color .2s;
-} */
 
 .cta a.btn {
-  flex: 0 1 220px;   /* todos terão a mesma largura */
-  text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 60px;      /* altura uniforme */
-  font-size: 1rem;
+  justify-content: center;
+  width: 60px;       /* tamanho fixo quadrado */
+  height: 60px;
+  border-radius: 50%; /* deixa redondo */
+  background: transparent; /* invisível */
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
 }
-.cta a.btn:hover { background: rgba(0,0,0,.04); }
+
+/* Ícones centralizados */
+.cta a.btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Efeito cítrico no hover */
+.cta a.btn:hover {
+  background: #fff9c4; /* amarelo clarinho cítrico */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: scale(1.1);
+}
 
 /* Instagram */
 .cta a.btn--ig,
