@@ -848,6 +848,45 @@ iframe {
 /* “Pílula” herda a cor do botão */
 .cta .btn .pill { color: inherit; opacity: .9; }
 
+/********************************************
+#                                              #
+#         Botões de doação Pix                 #
+#                                              #
+********************************************/
+
+
+.btn {
+  background: linear-gradient(135deg, var(--cor3), var(--cor2));
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: var(--font-destaque);
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, var(--cor2), var(--cor3));
+  color: #111;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-destaque {
+  background: linear-gradient(135deg, var(--cor5), var(--cor4));
+  color: #fff;
+}
+
+.btn-destaque:hover {
+  background: linear-gradient(135deg, var(--cor4), var(--cor5));
+  color: #fff;
+}
+
+
 
 
 
