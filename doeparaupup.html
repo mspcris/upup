@@ -70,10 +70,20 @@
 
 
 
+        <h1>NOSSA CHAVE PIX É: 48.211.513/0001-78</h1>
 
 
+        <p>Chave Pix: <strong id="pixKey">48.211.513/0001-78</strong></p>
+        <button onclick="copyPix()">Copiar Chave Pix</button>
 
-
+        <script>
+            function copyPix() {
+                const pixKey = document.getElementById("pixKey").innerText;
+                navigator.clipboard.writeText(pixKey).then(() => {
+                    alert("Chave Pix copiada! Abra seu app do banco e cole.");
+                });
+            }
+        </script>
 
 
 
