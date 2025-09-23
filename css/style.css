@@ -382,7 +382,7 @@ nav li:hover a {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--font-destaque);
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   color: #fff;
   opacity: 0;
@@ -404,6 +404,7 @@ nav li:hover a {
  * Marca fixa abaixo do título
  **************************************/
 .upup-brand {
+  display: none;
   text-align: center;
   margin-top: 4px;
   font-family: var(--font-destaque);
