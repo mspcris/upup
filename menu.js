@@ -27,29 +27,25 @@ function openDrawer() {
   const brand = drawer.querySelector(".upup-brand");
   const menuItems = drawer.querySelectorAll(".upup-list li");
 
-  // Reset estados
+  // reset
+  menuItems.forEach(li => li.classList.remove("show"));
   brand.classList.remove("visible");
-  menuItems.forEach(li => {
-    li.classList.add("hidden-init");
-    li.classList.remove("show");
-  });
 
-  // Splash dura 2s
   splash.style.display = "block";
 
   setTimeout(() => {
     splash.style.display = "none";
-    brand.classList.add("visible"); // ativa UPUP pequeno no header
 
-    // Agora mostra os itens do menu em cascata
+    // só aqui a brand aparece
+    brand.classList.add("visible");
+
+    // depois os itens entram
     menuItems.forEach((li, i) => {
-      setTimeout(() => {
-        li.classList.remove("hidden-init");
-        li.classList.add("show");
-      }, i * 200);
+      setTimeout(() => li.classList.add("show"), i * 200);
     });
-  }, 2000);
+  }, 2000); // espera splash terminar
 }
+
 
 
 
