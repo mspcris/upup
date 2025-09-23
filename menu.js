@@ -27,25 +27,26 @@ function openDrawer() {
   const brand = drawer.querySelector(".upup-brand");
   const menuItems = drawer.querySelectorAll(".upup-list li");
 
-  // reset
+  // Reset
   menuItems.forEach(li => li.classList.remove("show"));
   brand.classList.remove("visible");
 
+  // Reinicia animação do splash
   splash.style.display = "block";
+  splash.style.animation = "none";        // zera animação
+  splash.offsetHeight;                    // força reflow
+  splash.style.animation = "splashFade 2s ease forwards"; // reaplica animação
 
+  // Depois de 2s, troca pro brand + itens
   setTimeout(() => {
     splash.style.display = "none";
-
-    // só aqui a brand aparece
     brand.classList.add("visible");
 
-    // depois os itens entram
     menuItems.forEach((li, i) => {
       setTimeout(() => li.classList.add("show"), i * 200);
     });
-  }, 2000); // espera splash terminar
+  }, 2000);
 }
-
 
 
 

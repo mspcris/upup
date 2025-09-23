@@ -417,6 +417,7 @@ nav li:hover a {
 /* Ativa após o splash desaparecer */
 .upup-brand.visible {
   opacity: 1;
+  display: initial;
 }
 
 
