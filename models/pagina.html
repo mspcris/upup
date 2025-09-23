@@ -9,27 +9,16 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Importa o JavaScript -->
-    <script src=".js/menu.js" defer></script>
-    <script src=".js/preloader.js" defer></script>
-    <script src=".js/carossel.js" defer></script>
-
+    <script src="js/menu.js" defer></script>
+    <script src="js/preloader.js" defer></script>
+    <script src="js/carossel.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <!-- no <head> de todas as páginas -->
+    <base href="/upup/">
 
 </head>
 
-<body class="subpag">
-       <!-- FRASE PRÉ -SITE -->
-    <!-- Tela de pré-carregamento -->
-     <div id="preloader">
-        <div class="preloader-content">
-            <img src="images/upup_logomarca_fundo_transparente.png" alt="Logo UPUP" class="preloader-img">
-            <div class="preloader-text">
-                Com amor e serviço,<br>
-                UPUP constrói pontes.<br>
-                <strong>Unidos pelo próximo</strong>
-            </div>
-        </div>
-    </div>
-
+<body>
 
     <!-- Botão hamburguer que abre o menu -->
     <button id="menuToggle" class="upup-menu-btn" aria-label="Abrir menu" aria-controls="app-drawer"
@@ -56,7 +45,8 @@
                 <li><a class="upup-link" href="index.html">🏠 Início</a></li>
                 <li><a class="upup-link" href="quemsomos_leiamais.html">ℹ️ Quem Somos</a></li>
                 <li class="upup-group">
-                    <button class="upup-accordion" aria-controls="grp-cursos" aria-expanded="false">🎓 Cursos</button>
+                    <button class="upup-accordion" aria-controls="grp-cursos" aria-expanded="false">🎓
+                        Cursos</button>
                     <ul id="grp-cursos" class="upup-sublist">
                         <li><a class="upup-sublink" href="cursos/curso1.html">Curso 1</a></li>
                         <li><a class="upup-sublink" href="cursos/curso2.html">Curso 2</a></li>
@@ -73,118 +63,81 @@
 
     </aside>
 
-    <header>
-        <h1 id="h1_reader">UPUP - Unidos Por Um Propósito</h1>
-        <H4 id="h4_1_reader">"Tudo posso naquele que me fortalece"</H4>
-        <h6>Filipenses 4:13</h6>
-    </header>
-    <nav>
+    <div id="header"></div>
+
+
+    <main>
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+    <section class="card">
+        <h2 class="subtitulos">Conecte-se com a UPUP</h2>
+        <p>Acompanhe, participe e compartilhe nossas iniciativas nas redes oficiais:</p>
+        <div class="cta">
+            <a class="btn btn--ig" href="https://www.instagram.com/upupoficial/" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3zm11 1.5a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
+                </svg>
+                <strong>Instagram</strong> <span class="pill">@upupoficial</span>
+            </a>
+
+            <a class="btn btn--fb" href="https://www.facebook.com/upupoficial" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M13 3h4a1 1 0 011 1v3h-3a2 2 0 00-2 2v3h4l-1 4h-3v6h-4v-6H7v-4h3V9a4 4 0 014-4z" />
+                </svg>
+                <strong>Facebook</strong> <span class="pill">/upupoficial</span>
+            </a>
+
+            <a class="btn btn--wa"
+                href="https://wa.me/5522998626059?text=Ol%C3%A1%20UPUP!%20Vim%20pelo%20site%20e%20quero%20ajudar."
+                target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" fill="currentColor" opacity=".15"></circle>
+                    <path fill="currentColor"
+                        d="M19 12.1c0-3.9-3.2-7.1-7.1-7.1A7.1 7.1 0 0 0 4.8 16l-.6 3.3 3.4-.6a7 7 0 0 0 3.3.8c3.9 0 7.1-3.2 7.1-7.1Zm-9.5 1.9c1.9 1.9 2.9 1.5 3.3 1.3.4-.2 1.3-.9 1.1-1.3-.2-.4-.7-.5-1.1-.7-.4-.2-.7-.1-.9.1-.2.2-.3.5-.6.4-.4-.1-1.1-.5-1.7-1.1-.6-.6-1-1.3-1.1-1.7 0-.3.2-.4.4-.6.2-.2.3-.6.1-.9-.2-.4-.3-.9-.7-1.1-.4-.2-1.1.7-1.3 1.1-.2.4-.6 1.4 1.3 3.3Z" />
+                </svg>
+                <strong>WhatsApp</strong> <span class="pill">+55 (22) 99862-6059</span>
+            </a>
+            <a class="btn btn--mail"
+                href="mailto:upupoficial@gmail.com?subject=Contato%20via%20site%20UPUP&body=Ol%C3%A1%2C%20UPUP!%20Vim%20pelo%20site%20e%20gostaria%20de..."
+                rel="noopener" aria-label="E-mail da UPUP">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z" />
+                </svg>
+                <strong>E-mail</strong> <span class="pill">upupoficial@gmail.com</span>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="card">
+        <h2 class="subtitulos">Como se juntar ao nosso propósito?</h2>
+        <p>
+            Seja <strong>voluntário</strong>, <strong>parceiro</strong> ou <strong>doador</strong>. Cada
+            gesto conta e faz diferença na vida de muitas pessoas.
+        </p>
         <ul>
-            <li id="li1">
-                <a href="https://www.instagram.com/upupoficial/" target="_blank">
-                    <img src="images/instagram_30x30.png" alt="instagram.com">/upupoficial</a>
-            </li>
-
-            <li id="li2">
-                <a href="https://www.facebook.com/sandrasantospaz" target="_blank">
-                    <img src="images/Facebook_logo_30x.png" alt="facebook.com">/sandrasantospaz</a>
-            </li>
-            <li id="li3">
-                <a href="https://www.instagram.com/pastorasandra.nat/" target="_blank">
-                    <img src="images/instagram_30x30.png" alt="instagram.com">/pastorasandra.nat</a>
-            </li>
-            <li id="li4">
-                <a href="https://api.whatsapp.com/send?phone=5522998626059" target="_blank">
-                    <img src="images/icon_Whatsapp_30x30.png" alt="instagram.com">/(22)99862-6059</a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- MENU EM HTML DESATIVADO EM 23/09/2025 - PÓS INCLUSÃO DO MENU EM JS -->
-    <!-- <div class="submenu">
-        <ul>
-            <li><a href="quemsomos_leiamais.html">Quem somos</a></li>
-            <li><a href="porquenatividade.html">Por que Natividade?</a></li>
-            <li><a href="missaovisaovalores.html">Missão</a></li>
-            <li><a href="courses/index_cursos.html">Cursos</a></li>
+            <li>Divulgue nossas ações nas suas redes.</li>
+            <li>Junte-se às iniciativas presenciais na sua cidade.</li>
+            <li>Conecte-se pelos links oficiais acima para saber quando e como ajudar.</li>
+            <li><a href="doeparaupup.html">Clique aqui</a> para doar seu tempo, dinheiro, roupas,
+                brinquedos,
+                etc. </li>
         </ul>
 
-    </div> -->
-
-
-
-        <main>
-
-
-
-
-
-
-
-
-
-        </main>
-
-
-        <section class="card">
-            <h2 class="subtitulos">Conecte-se com a UPUP</h2>
-            <p>Acompanhe, participe e compartilhe nossas iniciativas nas redes oficiais:</p>
-            <div class="cta">
-                <a class="btn btn--ig" href="https://www.instagram.com/upupoficial/" target="_blank" rel="noopener">
-                    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill="currentColor"
-                            d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3zm11 1.5a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
-                    </svg>
-                    <strong>Instagram</strong> <span class="pill">@upupoficial</span>
-                </a>
-
-                <a class="btn btn--fb" href="https://www.facebook.com/upupoficial" target="_blank" rel="noopener">
-                    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill="currentColor"
-                            d="M13 3h4a1 1 0 011 1v3h-3a2 2 0 00-2 2v3h4l-1 4h-3v6h-4v-6H7v-4h3V9a4 4 0 014-4z" />
-                    </svg>
-                    <strong>Facebook</strong> <span class="pill">/upupoficial</span>
-                </a>
-
-                <a class="btn btn--wa"
-                    href="https://wa.me/5522998626059?text=Ol%C3%A1%20UPUP!%20Vim%20pelo%20site%20e%20quero%20ajudar."
-                    target="_blank" rel="noopener">
-                    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" fill="currentColor" opacity=".15"></circle>
-                        <path fill="currentColor"
-                            d="M19 12.1c0-3.9-3.2-7.1-7.1-7.1A7.1 7.1 0 0 0 4.8 16l-.6 3.3 3.4-.6a7 7 0 0 0 3.3.8c3.9 0 7.1-3.2 7.1-7.1Zm-9.5 1.9c1.9 1.9 2.9 1.5 3.3 1.3.4-.2 1.3-.9 1.1-1.3-.2-.4-.7-.5-1.1-.7-.4-.2-.7-.1-.9.1-.2.2-.3.5-.6.4-.4-.1-1.1-.5-1.7-1.1-.6-.6-1-1.3-1.1-1.7 0-.3.2-.4.4-.6.2-.2.3-.6.1-.9-.2-.4-.3-.9-.7-1.1-.4-.2-1.1.7-1.3 1.1-.2.4-.6 1.4 1.3 3.3Z" />
-                    </svg>
-                    <strong>WhatsApp</strong> <span class="pill">+55 (22) 99862-6059</span>
-                </a>
-                <a class="btn btn--mail"
-                    href="mailto:upupoficial@gmail.com?subject=Contato%20via%20site%20UPUP&body=Ol%C3%A1%2C%20UPUP!%20Vim%20pelo%20site%20e%20gostaria%20de..."
-                    rel="noopener" aria-label="E-mail da UPUP">
-                    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill="currentColor"
-                            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z" />
-                    </svg>
-                    <strong>E-mail</strong> <span class="pill">upupoficial@gmail.com</span>
-                </a>
-
-            </div>
-        </section>
-
-        <section class="card">
-            <h2 class="subtitulos">Como se juntar ao nosso propósito?</h2>
-            <p>
-                Seja <strong>voluntário</strong>, <strong>parceiro</strong> ou <strong>doador</strong>. Cada
-                gesto conta e faz diferença na vida de muitas pessoas.
-            </p>
-            <ul>
-                <li>Divulgue nossas ações nas suas redes.</li>
-                <li>Junte-se às iniciativas presenciais na sua cidade.</li>
-                <li>Conecte-se pelos links oficiais acima para saber quando e como ajudar.</li>
-                <li><a href="doeparaupup.html">Clique aqui</a> para doar seu tempo, dinheiro, roupas,
-                    brinquedos,
-                    etc. </li>
-            </ul>
-
-        </SECtion>
+    </SECtion>
     <section>
         <P class="prerodape">A UPUP está localizada na Rua Dr. Antônio de Carvalho Cavalcanti, 248 Cantinho Fiorello,
             Natividade – RJ CEP: 28380-000.</P>

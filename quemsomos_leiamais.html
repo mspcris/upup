@@ -9,36 +9,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Importa o JavaScript -->
-    <script src=".js/menu.js" defer></script>
-    <script src=".js/preloader.js" defer></script>
-    <script src=".js/carossel.js" defer></script>
-
+    <script src="js/menu.js" defer></script>
+    <script src="js/preloader.js" defer></script>
+    <script src="js/carossel.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <!-- no <head> de todas as páginas -->
+    <base href="/upup/">
 
 </head>
 
 <body>
-    <!-- FRASE PRÉ -SITE -->
-    <!-- Tela de pré-carregamento -->
-    <!-- <div id="preloader">
-        <div class="preloader-text">
-            UPUP é mais que um projeto social: <br>
-            é uma família unida por um propósito — <br>
-            <strong>Amar e servir</strong>
-        </div>
-    </div> -->
-
-
-    <div id="preloader">
-        <div class="preloader-content">
-            <img src="images/upup_logomarca_fundo_transparente.png" alt="Logo UPUP" class="preloader-img">
-            <div class="preloader-text">
-                Com amor e serviço,<br>
-                UPUP constrói pontes.<br>
-                <strong>Unidos pelo próximo</strong>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Botão hamburguer que abre o menu -->
     <button id="menuToggle" class="upup-menu-btn" aria-label="Abrir menu" aria-controls="app-drawer"
@@ -65,7 +45,8 @@
                 <li><a class="upup-link" href="index.html">🏠 Início</a></li>
                 <li><a class="upup-link" href="quemsomos_leiamais.html">ℹ️ Quem Somos</a></li>
                 <li class="upup-group">
-                    <button class="upup-accordion" aria-controls="grp-cursos" aria-expanded="false">🎓 Cursos</button>
+                    <button class="upup-accordion" aria-controls="grp-cursos" aria-expanded="false">🎓
+                        Cursos</button>
                     <ul id="grp-cursos" class="upup-sublist">
                         <li><a class="upup-sublink" href="cursos/curso1.html">Curso 1</a></li>
                         <li><a class="upup-sublink" href="cursos/curso2.html">Curso 2</a></li>
@@ -79,46 +60,10 @@
         </nav>
         <div class="upup-splash">AMAR SERVIR</div> <!-- Splash central -->
         <div class="upup-brand">UPUP</div> <!-- Marca fixa abaixo do header -->
+
     </aside>
 
-    <header>
-        <h1 id="h1_reader">UPUP - Unidos Por Um Propósito</h1>
-        <H4 id="h4_1_reader">"Tudo posso naquele que me fortalece"</H4>
-        <h6>Filipenses 4:13</h6>
-    </header>
-    <nav>
-        <ul>
-            <li id="li1">
-                <a href="https://www.instagram.com/upupoficial/" target="_blank">
-                    <img src="images/instagram_30x30.png" alt="instagram.com">/upupoficial</a>
-            </li>
-
-            <li id="li2">
-                <a href="https://www.facebook.com/sandrasantospaz" target="_blank">
-                    <img src="images/Facebook_logo_30x.png" alt="facebook.com">/sandrasantospaz</a>
-            </li>
-            <li id="li3">
-                <a href="https://www.instagram.com/pastorasandra.nat/" target="_blank">
-                    <img src="images/instagram_30x30.png" alt="instagram.com">/pastorasandra.nat</a>
-            </li>
-            <li id="li4">
-                <a href="https://api.whatsapp.com/send?phone=5522998626059" target="_blank">
-                    <img src="images/icon_Whatsapp_30x30.png" alt="instagram.com">/(22)99862-6059</a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- MENU EM HTML DESATIVADO EM 23/09/2025 - PÓS INCLUSÃO DO MENU EM JS -->
-    <!-- <div class="submenu">
-        <ul>
-            <li><a href="quemsomos_leiamais.html">Quem somos</a></li>
-            <li><a href="porquenatividade.html">Por que Natividade?</a></li>
-            <li><a href="missaovisaovalores.html">Missão</a></li>
-            <li><a href="courses/index_cursos.html">Cursos</a></li>
-        </ul>
-
-    </div> -->
-
+    <div id="header"></div>
 
 
     <main>
