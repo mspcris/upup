@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.setAttribute("aria-hidden", "false");
     toggleBtn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
+
+    // anima splash + depois exibe os itens
+    const menuList = drawer.querySelector(".upup-list");
+    menuList.classList.remove("show");
+    setTimeout(() => {
+      menuList.classList.add("show");
+    }, 300); // espera a animação do "UPUP" acabar
   }
 
   function closeDrawer() {
@@ -37,32 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
   accordions.forEach(btn => {
     const target = document.getElementById(btn.getAttribute("aria-controls"));
     btn.addEventListener("click", () => {
-  const expanded = btn.getAttribute("aria-expanded") === "true";
-  btn.setAttribute("aria-expanded", String(!expanded));
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
 
-  if (expanded) {
-    target.classList.remove("open"); // fecha com animação
-  } else {
-    target.classList.add("open"); // abre com animação
-  }
-});
+      if (expanded) {
+        target.classList.remove("open"); // fecha com animação
+      } else {
+        target.classList.add("open"); // abre com animação
+      }
     });
   });
-
-
-//   Splash
-function openDrawer() {
-  drawer.hidden = false;
-  overlay.hidden = false;
-  drawer.setAttribute("data-open", "true");
-  overlay.setAttribute("aria-hidden", "false");
-  toggleBtn.setAttribute("aria-expanded", "true");
-  document.body.style.overflow = "hidden";
-
-  // anima splash + depois exibe os itens
-  const menuList = drawer.querySelector(".upup-list");
-  menuList.classList.remove("show");
-  setTimeout(() => {
-    menuList.classList.add("show");
-  }, 1200); // espera a animação do "UPUP" acabar
-}
+});
