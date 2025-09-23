@@ -67,7 +67,48 @@
 }
 
 
+/* =============================
+    Botão hamburguer - Splash
+   ============================= */
+/* ===== Splash da logo ===== */
+.upup-splash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  pointer-events: none;
+}
 
+.upup-splash img {
+  width: 120px; /* tamanho da logo */
+  opacity: 0;
+  transform: scale(0.8);
+  animation: splashLogo 2s ease forwards;
+}
+
+/* Animação da logo: aparece e depois sobe */
+@keyframes splashLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(0.7); /* sobe para perto do título */
+  }
+}
 
 
 

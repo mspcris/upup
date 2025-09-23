@@ -14,12 +14,25 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
 
     // anima splash + depois exibe os itens
-    const menuList = drawer.querySelector(".upup-list");
-    menuList.classList.remove("show");
-    setTimeout(() => {
-      menuList.classList.add("show");
-    }, 300); // espera a animação do "UPUP" acabar
-  }
+    // const menuList = drawer.querySelector(".upup-list");
+    // menuList.classList.remove("show");
+    // setTimeout(() => {
+    //   menuList.classList.add("show");
+    // }, 300); // espera a animação do "UPUP" acabar
+
+
+    
+  // anima splash da logo + depois exibe os itens
+const menuList = drawer.querySelector(".upup-list");
+menuList.classList.remove("show");
+
+// espera a animação da logo (2s) antes de mostrar itens
+setTimeout(() => {
+  menuList.classList.add("show");
+}, 2000);
+
+
+}
 
   function closeDrawer() {
     drawer.setAttribute("data-open", "false");
