@@ -801,3 +801,26 @@ iframe {
     padding: 15px;
   }
 }
+
+
+/********************************************
+#                                              #
+#     RESPONSIVIDADE DO MENU LATERAL           #
+#                                              #
+********************************************/
+
+@media (max-width: 768px) {
+  .upup-list {
+    align-items: center;     /* centraliza horizontalmente */
+  }
+
+  .upup-link,
+  .upup-accordion {
+    text-align: center;      /* centraliza texto e ícones */
+    justify-content: center; /* se usar flex */
+  }
+
+  .upup-sublink {
+    text-align: center;
+  }
+}
