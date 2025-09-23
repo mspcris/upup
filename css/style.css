@@ -386,14 +386,23 @@ nav li:hover a {
   animation: splashLogoBox 2s ease forwards;
 }
 
-/* Aparece no centro, depois sobe e some suavemente */
-@keyframes splashLogoBox {
+/* Animação: aparece no meio e depois some */
+@keyframes splashFadeMove {
   0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
   30%  { opacity: 1; transform: translate(-50%, -50%) scale(1);   }
-  60%  { opacity: 1; transform: translate(-50%, -50%) scale(1);   }
-  100% { opacity: 0; transform: translate(-50%, calc(-50% - 120px)) scale(0.7); }
+  70%  { opacity: 1; transform: translate(-50%, -50%) scale(1);   }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.7); }
 }
 
+/* Logo que reaparece no header */
+.upup-drawer-header::before {
+  content: "";
+  display: inline-block;
+  width: 32px; height: 32px;
+  margin-right: 8px;
+  background: url('images/upup_logomarca_somente_nome_up_favicon.png') center/contain no-repeat;
+  vertical-align: middle;
+}
 
 
 
@@ -445,14 +454,16 @@ nav li:hover a {
 .upup-group { width: 100%; }
 
 /* Fechado por padrão (animável) */
+/* Submenu padrão */
 .upup-sublist {
   list-style: none;
-  margin: 0 0 0 16px;
+  margin: 0;           /* <-- antes tinha margin-left */
   padding: 0;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: max-height 0.3s ease, opacity 1;
+  text-align: center;  /* centraliza no mobile */
 }
 
 /* Aberto (expande suavemente) */
@@ -462,14 +473,17 @@ nav li:hover a {
 }
 
 /* Links do submenu */
+/* Links do submenu */
 .upup-sublink {
-  display: block;
-  padding: 8px 10px;
-  margin: 3px 0;
+  display: inline-block;     /* para centralizar melhor */
+  margin: 6px;
+  padding: 8px 12px;
   border-radius: 8px;
   color: #ddd;
   text-decoration: none;
   transition: all .25s ease;
+}
+
 }
 .upup-sublink:hover {
   color: #fff;
@@ -486,26 +500,39 @@ nav li:hover a {
 #   MENU LATERAL — ENTRADA SUAVE DOS ITENS     #
 #                                              #
 ********************************************/
-/* Itens começam invisíveis */
+/* Itens começam invisíveis
 .upup-list li {
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Quando o JS adiciona .show, entram com fade + slide */
+Quando o JS adiciona .show, entram com fade + slide
 .upup-list.show li {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Atraso progressivo para criar “stagger” */
+Atraso progressivo para criar “stagger”
 .upup-list.show li:nth-child(1) { transition-delay: 0.30s; }
 .upup-list.show li:nth-child(2) { transition-delay: 0.50s; }
 .upup-list.show li:nth-child(3) { transition-delay: 0.70s; }
 .upup-list.show li:nth-child(4) { transition-delay: 0.90s; }
-.upup-list.show li:nth-child(5) { transition-delay: 1.10s; }
+.upup-list.show li:nth-child(5) { transition-delay: 1.10s; } */
 
+/* Itens do menu SEM esconder antes */
+.upup-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Mantém o .show só se quiser dar atraso progressivo */
+.upup-list.show li:nth-child(1) { transition-delay: 0.2s; }
+.upup-list.show li:nth-child(2) { transition-delay: 0.3s; }
+.upup-list.show li:nth-child(3) { transition-delay: 0.4s; }
+.upup-list.show li:nth-child(4) { transition-delay: 0.5s; }
+.upup-list.show li:nth-child(5) { transition-delay: 0.6s; }
 
 
 
