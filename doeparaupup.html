@@ -66,27 +66,41 @@
     <div id="header"></div>
 
 
-    <main>
-        <h1>Chave Pix: <strong id="pixKey">48.211.513/0001-78</strong></h1>
-        <p>Leia o QRcode e abençõe a mais vidas!</p>
-        <img src="images/upup_qr_pix.png" alt="qr_code">
+    <main class="doacoes">
+        <h1>💛 Sua doação transforma vidas!</h1>
+        <p>
+            A UPUP doa mais do que recebe, sempre acreditando que <strong>cada gesto de amor
+                multiplica esperança</strong>. Com sua ajuda, podemos alimentar mais crianças,
+            oferecer cursos e levar dignidade a muitas famílias.
+        </p>
 
+        <section class="pix">
+            <h2>Contribua pelo Pix</h2>
+            <p>Chave Pix (CNPJ): <strong id="pixKey">48.211.513/0001-78</strong></p>
+            <button class="btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
 
-        <p>PIX Copia e cola</p>
+            <h3>Ou aponte sua câmera:</h3>
+            <img src="images/upup_qr_pix.png" alt="QR Code para doação via Pix" class="qrcode">
+        </section>
 
+        <section class="impacto">
+            <h2>🌱 O impacto da sua doação</h2>
+            <ul>
+                <li>🍲 Um prato de comida quente para quem tem fome.</li>
+                <li>📚 Cursos de inglês, artesanato e cidadania para crianças.</li>
+                <li>🎁 Apoio a famílias em vulnerabilidade social.</li>
+            </ul>
+        </section>
+    </main>
 
-        <button onclick="copyPix()">Copiar Chave Pix</button>
-
-        <script>
-            function copyPix() {
-                const pixKey = document.getElementById("pixKey").innerText;
-                navigator.clipboard.writeText(pixKey).then(() => {
-                    alert("Chave Pix copiada! Abra seu app do banco e cole.");
-                });
-            }
-        </script>
-
-
+    <script>
+        function copyPix() {
+            const pixKey = document.getElementById("pixKey").innerText;
+            navigator.clipboard.writeText(pixKey).then(() => {
+                alert("✅ Chave Pix copiada! Agora abra seu app do banco e cole.");
+            });
+        }
+    </script>
 
     </main>
 
