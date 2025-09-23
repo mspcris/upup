@@ -48,3 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
     });
   });
+
+
+//   Splash
+function openDrawer() {
+  drawer.hidden = false;
+  overlay.hidden = false;
+  drawer.setAttribute("data-open", "true");
+  overlay.setAttribute("aria-hidden", "false");
+  toggleBtn.setAttribute("aria-expanded", "true");
+  document.body.style.overflow = "hidden";
+
+  // anima splash + depois exibe os itens
+  const menuList = drawer.querySelector(".upup-list");
+  menuList.classList.remove("show");
+  setTimeout(() => {
+    menuList.classList.add("show");
+  }, 1200); // espera a animação do "UPUP" acabar
+}
