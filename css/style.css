@@ -787,14 +787,31 @@ iframe {
 #        BOTÕES DE REDES (CTA SOCIAIS)         #
 #                                              #
 ********************************************/
-.cta {
+
+
+
+
+
+
+
+
+
+
+
+/* .cta {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+} */
+ .cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;   /* permite quebrar no mobile */
+  gap: 15px;
 }
 
 /* Base neutra */
-.cta a.btn {
+/* .cta a.btn {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 12px 16px; border-radius: 12px;
   border: 1px solid #d9dde3;
@@ -802,6 +819,16 @@ iframe {
   color: #1f2937;
   text-decoration: none;
   transition: background .2s, color .2s, border-color .2s;
+} */
+
+.cta a.btn {
+  flex: 0 1 220px;   /* todos terão a mesma largura */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;      /* altura uniforme */
+  font-size: 1rem;
 }
 .cta a.btn:hover { background: rgba(0,0,0,.04); }
 
@@ -909,6 +936,7 @@ iframe {
 #                                              #
 #               RESPONSIVIDADE                 #
 #                                              #
+#    Mobile: botões ocupam toda a largura      #                                        #
 ********************************************/
 @media (max-width: 768px) {
   #h1_reader { font-size: 2em; }
@@ -934,8 +962,13 @@ iframe {
     margin: 10px;
     padding: 15px;
   }
-}
 
+
+  .cta a.btn {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
 
 /********************************************
 #                                              #
