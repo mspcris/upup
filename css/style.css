@@ -624,8 +624,7 @@ nav li:hover a {
 #              CONTEÚDO / CARDS                #
 #                                              #
 ********************************************/
-main,
-.extra {
+main{
   max-width: 1000px;
   margin: 3px auto;
   padding: 20px;
@@ -720,7 +719,14 @@ iframe {
 #          SEÇÃO EXTRA / LISTAGENS             #
 #                                              #
 ********************************************/
-.extra { background-color: var(--cor1); }
+.extra { background-color: var(--cor1); 
+  max-width: 1000px;
+  margin: 3px auto;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  color: black;
+}
 
 #extrah2 {
   color: var(--cor7);
@@ -729,6 +735,7 @@ iframe {
   margin: -20px -20px 20px -20px;
   padding: 10px;
   border-radius: 12px 12px 0 0;
+  text-align: right;
 }
 
 .extra ul {
@@ -736,6 +743,7 @@ iframe {
   padding: 0;
   column-count: 2;
   column-gap: 40px;
+  text-align: center;
 }
 
 .extra ul li { margin-bottom: 8px; }
