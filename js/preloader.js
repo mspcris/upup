@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+  
+  window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   const preloaderText = document.querySelector(".preloader-text");
 

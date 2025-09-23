@@ -77,12 +77,16 @@
 /* Tela de pré-carregamento */
 #preloader {
   position: fixed;
-  inset: 0;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: #F2B705;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 
 .preloader-content {
@@ -118,10 +122,8 @@
 /* Estado final ao remover (fade-out + blur no fundo) */
 #preloader.fade-out {
   opacity: 0;
-  backdrop-filter: blur(20px);      /* efeito fosco */
-  -webkit-backdrop-filter: blur(20px);
+  pointer-events: none;
 }
-
 /* mesma animação que você usou no texto */
 @keyframes fadeInOut {
   0%   { opacity: 0; }
