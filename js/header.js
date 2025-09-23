@@ -1,3 +1,5 @@
+/*
+
 document.addEventListener("DOMContentLoaded", () => {
   fetch("header.html")
     .then(response => response.text())
@@ -6,3 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("Erro ao carregar header:", err));
 });
+
+
+*/

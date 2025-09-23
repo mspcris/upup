@@ -149,7 +149,25 @@ body {
 #                   HEADER                     #
 #                                              #
 ********************************************/
-header {
+/* header {
+  color: white;
+  text-align: center;
+  font-family: var(--font-destaque);
+  background-image: linear-gradient(var(--cor0),var(--cor01),var(--cor01), var(--cor1), var(--cor2), var(--cor3));
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+} */
+
+#h1_header {
+  margin: 3px 0;
+  padding-top: 10px;
+  font-size: 2em;
+  font-weight: 400;
+  color: var(--cor0);
+  text-shadow: 2px 2px 2px var(--cor5);
+  text-align: center;
+  
+}
+#fundoheader{
   color: white;
   text-align: center;
   font-family: var(--font-destaque);
@@ -157,19 +175,14 @@ header {
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-#h1_reader {
-  margin: 3px 0;
-  padding-top: 10px;
-  font-size: 2em;
-  font-weight: 400;
-  color: var(--cor0);
-  text-shadow: 2px 2px 2px var(--cor5);
-}
-
-#h4_1_reader,
-#h4_2_reader {
+#h4_1_header,
+#h4_2_header,
+#h6_header
+{
   margin: 0;
   font-family: var(--font-destaque);
+  text-align: center;
+  color: var(--cor0);
 }
 
 header h6 {
@@ -187,10 +200,13 @@ header h6 {
 #              NAV PRINCIPAL (TOP)             #
 #                                              #
 ********************************************/
-nav {
+
+MENU SUPERIOR DESATIVADO COM IMPLEMENTAÇÃO DO MENU LATERAL */
+
+ nav {
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(var(--cor3) 50%, var(--cor2), var(--cor1), var(--cor0));
+  /* background-image: linear-gradient(var(--cor3), var(--cor2), var(--cor1), var(--cor0)); */
 }
 
 nav ul {
