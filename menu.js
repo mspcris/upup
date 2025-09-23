@@ -37,9 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
   accordions.forEach(btn => {
     const target = document.getElementById(btn.getAttribute("aria-controls"));
     btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!expanded));
-      target.hidden = expanded;
+  const expanded = btn.getAttribute("aria-expanded") === "true";
+  btn.setAttribute("aria-expanded", String(!expanded));
+
+  if (expanded) {
+    target.classList.remove("open"); // fecha com animação
+  } else {
+    target.classList.add("open"); // abre com animação
+  }
+});
     });
   });
-});

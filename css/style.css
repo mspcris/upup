@@ -158,12 +158,24 @@
 /* ===== Submenus ===== */
 .upup-group { width: 100%; }
 
+/* Submenu fechado */
 .upup-sublist {
   list-style: none;
-  margin: 4px 0 0 16px;
+  margin: 0 0 0 16px;
   padding: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
-.upup-sublist[hidden] { display: none; }
+
+/* Submenu aberto */
+.upup-sublist.open {
+  max-height: 500px; /* grande o bastante para caber os itens */
+  opacity: 1;
+}
+
+/* .upup-sublist[hidden] { display: none; } */
 
 .upup-sublink {
   display: block;
