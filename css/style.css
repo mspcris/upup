@@ -404,14 +404,19 @@ nav li:hover a {
  * Marca fixa abaixo do título
  **************************************/
 .upup-brand {
+  text-align: center;
+  margin-top: 4px;
+  font-family: var(--font-destaque);
+  font-size: 1rem;
+  color: #fff;
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.8s ease;
 }
 
+/* Ativa após o splash desaparecer */
 .upup-brand.visible {
   opacity: 1;
 }
-
 
 
 
