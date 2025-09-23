@@ -66,66 +66,67 @@
     <div id="header"></div>
 
 
-  <main>
+    <main>
 
-  <!-- Título e chamada emocional -->
-  <section class="card">
-    <h1 class="h1main">💛 Sua doação transforma vidas!</h1>
-    <p>
-      A UPUP acredita que <strong>cada gesto de amor multiplica esperança</strong>.  
-      Com sua ajuda, conseguimos oferecer refeições, cursos gratuitos e apoio a famílias inteiras.
-      Junte-se a nós nessa missão!
-    </p>
-  </section>
+        <!-- Título e chamada emocional -->
+        <section class="card">
+            <h1 class="h1main">💛 Sua doação transforma vidas!</h1>
+            <p>
+                A UPUP acredita que <strong>cada gesto de amor multiplica esperança</strong>.
+                Com sua ajuda, conseguimos oferecer refeições, cursos gratuitos e apoio a famílias inteiras.
+                Junte-se a nós nessa missão!
+            </p>
+        </section>
 
-  <!-- Bloco Pix -->
-  <section class="card">
-    <h2 class="subtitulos">Contribua pelo Pix</h2>
+        <!-- Bloco Pix -->
+        <section class="card">
+            <h2 class="subtitulos">Contribua pelo Pix</h2>
 
-    <p>Chave Pix (CNPJ): <strong id="pixKey">48.211.513/0001-78</strong></p>
-    <button class="btn btn-pix" onclick="copyText('pixKey')">📋 Copiar Chave Pix</button>
+            <p>Chave Pix (CNPJ): <strong id="pixKey">48.211.513/0001-78</strong></p>
+            <button class="btn btn-pix" onclick="copyText('pixKey')">📋 Copiar Chave Pix</button>
 
-    <p>Pix Copia e Cola:</p>
-    <p id="pixCopyPaste" style="word-break: break-all; background:#f9f9f9; padding:8px; border-radius:6px;">
-      00020126430014br.gov.bcb.pix0114482115130001780203Pix5204000053039865802BR5923UNIDOS POR UM PROPOSITO6014RIO DE JANEIRO62290525ORStQ4lype1d7FthMjQ4wBEU76304184F
-    </p>
-    <button class="btn btn-pix" onclick="copyText('pixCopyPaste')">📋 Copiar Pix Copia e Cola</button>
+            <p>Pix Copia e Cola:</p>
+            <p id="pixCopyPaste" style="word-break: break-all; background:#f9f9f9; padding:8px; border-radius:6px;">
+                00020126430014br.gov.bcb.pix0114482115130001780203Pix5204000053039865802BR5923UNIDOS POR UM
+                PROPOSITO6014RIO DE JANEIRO62290525ORStQ4lype1d7FthMjQ4wBEU76304184F
+            </p>
+            <button class="btn btn-pix" onclick="copyText('pixCopyPaste')">📋 Copiar Pix Copia e Cola</button>
 
-    <h3>Ou aponte sua câmera:</h3>
-    <img src="images/upup_qr_pix_200px.png" alt="QR Code para doação via Pix" class="qrcode">
-  </section>
+            <h3>Ou aponte sua câmera:</h3>
+            <img src="images/upup_qr_pix_200px.png" alt="QR Code para doação via Pix" class="qrcode">
+        </section>
 
-  <!-- Impacto -->
-  <section class="card">
-    <h2 class="subtitulos">🌱 O impacto da sua doação</h2>
-    <ul>
-      <li>🍲 Refeições quentinhas para famílias em vulnerabilidade.</li>
-      <li>📚 Cursos de inglês, artesanato e cidadania para crianças.</li>
-      <li>🎁 Apoio em datas especiais como Natal e Dia das Crianças.</li>
-    </ul>
-    <p><em>Com pouco, fazemos muito. Com você, podemos fazer ainda mais.</em></p>
-  </section>
+        <!-- Impacto -->
+        <section class="card">
+            <h2 class="subtitulos">🌱 O impacto da sua doação</h2>
+            <ul>
+                <li>🍲 Refeições quentinhas para famílias em vulnerabilidade.</li>
+                <li>📚 Cursos de inglês, artesanato e cidadania para crianças.</li>
+                <li>🎁 Apoio em datas especiais como Natal e Dia das Crianças.</li>
+            </ul>
+            <p><em>Com pouco, fazemos muito. Com você, podemos fazer ainda mais.</em></p>
+        </section>
 
-  <!-- Encerramento -->
-  <section class="card" style="text-align:center;">
-    <h2 class="subtitulos">🙏 Junte-se a nós</h2>
-    <p>
-      Doe esperança, amor e dignidade.  
-      <strong>Seu apoio mantém este propósito vivo.</strong>
-    </p>
-    <button class="btn btn-destaque" onclick="copyText('pixKey')">💛 Quero doar agora</button>
-  </section>
+        <!-- Encerramento -->
+        <section class="card" style="text-align:center;">
+            <h2 class="subtitulos">🙏 Junte-se a nós</h2>
+            <p>
+                Doe esperança, amor e dignidade.
+                <strong>Seu apoio mantém este propósito vivo.</strong>
+            </p>
+            <button class="btn btn-destaque" onclick="copyText('pixKey')">💛 Quero doar agora</button>
+        </section>
 
-</main>
+    </main>
 
-<script>
-  function copyText(elementId) {
-    const text = document.getElementById(elementId).innerText;
-    navigator.clipboard.writeText(text).then(() => {
-      alert("✅ Copiado com sucesso! Agora abra seu app do banco e cole.");
-    });
-  }
-</script>
+    <script>
+        function copyText(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("✅ Copiado com sucesso! Agora abra seu app do banco e cole.");
+            });
+        }
+    </script>
 
 
     <!-- <script>
@@ -160,6 +161,18 @@
                 <strong>Facebook</strong> <span class="pill">/upupoficial</span>
             </a>
 
+
+            <a class="btn btn--mail"
+                href="mailto:upupoficial@gmail.com?subject=Contato%20via%20site%20UPUP&body=Ol%C3%A1%2C%20UPUP!%20Vim%20pelo%20site%20e%20gostaria%20de..."
+                rel="noopener" aria-label="E-mail da UPUP">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z" />
+                </svg>
+                <strong>E-mail</strong> <span class="pill">upupoficial@gmail.com</span>
+            </a>
+
+
             <a class="btn btn--wa"
                 href="https://wa.me/5522998626059?text=Ol%C3%A1%20UPUP!%20Vim%20pelo%20site%20e%20quero%20ajudar."
                 target="_blank" rel="noopener">
@@ -170,15 +183,7 @@
                 </svg>
                 <strong>WhatsApp</strong> <span class="pill">+55 (22) 99862-6059</span>
             </a>
-            <a class="btn btn--mail"
-                href="mailto:upupoficial@gmail.com?subject=Contato%20via%20site%20UPUP&body=Ol%C3%A1%2C%20UPUP!%20Vim%20pelo%20site%20e%20gostaria%20de..."
-                rel="noopener" aria-label="E-mail da UPUP">
-                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor"
-                        d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z" />
-                </svg>
-                <strong>E-mail</strong> <span class="pill">upupoficial@gmail.com</span>
-            </a>
+
 
         </div>
     </section>
