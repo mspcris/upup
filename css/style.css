@@ -783,11 +783,8 @@ iframe {
 
 
 /********************************************
-#                                              #
-#        BOTÕES DE REDES (CTA SOCIAIS)         #
-#                                              #
+#        BOTÕES DE REDES (CTA SOCIAIS)       #
 ********************************************/
-/* Container */
 .cta {
   display: flex;
   justify-content: center;
@@ -795,129 +792,63 @@ iframe {
   gap: 16px;
 }
 
-/* Botões retangulares só com ícone */
+/* Botões retangulares */
 .cta a.btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 70px;          /* largura fixa */
-  height: 56px;         /* altura igual ao do modelo */
-  border-radius: 12px;  /* mesmo arredondado do retângulo */
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 12px 16px;
+  min-width: 180px;
+  height: 56px;
+
+  border-radius: 12px;
   background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 1.5rem;
+
   transition: all .25s ease;
 }
 
-
-}
-
-/* Bordas e cores (mantendo estilo do modelo) */
-.cta a.btn--ig { color:#E4405F; border:1px solid rgba(228,64,95,.35); }
-.cta a.btn--fb { color:#1877F2; border:1px solid rgba(24,119,242,.35); }
-.cta a.btn--wa { color:#25D366; border:1px solid rgba(37,211,102,.35); }
-.cta a.btn--mail { color:#EA4335; border:1px solid rgba(234,67,53,.35); }
-
-
-
-
-
-
-
-/* Botões circulares */
-.cta a.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-/* Cores individuais */
-.btn--ig { background: #E4405F; }
-.btn--fb { background: #1877F2; }
-.btn--wa { background: #25D366; }
-.btn--mail { background: #EA4335; }
-
-/* Ícones centralizados */
-.cta a.btn svg {
-  width: 28px;
-  height: 28px;
-}
-
-/* Hover com vidro fosco cítrico */
+/* Hover com efeito vidro fosco cítrico */
 .cta a.btn:hover {
-  background: rgba(242,203,5,0.18);
+  background: rgba(242,203,5,0.12);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-
-/* Instagram */
-.cta a.btn--ig,
-.cta a.btn--ig:link,
-.cta a.btn--ig:visited,
-.cta a.btn--ig:hover,
-.cta a.btn--ig:active {
-  color: #E4405F !important;
-  border: 1px solid rgba(228,64,95,.35) !important;
 }
 
-/* Facebook */
-.cta a.btn--fb,
-.cta a.btn--fb:link,
-.cta a.btn--fb:visited,
-.cta a.btn--fb:hover,
-.cta a.btn--fb:active {
-  color: #1877F2 !important;
-  border: 1px solid rgba(24,119,242,.35) !important;
+/* Ícones */
+.cta a.btn i {
+  font-size: 1.4rem;
 }
 
-/* WhatsApp */
-.cta a.btn--wa,
-.cta a.btn--wa:link,
-.cta a.btn--wa:visited,
-.cta a.btn--wa:hover,
-.cta a.btn--wa:active {
-  color: #25D366 !important;
-  border: 1px solid rgba(37,211,102,.35) !important;
+/* Bordas e cores individuais */
+.cta a.btn--ig { color:#E4405F; border:1px solid rgba(228,64,95,.55); }
+.cta a.btn--fb { color:#1877F2; border:1px solid rgba(24,119,242,.55); }
+.cta a.btn--wa { color:#25D366; border:1px solid rgba(37,211,102,.55); }
+.cta a.btn--mail { color:#EA4335; border:1px solid rgba(234,67,53,.55); }
+
+/********************************************
+#            RESPONSIVIDADE CTA              #
+********************************************/
+@media (max-width: 768px) {
+  .cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta a.btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
 }
 
-/* E-mail */
-.cta a.btn--mail,
-.cta a.btn--mail:link,
-.cta a.btn--mail:visited,
-.cta a.btn--mail:hover,
-.cta a.btn--mail:active {
-  color: #EA4335 !important;
-  border: 1px solid rgba(234,67,53,.35) !important;
-}
 
-/* “Pílula” herda a cor do botão */
-.cta .btn .pill { color: inherit; opacity: .9; }
 
-.cta {
-  display: flex;
-  justify-content: center; /* centraliza na horizontal */
-  flex-wrap: wrap;         /* permite quebrar linha em telas menores */
-  gap: 10px;
-}
 
-.cta a.btn {
-  flex: 0 1 200px;   /* largura flexível */
-  text-align: center;
-}
-
-/* Cores individuais */
-.btn--ig { background: #E4405F; }
-.btn--fb { background: #1877F2; }
-.btn--wa { background: #25D366; }
-.btn--mail { background: #EA4335; }
 
 /********************************************
 #                                              #
@@ -993,20 +924,6 @@ iframe {
     margin: 10px;
     padding: 15px;
   }
-
-
-  .cta a.btn {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  /* ULTRA Responsivo */
-@media (max-width: 480px) {
-  .cta { gap: 12px; }
-  .cta a.btn { width: 64px; height: 50px; }
-}
-
-
 }
 
 /********************************************
