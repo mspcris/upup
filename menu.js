@@ -7,11 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("drawerClose");   // Botão fechar (X)
   const accordions = document.querySelectorAll(".upup-accordion"); // Botões que abrem submenus
 
-
-
-
-
-
   /**
    * Abre o menu lateral (drawer)
    */
@@ -47,14 +42,6 @@ function openDrawer() {
     });
   }, 2000);
 }
-
-
-
-
-
-
-
-
 
   /**
    * Fecha o menu lateral (drawer)

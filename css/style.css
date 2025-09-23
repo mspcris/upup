@@ -264,7 +264,7 @@ nav li:hover a {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #080808;
+  background: #080808;xx
   border: 2px solid var(--cor5);
   cursor: pointer;
   opacity: 0.1;
