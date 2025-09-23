@@ -787,26 +787,33 @@ iframe {
 #        BOTÕES DE REDES (CTA SOCIAIS)         #
 #                                              #
 ********************************************/
-
+/* Container centralizado */
 .cta {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px; /* espaço entre os botões */
+  gap: 20px;
 }
 
+/* Botões circulares */
 .cta a.btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: transparent; /* invisível por padrão */
-  color: inherit;
-  font-size: 1.8rem;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
+
+/* Cores individuais */
+.btn--ig { background: #E4405F; }
+.btn--fb { background: #1877F2; }
+.btn--wa { background: #25D366; }
+.btn--mail { background: #EA4335; }
 
 /* Ícones centralizados */
 .cta a.btn svg {
@@ -891,6 +898,11 @@ iframe {
   text-align: center;
 }
 
+/* Cores individuais */
+.btn--ig { background: #E4405F; }
+.btn--fb { background: #1877F2; }
+.btn--wa { background: #25D366; }
+.btn--mail { background: #EA4335; }
 
 /********************************************
 #                                              #
