@@ -52,6 +52,141 @@
     
 }
 
+
+/* ===== MENU LATERAL (UpUp) ===== */
+:root {
+  --upup-drawer-w: 280px;
+  --upup-bg: #0c0d0f;
+  --upup-elev: #13151a;
+  --upup-text: #f2f2f2;
+  --upup-text-dim: #b4b7c1;
+  --upup-accent: #16a34a;
+  --upup-border: #22252d;
+  --upup-shadow: 0 8px 28px rgba(0,0,0,.45);
+  --upup-speed: .28s;
+}
+
+
+
+
+
+
+/* =============================
+    Botão hamburguer
+   ============================= */
+
+/* ===== MENU LATERAL ===== */
+.upup-menu-btn {
+  position: fixed; top: 12px; left: 12px; z-index: 1001;
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.upup-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+
+}
+.upup-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.4);
+  z-index: 1000; opacity: 0; transition: opacity .3s;
+}
+.upup-overlay[aria-hidden="false"] { opacity: 1; }
+
+.upup-drawer {
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.15); /* vidro fosco */
+  backdrop-filter: blur(10px);            /* efeito blur */
+  -webkit-backdrop-filter: blur(10px);
+  color: #000;
+  transform: translateX(-100%);
+  transition: transform .35s ease;        /* transição mais suave */
+  z-index: 1002;
+  display: flex; flex-direction: column;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+}
+.upup-drawer[data-open="true"] { transform: translateX(0); }
+
+.upup-drawer-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px; font-weight: bold; font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+.upup-nav { padding: 10px; overflow-y: auto; }
+.upup-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+
+/* Itens do menu */
+.upup-link,
+.upup-accordion {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 4px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);     /* transparente padrão */
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+/* Hover com vidro mais forte */
+.upup-link:hover,
+.upup-accordion:hover {
+  background: rgba(255, 255, 255, 0.2);   /* efeito vidro intenso */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateY(-1px);            /* leve elevação */
+}
+
+.upup-sublist { list-style: none; margin-left: 16px; padding: 0; }
+
+.upup-sublist[hidden] { display: none; }
+.upup-sublink {
+  display: block;
+  padding: 8px 10px;
+  margin: 3px 0;
+  border-radius: 8px;
+  color: #ddd;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+.upup-sublink:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =============================
    BASE
    ============================= */
