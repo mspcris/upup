@@ -7,32 +7,57 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("drawerClose");   // Botão fechar (X)
   const accordions = document.querySelectorAll(".upup-accordion"); // Botões que abrem submenus
 
+
+
+
+
+
   /**
    * Abre o menu lateral (drawer)
    */
-  function openDrawer() {
-    // Mostra menu e overlay
-    drawer.hidden = false;
-    overlay.hidden = false;
+function openDrawer() {
+  drawer.hidden = false;
+  overlay.hidden = false;
+  drawer.setAttribute("data-open", "true");
+  overlay.setAttribute("aria-hidden", "false");
+  toggleBtn.setAttribute("aria-expanded", "true");
+  document.body.style.overflow = "hidden";
 
-    // Marca menu como aberto
-    drawer.setAttribute("data-open", "true");
-    overlay.setAttribute("aria-hidden", "false");
-    toggleBtn.setAttribute("aria-expanded", "true");
+  const splash = drawer.querySelector(".upup-splash");
+  const brand = drawer.querySelector(".upup-brand");
+  const menuItems = drawer.querySelectorAll(".upup-list li");
 
-    // Evita scroll na página
-    document.body.style.overflow = "hidden";
+  // Reset estados
+  brand.classList.remove("visible");
+  menuItems.forEach(li => {
+    li.classList.add("hidden-init");
+    li.classList.remove("show");
+  });
 
-    // ANIMAÇÃO:
-    // Primeiro aparece o splash da logo (2s no CSS).
-    // Só depois os itens do menu começam a aparecer.
-    const menuList = drawer.querySelector(".upup-list");
-    menuList.classList.remove("show"); // Garante reset da animação
+  // Splash dura 2s
+  splash.style.display = "block";
 
-    setTimeout(() => {
-      menuList.classList.add("show");  // Ativa animação dos links
-    }, 2000); // Espera 2s = duração do splash
-  }
+  setTimeout(() => {
+    splash.style.display = "none";
+    brand.classList.add("visible"); // ativa UPUP pequeno no header
+
+    // Agora mostra os itens do menu em cascata
+    menuItems.forEach((li, i) => {
+      setTimeout(() => {
+        li.classList.remove("hidden-init");
+        li.classList.add("show");
+      }, i * 200);
+    });
+  }, 2000);
+}
+
+
+
+
+
+
+
+
 
   /**
    * Fecha o menu lateral (drawer)
