@@ -955,3 +955,78 @@ iframe {
     text-align: center;
   }
 }
+
+
+/********************************************
+#                                              #
+#                   FORMS                      # 
+#                                              #
+********************************************/
+
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+            display: block;
+  /* justify-content: center; /*centraliza na horizontal*/
+  /* align-items: center;     centraliza na vertical */ 
+  /* Alinhamento ficou ruim, coloquei o form na div e centralizei a div*/
+            background: var(--cor01);
+  
+            
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-top: 16px;
+            padding: 10px;
+            width: 100%;
+            background: var(--cor3);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background: var(--cor5);
+        }
+
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            max-width: 800px; /* largura máxima visível */
+            max-height: 1024px; /* largura máxima visível */
+}
+
+
+iframe {
+  width: 100%;
+  max-width: 1024px; /* largura do form do Google */
+  height: 1200px;   /* ajuste conforme o tamanho do form */
+  margin: 0 auto;
+  display: block;
+
+}
