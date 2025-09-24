@@ -1021,12 +1021,11 @@ iframe {
             max-height: 1024px; /* largura máxima visível */
 }
 
-
-iframe {
-  width: 100%;
-  max-width: 1024px; /* largura do form do Google */
-  height: 1200px;   /* ajuste conforme o tamanho do form */
-  margin: 0 auto;
-  display: block;
+        .iframe_forms {
+          width: 100%;
+          max-width: 1024px; /* largura do form do Google */
+          height: 1200px;   /* ajuste conforme o tamanho do form */
+          margin: 0 auto;
+          display: block;
 
 }
