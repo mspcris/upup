@@ -896,8 +896,17 @@ iframe {
   color: #fff;
 }
 
-
-
+/********************************************
+#                                              #
+#         FOOTER                               #
+#                                              #
+********************************************/
+footer.copyright {
+  background: var(--cor7) !important;
+  color: var(--cor3) !important;
+  text-align: center;
+  padding: 10px;
+}
 
 
 
