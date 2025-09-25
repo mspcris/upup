@@ -17,6 +17,236 @@
     <!-- no <head> de todas as páginas -->
     <!-- <base href="/upup/"> -->
 
+
+
+
+    <style>
+        :root {
+            --upup-yellow: #F5C400;
+            /* amarelo gema de ovo */
+            --upup-yellow-dark: #D8AE00;
+            /* para sombras/contraste */
+            --upup-blue: #0A4C9A;
+            /* cor de apoio */
+            --ink: #1A1A1A;
+            --muted: #5b5b5b;
+            --card: #fffaf0;
+            /* leve tom quente pro fundo do card */
+            --radius: 18px;
+            --shadow: 0 8px 28px rgba(0, 0, 0, .15);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            background: #fff;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 18px 56px;
+        }
+
+        /* Banner 16:9 */
+        .hero {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            /* mantém 16x9 em qualquer tela */
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background:
+                radial-gradient(110% 120% at 10% 10%, #fff8cc 0, #ffe066 25%, transparent 60%),
+                radial-gradient(120% 140% at 90% 90%, #ffd84d 0, #ffcc00 35%, transparent 70%),
+                var(--upup-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            color: #fff;
+            text-align: center;
+            isolation: isolate;
+        }
+
+        .hero::after {
+            /* suave textura/realce */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .25), rgba(255, 204, 0, .15) 45%, rgba(0, 0, 0, .08));
+            mix-blend-mode: soft-light;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: Poppins, Inter, system-ui;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: .2px;
+            margin: 0;
+            font-size: clamp(28px, 5vw, 52px);
+            text-shadow: 0 3px 16px rgba(0, 0, 0, .28);
+        }
+
+        .hero p {
+            margin: 14px 0 0;
+            font-size: clamp(14px, 2.3vw, 18px);
+            font-weight: 600;
+            opacity: .95;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, .22);
+            text-align: center;
+        }
+
+        /* Cartão do texto */
+        .card {
+            background: var(--card);
+            border: 1px solid rgba(0, 0, 0, .06);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 22px;
+            padding: 26px clamp(16px, 4vw, 36px);
+            color: var(--ink);
+        }
+
+        .kicker {
+            display: inline-flex;
+            gap: .6rem;
+            align-items: center;
+            background: linear-gradient(90deg, var(--upup-yellow), #ffe57a);
+            color: #3b2d00;
+            padding: .4rem .8rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-family: Poppins, Inter;
+            letter-spacing: .2px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(245, 196, 0, .35);
+        }
+
+        h2 {
+            font-family: Poppins, Inter, system-ui;
+            font-weight: 800;
+            margin: 10px 0 14px;
+            color: #2a2000;
+            letter-spacing: .2px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 1.04rem;
+            color: #2b2b2b;
+            margin: .6rem 0
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .list {
+            margin: 12px 0 18px;
+            padding-left: 1rem;
+        }
+
+        .list li {
+            margin: .4rem 0;
+            line-height: 1.6;
+        }
+
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            appearance: none;
+            border: 0;
+            cursor: pointer;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            transition: transform .06s ease, filter .2s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+            text-decoration: none;
+        }
+
+        .btn:active {
+            transform: translateY(1px)
+        }
+
+        .btn-primary {
+            background: linear-gradient(180deg, #ffdd33, var(--upup-yellow-dark));
+            color: #2b2100;
+        }
+
+        .btn-outline {
+            background: #fff;
+            color: var(--upup-blue);
+            border: 2px solid var(--upup-blue);
+        }
+
+        .info {
+            display: grid;
+            gap: 8px;
+            grid-template-columns: 1fr;
+            margin-top: 12px;
+        }
+
+        .info .row {
+            background: #fff;
+            border: 1px dashed rgba(0, 0, 0, .12);
+            padding: 12px 14px;
+            border-radius: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .tag {
+            font-family: Poppins;
+            font-weight: 800;
+            color: var(--upup-blue)
+        }
+
+        .pix {
+            font-variant-numeric: tabular-nums;
+            letter-spacing: .4px
+        }
+
+        /* Ajudinhas de impressão */
+        @media print {
+            .hero {
+                box-shadow: none
+            }
+
+            .card {
+                box-shadow: none
+            }
+
+            .btn {
+                display: none
+            }
+
+            body {
+                background: #fff
+            }
+        }
+    </style>
+
+
+
+
+
 </head>
 
 <body>
@@ -88,568 +318,111 @@
 
 
 
-        <!-- Carrossel com fade -->
-        <section class="carrossel2" aria-label="Galeria de imagens">
-            <!-- <div class="viewport2" id="viewport2">
-                <figure class="slide2 ativo2" data-index="0">
-                    <img src="https://picsum.photos/id/1015/1200/600" alt="Montanhas ao pôr do sol">
-                </figure>
-                <figure class="slide2" data-index="1">
-                    <img src="https://picsum.photos/id/1025/1200/600" alt="Cachorro olhando para a câmera">
-                </figure>
-                <figure class="slide2" data-index="2">
-                    <img src="https://picsum.photos/id/1043/1200/600" alt="Lago com floresta">
-                </figure>
-            </div> -->
 
-
-            <div class="viewport2" id="viewport2">
-                <!-- Foto 1 -->
-                <figure class="slide2 ativo2" data-index="0">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_1.jpg" alt="Foto 1">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="1">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 2 -->
-                <figure class="slide2" data-index="2">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_2.jpg" alt="Foto 2">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="3">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 3 -->
-                <figure class="slide2" data-index="4">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_3.jpg" alt="Foto 3">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="5">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 4 -->
-                <figure class="slide2" data-index="6">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_4.jpg" alt="Foto 4">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="7">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 5 -->
-                <figure class="slide2" data-index="8">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_5.jpg" alt="Foto 5">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="9">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 6 -->
-                <figure class="slide2" data-index="10">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_6.jpg" alt="Foto 6">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="11">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 7 -->
-                <figure class="slide2" data-index="12">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_7.jpg" alt="Foto 7">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="13">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 8 -->
-                <figure class="slide2" data-index="14">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_8.jpg" alt="Foto 8">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="15">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 9 -->
-                <figure class="slide2" data-index="16">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_9.jpg" alt="Foto 9">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="17">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 10 -->
-                <figure class="slide2" data-index="18">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_10.jpg" alt="Foto 10">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="19">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 11 -->
-                <figure class="slide2" data-index="20">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_11.jpg" alt="Foto 11">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="21">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 12 -->
-                <figure class="slide2" data-index="22">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_12.jpg" alt="Foto 12">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="23">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 13 -->
-                <figure class="slide2" data-index="24">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_13.jpg" alt="Foto 13">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="25">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 14 -->
-                <figure class="slide2" data-index="26">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_14.jpg" alt="Foto 14">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="27">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 15 -->
-                <figure class="slide2" data-index="28">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_15.jpg" alt="Foto 15">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="29">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 16 -->
-                <figure class="slide2" data-index="30">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_16.jpg" alt="Foto 16">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="31">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 17 -->
-                <figure class="slide2" data-index="32">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_17.jpg" alt="Foto 17">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="33">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 18 -->
-                <figure class="slide2" data-index="34">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_18.jpg" alt="Foto 18">
-                </figure>
-
-                <!-- Doações -->
-                <figure class="slide2" data-index="35">
-                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
-                        alt="Imagem de doações">
-                </figure>
-
-                <!-- Foto 19 -->
-                <figure class="slide2" data-index="36">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_19.jpg" alt="Foto 19">
-                </figure>
-            </div>
-
-
-            <div class="controles2">
-                <div class="bolinhas2" id="bolinhas2"></div>
-            </div>
-
-        </section>
-
-
-        <!DOCTYPE html>
-        <html lang="pt-br">
-
-        <head>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width,initial-scale=1" />
-            <title>UPUP • Dia das Crianças – Campanha de Doações</title>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link
-                href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;600&display=swap"
-                rel="stylesheet">
-            <style>
-                :root {
-                    --upup-yellow: #F5C400;
-                    /* amarelo gema de ovo */
-                    --upup-yellow-dark: #D8AE00;
-                    /* para sombras/contraste */
-                    --upup-blue: #0A4C9A;
-                    /* cor de apoio */
-                    --ink: #1A1A1A;
-                    --muted: #5b5b5b;
-                    --card: #fffaf0;
-                    /* leve tom quente pro fundo do card */
-                    --radius: 18px;
-                    --shadow: 0 8px 28px rgba(0, 0, 0, .15);
-                }
-
-                * {
-                    box-sizing: border-box
-                }
-
-                html,
-                body {
-                    margin: 0;
-                    background: #fff;
-                    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial
-                }
-
-                .page {
-                    max-width: 1100px;
-                    margin: auto;
-                    padding: 20px 18px 56px;
-                }
-
-                /* Banner 16:9 */
-                .hero {
-                    position: relative;
-                    width: 100%;
-                    aspect-ratio: 16/9;
-                    /* mantém 16x9 em qualquer tela */
-                    border-radius: var(--radius);
-                    overflow: hidden;
-                    box-shadow: var(--shadow);
-                    background:
-                        radial-gradient(110% 120% at 10% 10%, #fff8cc 0, #ffe066 25%, transparent 60%),
-                        radial-gradient(120% 140% at 90% 90%, #ffd84d 0, #ffcc00 35%, transparent 70%),
-                        var(--upup-yellow);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 24px;
-                    color: #fff;
-                    text-align: center;
-                    isolation: isolate;
-                }
-
-                .hero::after {
-                    /* suave textura/realce */
-                    content: "";
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(135deg, rgba(255, 255, 255, .25), rgba(255, 204, 0, .15) 45%, rgba(0, 0, 0, .08));
-                    mix-blend-mode: soft-light;
-                    pointer-events: none;
-                }
-
-                .hero h1 {
-                    font-family: Poppins, Inter, system-ui;
-                    font-weight: 800;
-                    line-height: 1.05;
-                    letter-spacing: .2px;
-                    margin: 0;
-                    font-size: clamp(28px, 5vw, 52px);
-                    text-shadow: 0 3px 16px rgba(0, 0, 0, .28);
-                }
-
-                .hero p {
-                    margin: 14px 0 0;
-                    font-size: clamp(14px, 2.3vw, 18px);
-                    font-weight: 600;
-                    opacity: .95;
-                    text-shadow: 0 2px 10px rgba(0, 0, 0, .22);
-                }
-
-                /* Cartão do texto */
-                .card {
-                    background: var(--card);
-                    border: 1px solid rgba(0, 0, 0, .06);
-                    border-radius: var(--radius);
-                    box-shadow: var(--shadow);
-                    margin-top: 22px;
-                    padding: 26px clamp(16px, 4vw, 36px);
-                    color: var(--ink);
-                }
-
-                .kicker {
-                    display: inline-flex;
-                    gap: .6rem;
-                    align-items: center;
-                    background: linear-gradient(90deg, var(--upup-yellow), #ffe57a);
-                    color: #3b2d00;
-                    padding: .4rem .8rem;
-                    border-radius: 999px;
-                    font-weight: 700;
-                    font-family: Poppins, Inter;
-                    letter-spacing: .2px;
-                    margin-bottom: 10px;
-                    box-shadow: 0 4px 12px rgba(245, 196, 0, .35);
-                }
-
-                h2 {
-                    font-family: Poppins, Inter, system-ui;
-                    font-weight: 800;
-                    margin: 10px 0 14px;
-                    color: #2a2000;
-                    letter-spacing: .2px;
-                }
-
-                p {
-                    line-height: 1.7;
-                    font-size: 1.04rem;
-                    color: #2b2b2b;
-                    margin: .6rem 0
-                }
-
-                .muted {
-                    color: var(--muted)
-                }
-
-                .list {
-                    margin: 12px 0 18px;
-                    padding-left: 1rem;
-                }
-
-                .list li {
-                    margin: .4rem 0;
-                    line-height: 1.6;
-                }
-
-                .cta {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 10px;
-                    margin-top: 10px;
-                }
-
-                .btn {
-                    appearance: none;
-                    border: 0;
-                    cursor: pointer;
-                    padding: 12px 18px;
-                    border-radius: 12px;
-                    font-weight: 700;
-                    letter-spacing: .2px;
-                    transition: transform .06s ease, filter .2s ease;
-                    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
-                    text-decoration: none;
-                }
-
-                .btn:active {
-                    transform: translateY(1px)
-                }
-
-                .btn-primary {
-                    background: linear-gradient(180deg, #ffdd33, var(--upup-yellow-dark));
-                    color: #2b2100;
-                }
-
-                .btn-outline {
-                    background: #fff;
-                    color: var(--upup-blue);
-                    border: 2px solid var(--upup-blue);
-                }
-
-                .info {
-                    display: grid;
-                    gap: 8px;
-                    grid-template-columns: 1fr;
-                    margin-top: 12px;
-                }
-
-                .info .row {
-                    background: #fff;
-                    border: 1px dashed rgba(0, 0, 0, .12);
-                    padding: 12px 14px;
-                    border-radius: 12px;
-                    display: flex;
-                    gap: 10px;
-                    align-items: center;
-                    font-weight: 600;
-                }
-
-                .tag {
-                    font-family: Poppins;
-                    font-weight: 800;
-                    color: var(--upup-blue)
-                }
-
-                .pix {
-                    font-variant-numeric: tabular-nums;
-                    letter-spacing: .4px
-                }
-
-                /* Ajudinhas de impressão */
-                @media print {
-                    .hero {
-                        box-shadow: none
-                    }
-
-                    .card {
-                        box-shadow: none
-                    }
-
-                    .btn {
-                        display: none
-                    }
-
-                    body {
-                        background: #fff
-                    }
-                }
-            </style>
-        </head>
-
-        <body>
-
-            <div class="page">
-                <!-- Banner 16:9 -->
-                <section class="hero" role="img" aria-label="Campanha UPUP - Dia das Crianças">
-                    <div>
-                        <h1>Doe para o melhor Dia das Crianças da UPUP 💛</h1>
-                        <p id=diadasc>Cada doação é uma semente de esperança que floresce em ações concretas.</p>
-                    </div>
-                </section>
-
-                <!-- Texto revisado -->
-                <article class="card">
-
-                    <h2 class="kicker">Querido amigo,</h2>
-
-                    <p>O <strong>Dia das Crianças</strong> está chegando e a <strong>ONG UPUP</strong>, situada no
-                        bairro
-                        <strong>Cantinho Fiorello</strong> em <strong>Natividade</strong>, já está preparando uma grande
-                        celebração
-                        para nossas crianças que participam das oficinas de <strong>artesanato</strong>,
-                        <strong>inglês</strong> e
-                        tantas outras atividades transformadoras.
-                    </p>
-
-                    <p>Este ano, sonhamos em realizar <strong>o melhor Dia das Crianças de todos os tempos!</strong> 🌟
-                        Uma festa especial na quadra do Cantinho Fiorello para <strong>150 crianças em situação de
-                            vulnerabilidade</strong>,
-                        cheia de alegria, brincadeiras, carinho e muita esperança.</p>
-
-                    <p>Mas para que esse sonho se torne realidade, <strong>precisamos da sua ajuda</strong>.
-                        A sua contribuição é fundamental para que possamos oferecer um dia repleto de amor, cuidado e
-                        sorrisos
-                        que ficarão guardados para sempre na memória de cada criança.</p>
-
-                    <p>Com a sua generosidade, <strong>construiremos juntos um dia mágico e inesquecível</strong>.</p>
-
-                    <p>🙏 <strong>Muito obrigado, de coração, pelo seu apoio e amor!</strong></p>
-
-                    <h2>🎁 Lista de doações necessárias</h2>
-                    <ul class="list">
-
-
-
-                        <section class="tabela-doacoes-wrap">
-                            <h2 class="tabela-titulo">Dia das Crianças UPUP — Itens e Doações</h2>
-
-                            <div class="tabela-scroll">
-                                <table class="tabela-doacoes" id="tabela-doacoes" aria-describedby="legenda-doacoes">
-                                    <thead>
-                                        <tr>
-                                            <th>Precisamos de</th>
-                                            <th>Valor</th>
-                                            <th>Responsável</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- O JS vai preencher -->
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <p id="legenda-doacoes" class="tabela-legenda">
-                                <span class="badge ok">Assumido</span> = doação prometida &nbsp;•&nbsp;
-                                <span class="badge pendente">Pendente</span> = aguardando &nbsp;•&nbsp;
-                                <span class="badge quitado">Quitado</span> = doação confirmada &nbsp;•&nbsp;
-                            </p>
-                        </section>
-
-
-                        <script>
-                            async function carregarTabela() {
-                                const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
-                                const resposta = await fetch(url);
-                                const texto = await resposta.text();
-
-                                const linhas = texto.trim().split("\n").map(l => l.split(","));
-                                const corpo = document.querySelector("#tabela-doacoes tbody");
-                                corpo.innerHTML = "";
-
-                                // pula cabeçalho
-                                linhas.slice(1).forEach(celulas => {
-                                    // remove aspas extras
-                                    const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
-
-                                    const item = limpar(celulas[0]);
-                                    const valor = limpar(celulas[1]);
-                                    const responsavel = limpar(celulas[2]);
-                                    const pagou = limpar(celulas[3]);
-
-                                    let status = `<span class="badge pendente">Pendente</span>`;
-                                    if (responsavel) {
-                                        status = `<span class="badge ok">Assumido</span>`;
-                                        if (pagou.toLowerCase() === "sim") {
-                                            status = `<span class="badge quitado">Quitado</span>`;
-                                        }
+        <!-- Doações -->
+
+
+
+
+
+        <div class="page">
+            <!-- Banner 16:9 -->
+            <section class="hero" role="img" aria-label="Campanha UPUP - Dia das Crianças">
+                <div>
+                    <h1>Doe para o melhor Dia das Crianças da UPUP 💛</h1>
+                    <!-- <p>Cada doação é uma semente de esperança que floresce em ações concretas.</p> -->
+                </div>
+            </section>
+
+            <!-- Texto revisado -->
+            <article class="card">
+
+                <h2 class="kicker">Querido amigo,</h2>
+
+                <p>O <strong>Dia das Crianças</strong> está chegando e a <strong>ONG UPUP</strong>, situada no
+                    bairro
+                    <strong>Cantinho Fiorello</strong> em <strong>Natividade</strong>, já está preparando uma grande
+                    celebração
+                    para nossas crianças que participam das oficinas de <strong>artesanato</strong>,
+                    <strong>inglês</strong> e
+                    tantas outras atividades transformadoras.
+                </p>
+
+                <p>Este ano, sonhamos em realizar <strong>o melhor Dia das Crianças de todos os tempos!</strong> 🌟
+                    Uma festa especial na quadra do Cantinho Fiorello para <strong>150 crianças em situação de
+                        vulnerabilidade</strong>,
+                    cheia de alegria, brincadeiras, carinho e muita esperança.</p>
+
+                <p>Mas para que esse sonho se torne realidade, <strong>precisamos da sua ajuda</strong>.
+                    A sua contribuição é fundamental para que possamos oferecer um dia repleto de amor, cuidado e
+                    sorrisos
+                    que ficarão guardados para sempre na memória de cada criança.</p>
+
+                <p>Com a sua generosidade, <strong>construiremos juntos um dia mágico e inesquecível</strong>.</p>
+
+                <p>🙏 <strong>Muito obrigado, de coração, pelo seu apoio e amor!</strong></p>
+
+                <h2>🎁 Lista de doações necessárias</h2>
+                <ul class="list">
+
+
+
+                    <section class="tabela-doacoes-wrap">
+                        <h2 class="tabela-titulo">Dia das Crianças UPUP — Itens e Doações</h2>
+
+                        <div class="tabela-scroll">
+                            <table class="tabela-doacoes" id="tabela-doacoes" aria-describedby="legenda-doacoes">
+                                <thead>
+                                    <tr>
+                                        <th>Precisamos de</th>
+                                        <th>Valor</th>
+                                        <th>Responsável</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- O JS vai preencher -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p id="legenda-doacoes" class="tabela-legenda">
+                            <span class="badge ok">Assumido</span> = doação prometida &nbsp;•&nbsp;
+                            <span class="badge pendente">Pendente</span> = aguardando &nbsp;•&nbsp;
+                            <span class="badge quitado">Quitado</span> = doação confirmada &nbsp;•&nbsp;
+                        </p>
+                    </section>
+
+
+                    <script>
+                        async function carregarTabela() {
+                            const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
+                            const resposta = await fetch(url);
+                            const texto = await resposta.text();
+
+                            const linhas = texto.trim().split("\n").map(l => l.split(","));
+                            const corpo = document.querySelector("#tabela-doacoes tbody");
+                            corpo.innerHTML = "";
+
+                            // pula cabeçalho
+                            linhas.slice(1).forEach(celulas => {
+                                // remove aspas extras
+                                const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
+
+                                const item = limpar(celulas[0]);
+                                const valor = limpar(celulas[1]);
+                                const responsavel = limpar(celulas[2]);
+                                const pagou = limpar(celulas[3]);
+
+                                let status = `<span class="badge pendente">Pendente</span>`;
+                                if (responsavel) {
+                                    status = `<span class="badge ok">Assumido</span>`;
+                                    if (pagou.toLowerCase() === "sim") {
+                                        status = `<span class="badge quitado">Quitado</span>`;
                                     }
+                                }
 
-                                    const tr = `
+                                const tr = `
       <tr>
         <td>${item}</td>
         <td>${valor}</td>
@@ -657,16 +430,16 @@
         <td>${status}</td>
       </tr>
     `;
-                                    corpo.insertAdjacentHTML("beforeend", tr);
-                                });
-                            }
+                                corpo.insertAdjacentHTML("beforeend", tr);
+                            });
+                        }
 
-                            carregarTabela();
-                        </script>
+                        carregarTabela();
+                    </script>
 
 
 
-                        <!-- 
+                    <!-- 
                         https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/edit?usp=sharing
 
 
@@ -679,76 +452,76 @@
 
 
 
-                        <div class="info">
-                            <div class="row"><span class="tag">📞 Contato:</span> <span>(22) 99862-6059</span></div>
-                            <div class="row"><span class="tag">💳 Pix (CNPJ):</span> <span
-                                    class="pix">48.211.513/0001-78</span></div>
-                        </div>
+                    <div class="info">
+                        <div class="row"><span class="tag">📞 Contato:</span> <span>(22) 99862-6059</span></div>
+                        <div class="row"><span class="tag">💳 Pix (CNPJ):</span> <span
+                                class="pix">48.211.513/0001-78</span></div>
+                    </div>
 
-                        <p class="muted" style="margin-top:16px">Com carinho,<br><strong>Equipe UPUP 💛</strong></p>
+                    <p class="muted" style="margin-top:16px">Com carinho,<br><strong>Equipe UPUP 💛</strong></p>
 
-                        <div class="cta" aria-hidden="true">
-                            <a class="btn btn-primary"
-                                href="https://wa.me/5522998626059?text=Quero%20doar%20para%20o%20Dia%20das%20Crian%C3%A7as%20da%20UPUP"
-                                target="_blank" rel="noopener">Quero Doar</a>
-                            <a class="btn btn-outline" href="#" onclick="window.print()">Imprimir/Salvar em PDF</a>
-                        </div>
-                </article>
-            </div>
-
-
+                    <div class="cta" aria-hidden="true">
+                        <a class="btn btn-primary"
+                            href="https://wa.me/5522998626059?text=Quero%20doar%20para%20o%20Dia%20das%20Crian%C3%A7as%20da%20UPUP"
+                            target="_blank" rel="noopener">Quero Doar</a>
+                        <a class="btn btn-outline" href="#" onclick="window.print()">Imprimir/Salvar em PDF</a>
+                    </div>
+            </article>
+        </div>
 
 
 
 
-            <!-- Título e chamada emocional -->
-            <section class="card">
-                <h1 class="h1main">💛 Sua doação transforma vidas!</h1>
-                <p>
-                    A UPUP acredita que <strong>cada gesto de amor multiplica esperança</strong>.
-                    Com sua ajuda, conseguimos oferecer refeições, cursos gratuitos e apoio a famílias inteiras.
-                    Junte-se a nós nessa missão!
-                </p>
-            </section>
 
-            <!-- Bloco Pix -->
-            <section class="card">
-                <h2 class="subtitulos">Contribua pelo Pix</h2>
 
-                <p>Chave Pix (CNPJ): <strong id="pixKey">48.211.513/0001-78</strong></p>
-                <button class="btn btn-pix" onclick="copyText('pixKey')">📋 Copiar Chave Pix</button>
+        <!-- Título e chamada emocional -->
+        <section class="card">
+            <h1 class="h1main">💛 Sua doação transforma vidas!</h1>
+            <p>
+                A UPUP acredita que <strong>cada gesto de amor multiplica esperança</strong>.
+                Com sua ajuda, conseguimos oferecer refeições, cursos gratuitos e apoio a famílias inteiras.
+                Junte-se a nós nessa missão!
+            </p>
+        </section>
 
-                <p>Pix Copia e Cola:</p>
-                <p id="pixCopyPaste" style="word-break: break-all; background:#f9f9f9; padding:8px; border-radius:6px;">
-                    00020126430014br.gov.bcb.pix0114482115130001780203Pix5204000053039865802BR5923UNIDOS POR UM
-                    PROPOSITO6014RIO DE JANEIRO62290525ORStQ4lype1d7FthMjQ4wBEU76304184F
-                </p>
-                <button class="btn btn-pix" onclick="copyText('pixCopyPaste')">📋 Copiar Pix Copia e Cola</button>
+        <!-- Bloco Pix -->
+        <section class="card">
+            <h2 class="subtitulos">Contribua pelo Pix</h2>
 
-                <h3>Ou aponte sua câmera:</h3>
-                <img src="images/upup_qr_pix_200px.png" alt="QR Code para doação via Pix" class="qrcode">
-            </section>
+            <p>Chave Pix (CNPJ): <strong id="pixKey">48.211.513/0001-78</strong></p>
+            <button class="btn btn-pix" onclick="copyText('pixKey')">📋 Copiar Chave Pix</button>
 
-            <!-- Impacto -->
-            <section class="card">
-                <h2 class="subtitulos">🌱 O impacto da sua doação</h2>
-                <ul>
-                    <li>🍲 Refeições quentinhas para famílias em vulnerabilidade.</li>
-                    <li>📚 Cursos de inglês, artesanato e cidadania para crianças.</li>
-                    <li>🎁 Apoio em datas especiais como Natal e Dia das Crianças.</li>
-                </ul>
-                <p><em>Com pouco, fazemos muito. Com você, podemos fazer ainda mais.</em></p>
-            </section>
+            <p>Pix Copia e Cola:</p>
+            <p id="pixCopyPaste" style="word-break: break-all; background:#f9f9f9; padding:8px; border-radius:6px;">
+                00020126430014br.gov.bcb.pix0114482115130001780203Pix5204000053039865802BR5923UNIDOS POR UM
+                PROPOSITO6014RIO DE JANEIRO62290525ORStQ4lype1d7FthMjQ4wBEU76304184F
+            </p>
+            <button class="btn btn-pix" onclick="copyText('pixCopyPaste')">📋 Copiar Pix Copia e Cola</button>
 
-            <!-- Encerramento -->
-            <section class="card" style="text-align:center;">
-                <h2 class="subtitulos">🙏 Junte-se a nós</h2>
-                <p>
-                    Doe esperança, amor e dignidade.
-                    <strong>Seu apoio mantém este propósito vivo.</strong>
-                </p>
-                <button class="btn btn-destaque" onclick="copyText('pixKey')">💛 Quero doar agora</button>
-            </section>
+            <h3>Ou aponte sua câmera:</h3>
+            <img src="images/upup_qr_pix_200px.png" alt="QR Code para doação via Pix" class="qrcode">
+        </section>
+
+        <!-- Impacto -->
+        <section class="card">
+            <h2 class="subtitulos">🌱 O impacto da sua doação</h2>
+            <ul>
+                <li>🍲 Refeições quentinhas para famílias em vulnerabilidade.</li>
+                <li>📚 Cursos de inglês, artesanato e cidadania para crianças.</li>
+                <li>🎁 Apoio em datas especiais como Natal e Dia das Crianças.</li>
+            </ul>
+            <p><em>Com pouco, fazemos muito. Com você, podemos fazer ainda mais.</em></p>
+        </section>
+
+        <!-- Encerramento -->
+        <section class="card" style="text-align:center;">
+            <h2 class="subtitulos">🙏 Junte-se a nós</h2>
+            <p>
+                Doe esperança, amor e dignidade.
+                <strong>Seu apoio mantém este propósito vivo.</strong>
+            </p>
+            <button class="btn btn-destaque" onclick="copyText('pixKey')">💛 Quero doar agora</button>
+        </section>
 
     </main>
 
@@ -828,7 +601,7 @@
 
 
 
-
+    <!-- 
 
 
     <section class="card">
@@ -846,7 +619,7 @@
                 etc. </li>
         </ul>
 
-    </SECtion>
+    </SECtion> -->
 
     <!-- ORGANIZAR O FOOTER PARA POR EM UM ARQUIVO -->
     <div id="footer"></div>

@@ -304,6 +304,7 @@ nav li:hover a {
 #                 CARROSSEL                    #
 #                                              #
 ********************************************/
+/* ========== TRILHO ========== */
 .carousel {
   position: relative;
   width: min(1037px, 100%);
@@ -314,36 +315,36 @@ nav li:hover a {
   background: #000;
 }
 
-/* Trilho dos slides */
-.carousel .slides {
+
+/* Trilho: 5x a largura do viewport */
+.carousel .slides{
   display: flex;
-  width: 400%;
+  width: 500%;            /* 5 itens */
   height: 100%;
-  transition: transform 0.8s ease;
+  transform: translateX(0);
+  transition: transform .8s ease;
 }
 
-/* Cada slide */
-.carousel .slides a,
-.carousel .slides img {
-  flex: 0 0 25%;
-  width: 25%;
+/* Cada slide ocupa 1/5 do trilho */
+.carousel .slides > a{
+  flex: 0 0 20%;          /* 100/5 */
   height: 100%;
   display: block;
 }
 
-.carousel .slides img {
+/* Imagem preenche o slide sem deformar */
+.carousel .slides img{
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  display: block;
+  object-fit: cover;      /* não distorce; troque para 'fill' se quiser esticar */
 }
 
-/* Radios (controle invisível) */
-.carousel input[type="radio"] {
-  display: none;
-}
+/* Radios ocultos */
+.carousel input[type="radio"]{ display:none; }
 
-/* Navegação (bolinhas) */
-.carousel .navigation {
+/* Bolinhas */
+.carousel .navigation{
   position: absolute;
   left: 50%;
   bottom: 10px;
@@ -352,48 +353,41 @@ nav li:hover a {
   gap: 10px;
   z-index: 2;
 }
-
-.carousel .bar {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #080808;
-  border: 2px solid var(--cor5);
-  cursor: pointer;
-  opacity: 0.1;
-  transition: background 0.3s, opacity 0.3s, transform 0.3s;
+.carousel .bar{
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #080808; border: 2px solid var(--cor5);
+  cursor: pointer; opacity: .2;
+  transition: background .3s, opacity .3s, transform .3s;
 }
+.carousel .bar:hover{ background: var(--cor5); opacity:.8; }
 
-.carousel .bar:hover { background: var(--cor5); }
-
-/* Lógica dos rádios (desloca o trilho) */
-#radio1:checked ~ .slides { transform: translateX(0%); }
-#radio2:checked ~ .slides { transform: translateX(-25%); }
-#radio3:checked ~ .slides { transform: translateX(-50%); }
-#radio4:checked ~ .slides { transform: translateX(-75%); }
+/* ======= Lógica dos rádios (agora com transform) ======= */
+/* Atenção: como o trilho tem 500% de largura, -20% = -100% da viewport */
+#radio1:checked ~ .slides{ transform: translateX(  0%); }
+#radio2:checked ~ .slides{ transform: translateX(-20%); }
+#radio3:checked ~ .slides{ transform: translateX(-40%); }
+#radio4:checked ~ .slides{ transform: translateX(-60%); }
+#radio5:checked ~ .slides{ transform: translateX(-80%); }
 
 /* Destaque da bolinha ativa */
 #radio1:checked ~ .navigation label[for="radio1"],
 #radio2:checked ~ .navigation label[for="radio2"],
 #radio3:checked ~ .navigation label[for="radio3"],
-#radio4:checked ~ .navigation label[for="radio4"] {
+#radio4:checked ~ .navigation label[for="radio4"],
+#radio5:checked ~ .navigation label[for="radio5"]{
   background: rgba(255,255,255,.35);
   border-color: rgba(255,255,255,.85);
   box-shadow: 0 0 0 4px rgba(255,255,255,.12) inset, 0 2px 6px rgba(0,0,0,.18);
   transform: scale(1.06);
+  opacity: 1;
 }
 
-/* Acessibilidade: menos movimento */
-@media (prefers-reduced-motion: reduce) {
-  .carousel .bar,
-  #radio1:checked ~ .navigation label[for="radio1"],
-  #radio2:checked ~ .navigation label[for="radio2"],
-  #radio3:checked ~ .navigation label[for="radio3"],
-  #radio4:checked ~ .navigation label[for="radio4"] {
-    transition: none;
-    transform: none;
-  }
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce){
+  .carousel .slides{ transition:none; }
+  .carousel .bar{ transition:none; transform:none; }
 }
+
 
 
 /********************************************
@@ -461,19 +455,31 @@ nav li:hover a {
                 gap: 6px;
             }
 
-            .bolinhas2 button {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                border: 2px solid #64748b;
-                background: transparent;
-                cursor: pointer;
-            }
+.bolinhas2 button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2); /* borda bem fraquinha */
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.2;  /* quase invisível */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-            .bolinhas2 button[aria-selected="true"] {
-                background: #e2e8f0;
-                border-color: #e2e8f0;
-            }
+.bolinhas2 button:hover {
+    opacity: 0.5; /* aparece um pouco no hover */
+    transform: scale(1.2);
+}
+
+.bolinhas2 button[aria-selected="true"] {
+    opacity: 0.9;               /* bem mais visível quando ativo */
+    border-color: #fff;
+    background: #fff;
+}
+
+
+
+
 
 
 /********************************************
@@ -1201,7 +1207,3 @@ footer.copyright {
   border-color: rgba(59,130,246,.35);
 }
 
-#diasdasc{
-  text-align: center;
-  align-items: center;
-}
