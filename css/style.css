@@ -68,6 +68,23 @@
   --upup-speed: .35s;
 }
 
+#drawerClose {
+  background: transparent;   /* sem fundo amarelo */
+  border: none;              /* remove borda */
+  color: white;              /* cor do X */
+  font-size: 1.5rem;          /* tamanho do X */
+  cursor: pointer;
+  line-height: 1;            /* centraliza melhor */
+  width: auto;               
+  height: auto;
+  padding: 0 8px;
+}
+
+#drawerClose:hover {
+  color: var(--cor3);        /* muda cor no hover */
+}
+
+
 /********************************************
 #                                              #
 #         Tela de pré-carregamento             #
@@ -1021,13 +1038,10 @@ footer.copyright {
             background: var(--cor5);
         }
 
-
-
-        .container {
-            display: flex;
-            justify-content: center;
-            max-width: 800px; /* largura máxima visível */
-            max-height: 1024px; /* largura máxima visível */
+.container {
+  display: flex;
+  justify-content: center;  /* centraliza na horizontal */
+  margin: 0 auto;           /* reforço para browsers antigos */
 }
 
         .iframe_forms {

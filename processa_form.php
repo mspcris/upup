@@ -1,27 +1,35 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $nascimento = $_POST['nascimento'];
-    $endereco = $_POST['endereco'];
-    $telefone = $_POST['telefone'];
+// Configurações do e-mail
+$destinatario = "upupoficial@gmail.com";  // coloque o e-mail da ONG
+$assunto = "Novo pedido de inscrição no curso - UPUP";
 
-    // e-mail de destino (pode ser um e-mail @upup.com.br configurado na KingHost)
-    $to = "contato@upup.com.br";
+// Captura os dados do formulário
+$nome       = $_POST['nome'] ?? '';
+$nascimento = $_POST['nascimento'] ?? '';
+$endereco   = $_POST['endereco'] ?? '';
+$telefone   = $_POST['telefone'] ?? '';
 
-    $subject = "Nova inscrição no curso";
-    $message = "Nome: $nome\n".
-               "Data de Nascimento: $nascimento\n".
-               "Endereço: $endereco\n".
-               "Telefone: $telefone\n";
+// Monta a mensagem
+$mensagem = "
+<strong>Nova solicitação de inscrição recebida:</strong><br><br>
+<b>Nome:</b> $nome <br>
+<b>Data de Nascimento:</b> $nascimento <br>
+<b>Endereço:</b> $endereco <br>
+<b>Telefone:</b> $telefone <br>
+";
 
-    // remetente deve ser do mesmo domínio (boa prática no KingHost)
-    $headers = "From: contato@upup.com.br\r\n";
-    $headers .= "Reply-To: $to\r\n";
+// Cabeçalhos (importante para evitar SPAM)
+$headers  = "MIME-Version: 1.1\r\n";
+$headers .= "Content-type: text/html; charset=UTF-8\r\n";
+$headers .= "From: contato@upup.ong.br\r\n";  // use um e-mail do seu domínio
+$headers .= "Reply-To: $destinatario\r\n";
 
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Inscrição enviada com sucesso!";
-    } else {
-        echo "Erro ao enviar. Tente novamente.";
-    }
+// Envia o e-mail
+if (mail($destinatario, $assunto, $mensagem, $headers)) {
+    echo "<h2>✅ Inscrição enviada com sucesso!</h2>";
+    echo "<a href='cursos_artesanato.html'>Voltar</a>";
+} else {
+    echo "<h2>❌ Ocorreu um erro ao enviar sua inscrição.</h2>";
+    echo "<a href='cursos_artesanato.html'>Tente novamente</a>";
 }
 ?>
