@@ -1052,3 +1052,18 @@ footer.copyright {
           display: block;
 
 }
+
+
+.container2{
+  display: flex;
+  justify-content: center;  /* centraliza na horizontal */
+  margin: 0 auto;           /* reforço para browsers antigos */
+}
+
+        .iframe_forms {
+          width: 100%;
+          max-width: 1024px; /* largura do form do Google */
+          height: 1200px;   /* ajuste conforme o tamanho do form */
+          margin: 0 auto;
+          display: block;
+}
