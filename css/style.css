@@ -1145,3 +1145,58 @@ footer.copyright {
           margin: 0 auto;
           display: block;
 }
+
+
+
+
+
+/********************************************
+#                                              #
+#                   TABELA                      # 
+#                                              #
+********************************************/
+
+.tabela-doacoes-wrap { --br: 12px; --borda: rgba(0,0,0,.08); --zebra: rgba(0,0,0,.03); --txt: #111; --muted:#666; }
+  .tabela-titulo { margin: 0 0 .5rem 0; font-weight: 700; font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: var(--txt); }
+  .tabela-scroll { overflow:auto; border-radius: var(--br); }
+  .tabela-doacoes { width:100%; border-collapse: collapse; border-spacing:0; }
+  .tabela-doacoes thead th{
+    position: sticky; top:0; background: rgba(255,255,255,.75); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--borda); text-align:left; font-weight:700; padding:.75rem .9rem; color: var(--txt);
+  }
+  .tabela-doacoes tbody td{ padding:.65rem .9rem; border-bottom:1px solid var(--borda); vertical-align: top; color: var(--txt); }
+  .tabela-doacoes tbody tr:nth-child(odd){ background: var(--zebra); } /* zebra leve e transparente */
+  .tabela-doacoes tbody tr:hover{ background: rgba(0,0,0,.045); }
+
+  /* Colunas mais estreitas para valor e status */
+  .tabela-doacoes th:nth-child(2), .tabela-doacoes td:nth-child(2){ white-space: nowrap; width:1%; }
+  .tabela-doacoes th:nth-child(4), .tabela-doacoes td:nth-child(4){ white-space: nowrap; width:1%; }
+
+  /* Badges de status */
+  .badge{ display:inline-block; padding:.2rem .5rem; border-radius:999px; font-size:.82rem; line-height:1; border:1px solid transparent; }
+  .badge.ok{ background: rgba(16,185,129,.12); color:#067e54; border-color: rgba(16,185,129,.35); }
+  .badge.pendente{ background: rgba(245,158,11,.12); color:#8a5500; border-color: rgba(245,158,11,.35); }
+
+  /* Acessibilidade e mobile */
+  @media (max-width: 640px){
+    .tabela-doacoes thead th, .tabela-doacoes tbody td{ padding:.6rem .7rem; }
+    .tabela-titulo{ text-align:center; }
+  }
+
+  .badge.ok {
+  background: rgba(16,185,129,.12);
+  color:#067e54;
+  border-color: rgba(16,185,129,.35);
+}
+
+.badge.pendente {
+  background: rgba(245,158,11,.12);
+  color:#8a5500;
+  border-color: rgba(245,158,11,.35);
+}
+
+.badge.quitado {
+  background: rgba(59,130,246,.15);
+  color:#1e40af;
+  border-color: rgba(59,130,246,.35);
+}
