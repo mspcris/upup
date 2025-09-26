@@ -539,7 +539,7 @@ nav li:hover a {
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px;
   color: #fff;
-  font-size: 2em; font-weight: bold;
+  font-size: 1.6em; font-weight: bold;
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
@@ -680,7 +680,7 @@ nav li:hover a {
   color: #ddd;
   text-decoration: none;
   transition: all .25s ease;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .upup-sublink:hover {
