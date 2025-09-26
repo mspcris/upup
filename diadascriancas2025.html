@@ -316,24 +316,7 @@
 
 
 
-
-
-
-
-
     <main>
-
-
-
-
-
-
-
-
-
-        <!-- Doações -->
-
-
 
 
         <!-- Banner 16:9 -->
@@ -346,97 +329,154 @@
 
                 <!-- <p>Cada doação é uma semente de esperança que floresce em ações concretas.</p> -->
             </section>
-
-            <!-- Texto revisado -->
-            <article class="card">
-
-                <h2 class="kicker">Querido amigo,</h2>
-
-                <p>O <strong>Dia das Crianças</strong> está chegando e a <strong>ONG UPUP</strong>, situada no
-                    bairro
-                    <strong>Cantinho Fiorello</strong> em <strong>Natividade</strong>, já está preparando uma grande
-                    celebração
-                    para nossas crianças que participam das oficinas de <strong>artesanato</strong>,
-                    <strong>inglês</strong> e
-                    tantas outras atividades transformadoras.
-                </p>
-
-                <p>Este ano, sonhamos em realizar <strong>o melhor Dia das Crianças de todos os tempos!</strong> 🌟
-                    Uma festa especial na quadra do Cantinho Fiorello para <strong>150 crianças em situação de
-                        vulnerabilidade</strong>,
-                    cheia de alegria, brincadeiras, carinho e muita esperança.</p>
-
-                <p>Mas para que esse sonho se torne realidade, <strong>precisamos da sua ajuda</strong>.
-                    A sua contribuição é fundamental para que possamos oferecer um dia repleto de amor, cuidado e
-                    sorrisos
-                    que ficarão guardados para sempre na memória de cada criança.</p>
-
-                <p>Com a sua generosidade, <strong>construiremos juntos um dia mágico e inesquecível</strong>.</p>
-
-                <p>🙏 <strong>Muito obrigado, de coração, pelo seu apoio e amor!</strong></p>
-
-                <h2>🎁 Lista de doações necessárias</h2>
-                <!-- <ul class="list"> -->
+        </div>
 
 
 
-                <section class="tabela-doacoes-wrap">
-                    <h2 class="tabela-titulo">Dia das Crianças UPUP — Itens e Doações</h2>
-
-                    <div class="tabela-scroll">
-                        <table class="tabela-doacoes" id="tabela-doacoes" aria-describedby="legenda-doacoes">
-                            <thead>
-                                <tr>
-                                    <th>Precisamos de</th>
-                                    <th>Valor</th>
-                                    <th>Responsável</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- O JS vai preencher -->
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="legenda-doacoes" class="tabela-legenda">
-                        <p><span class="badge ok">Assumido</span> = &nbsp;•&nbsp; doação prometida &nbsp;•&nbsp;</p>
-                        <p><span class="badge pendente">Pendente</span> = &nbsp;•&nbsp; aguardando &nbsp;•&nbsp;
-                        <p><span class="badge quitado">Quitado</span> = &nbsp;•&nbsp; doação confirmada
-                            &nbsp;•&nbsp;</p>
-                    </div>
-                </section>
 
 
-                <script>
-                    async function carregarTabela() {
-                        const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
-                        const resposta = await fetch(url);
-                        const texto = await resposta.text();
+        <!-- ======== CARROSSEL ======== -->
+        <div class="carousel" aria-label="Galeria UPUP">
+            <!-- 1) CONTROLES (radios). Precisam ficar como irmãos de .slides e .navigation -->
+            <input type="radio" name="radio-btn" id="radio1" checked>
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
 
-                        const linhas = texto.trim().split("\n").map(l => l.split(","));
-                        const corpo = document.querySelector("#tabela-doacoes tbody");
-                        corpo.innerHTML = "";
+            <!-- 2) TRILHO DOS SLIDES -->
+            <div class="slides">
+                <a href="#">
+                    <img src="images/upup_doacoes_ChatGPT Image 23 de set. de 2025, 09_54_36.png"
+                        alt="Clique_para_doar-UPUP">
+                </a>
+                <a href="#">
+                    <img src="images/upup_festa_dia_das_criancas_carrossel2_1.jpg" alt="Curso Bombeiro Mirim - UPUP">
+                </a>
+                <a href="#">
+                    <img src="images/upup_festa_dia_das_criancas_carrossel2_5.jpg"
+                        alt="Curso Preparatório TJ-RJ - UPUP">
+                </a>
+                <a href="#">
+                    <img src="images/upup_festa_dia_das_criancas_carrossel2_10.jpg" alt="Curso Sebrae - UPUP">
+                </a>
+                <a href="#">
+                    <img src="images/upup_festa_dia_das_criancas_carrossel2_11_16x9.jpg"
+                        alt="Passeata Centro de Natividade - UPUP">
+                </a>
 
-                        // pula cabeçalho
-                        linhas.slice(1).forEach(celulas => {
-                            // remove aspas extras
-                            const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
+            </div>
 
-                            const item = limpar(celulas[0]);
-                            const valor = limpar(celulas[1]);
-                            const responsavel = limpar(celulas[2]);
-                            const pagou = limpar(celulas[3]);
+            <!-- 3) NAVEGAÇÃO (bolinhas). Cada label aponta para um rádio -->
+            <div class="navigation">
+                <label for="radio1" class="bar" aria-label="Slide 1"></label>
+                <label for="radio2" class="bar" aria-label="Slide 2"></label>
+                <label for="radio3" class="bar" aria-label="Slide 3"></label>
+                <label for="radio4" class="bar" aria-label="Slide 4"></label>
+                <label for="radio5" class="bar" aria-label="Slide 5"></label>
+            </div>
+        </div>
 
-                            let status = `<span class="badge pendente">Pendente</span>`;
-                            if (responsavel) {
-                                status = `<span class="badge ok">Assumido</span>`;
-                                if (pagou.toLowerCase() === "sim") {
-                                    status = `<span class="badge quitado">Quitado</span>`;
-                                }
+
+
+
+        <!-- Doações -->
+
+
+
+
+
+
+        <!-- Texto revisado -->
+        <article class="card">
+
+            <h2 class="kicker">Querido amigo,</h2>
+
+            <p>O <strong>Dia das Crianças</strong> está chegando e a <strong>ONG UPUP</strong>, situada no
+                bairro
+                <strong>Cantinho Fiorello</strong> em <strong>Natividade</strong>, já está preparando uma grande
+                celebração
+                para nossas crianças que participam das oficinas de <strong>artesanato</strong>,
+                <strong>inglês</strong> e
+                tantas outras atividades transformadoras.
+            </p>
+
+            <p>Este ano, sonhamos em realizar <strong>o melhor Dia das Crianças de todos os tempos!</strong> 🌟
+                Uma festa especial na quadra do Cantinho Fiorello para <strong>150 crianças em situação de
+                    vulnerabilidade</strong>,
+                cheia de alegria, brincadeiras, carinho e muita esperança.</p>
+
+            <p>Mas para que esse sonho se torne realidade, <strong>precisamos da sua ajuda</strong>.
+                A sua contribuição é fundamental para que possamos oferecer um dia repleto de amor, cuidado e
+                sorrisos
+                que ficarão guardados para sempre na memória de cada criança.</p>
+
+            <p>Com a sua generosidade, <strong>construiremos juntos um dia mágico e inesquecível</strong>.</p>
+
+            <p>🙏 <strong>Muito obrigado, de coração, pelo seu apoio e amor!</strong></p>
+
+            <h2>🎁 Lista de doações necessárias</h2>
+            <!-- <ul class="list"> -->
+
+
+
+            <section class="tabela-doacoes-wrap">
+                <h2 class="tabela-titulo">Dia das Crianças UPUP — Itens e Doações</h2>
+
+                <div class="tabela-scroll">
+                    <table class="tabela-doacoes" id="tabela-doacoes" aria-describedby="legenda-doacoes">
+                        <thead>
+                            <tr>
+                                <th>Precisamos de</th>
+                                <th>Valor</th>
+                                <th>Responsável</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- O JS vai preencher -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="legenda-doacoes" class="tabela-legenda">
+                    <p><span class="badge ok">Assumido</span> = &nbsp;•&nbsp; doação prometida &nbsp;•&nbsp;</p>
+                    <p><span class="badge pendente">Pendente</span> = &nbsp;•&nbsp; aguardando &nbsp;•&nbsp;
+                    <p><span class="badge quitado">Quitado</span> = &nbsp;•&nbsp; doação confirmada
+                        &nbsp;•&nbsp;</p>
+                </div>
+            </section>
+
+
+            <script>
+                async function carregarTabela() {
+                    const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
+                    const resposta = await fetch(url);
+                    const texto = await resposta.text();
+
+                    const linhas = texto.trim().split("\n").map(l => l.split(","));
+                    const corpo = document.querySelector("#tabela-doacoes tbody");
+                    corpo.innerHTML = "";
+
+                    // pula cabeçalho
+                    linhas.slice(1).forEach(celulas => {
+                        // remove aspas extras
+                        const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
+
+                        const item = limpar(celulas[0]);
+                        const valor = limpar(celulas[1]);
+                        const responsavel = limpar(celulas[2]);
+                        const pagou = limpar(celulas[3]);
+
+                        let status = `<span class="badge pendente">Pendente</span>`;
+                        if (responsavel) {
+                            status = `<span class="badge ok">Assumido</span>`;
+                            if (pagou.toLowerCase() === "sim") {
+                                status = `<span class="badge quitado">Quitado</span>`;
                             }
+                        }
 
-                            const tr = `
+                        const tr = `
       <tr>
         <td>${item}</td>
         <td>${valor}</td>
@@ -444,72 +484,72 @@
         <td>${status}</td>
       </tr>
     `;
-                            corpo.insertAdjacentHTML("beforeend", tr);
-                        });
-                    }
+                        corpo.insertAdjacentHTML("beforeend", tr);
+                    });
+                }
 
-                    carregarTabela();
-                </script>
+                carregarTabela();
+            </script>
 
 
-                <script>
-                    async function carregarTabela() {
-                        const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
-                        const resposta = await fetch(url);
-                        const texto = await resposta.text();
+            <script>
+                async function carregarTabela() {
+                    const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
+                    const resposta = await fetch(url);
+                    const texto = await resposta.text();
 
-                        const linhas = texto.trim().split("\n").map(l => l.split(","));
-                        const corpo = document.querySelector("#tabela-doacoes tbody");
-                        corpo.innerHTML = "";
+                    const linhas = texto.trim().split("\n").map(l => l.split(","));
+                    const corpo = document.querySelector("#tabela-doacoes tbody");
+                    corpo.innerHTML = "";
 
-                        // pula cabeçalho do CSV
-                        linhas.slice(1).forEach(celulas => {
-                            const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
+                    // pula cabeçalho do CSV
+                    linhas.slice(1).forEach(celulas => {
+                        const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
 
-                            const item = limpar(celulas[0]);
-                            const valor = limpar(celulas[1]);
-                            const responsavel = limpar(celulas[2]);
-                            const pagou = limpar(celulas[3]);
+                        const item = limpar(celulas[0]);
+                        const valor = limpar(celulas[1]);
+                        const responsavel = limpar(celulas[2]);
+                        const pagou = limpar(celulas[3]);
 
-                            let status = `<span class="badge pendente">Pendente</span>`;
-                            if (responsavel) {
-                                status = `<span class="badge ok">Assumido</span>`;
-                                if ((pagou || "").toLowerCase() === "sim") status = `<span class="badge quitado">Quitado</span>`;
-                            }
+                        let status = `<span class="badge pendente">Pendente</span>`;
+                        if (responsavel) {
+                            status = `<span class="badge ok">Assumido</span>`;
+                            if ((pagou || "").toLowerCase() === "sim") status = `<span class="badge quitado">Quitado</span>`;
+                        }
 
-                            const tr = `
+                        const tr = `
         <tr>
           <td>${item}</td>
           <td>${valor}</td>
           <td>${responsavel || "—"}</td>
           <td>${status}</td>
         </tr>`;
-                            corpo.insertAdjacentHTML("beforeend", tr);
+                        corpo.insertAdjacentHTML("beforeend", tr);
+                    });
+
+                    // 👇 aplica os rótulos com base no THEAD (sem mudar o HTML manualmente)
+                    aplicarLabelsResponsivos();
+                }
+
+                function aplicarLabelsResponsivos() {
+                    const tabela = document.getElementById('tabela-doacoes');
+                    if (!tabela) return;
+                    const headers = Array.from(tabela.querySelectorAll('thead th'))
+                        .map(th => th.textContent.trim());
+
+                    tabela.querySelectorAll('tbody tr').forEach(tr => {
+                        Array.from(tr.children).forEach((td, i) => {
+                            td.setAttribute('data-label', headers[i] || '');
                         });
+                    });
+                }
 
-                        // 👇 aplica os rótulos com base no THEAD (sem mudar o HTML manualmente)
-                        aplicarLabelsResponsivos();
-                    }
-
-                    function aplicarLabelsResponsivos() {
-                        const tabela = document.getElementById('tabela-doacoes');
-                        if (!tabela) return;
-                        const headers = Array.from(tabela.querySelectorAll('thead th'))
-                            .map(th => th.textContent.trim());
-
-                        tabela.querySelectorAll('tbody tr').forEach(tr => {
-                            Array.from(tr.children).forEach((td, i) => {
-                                td.setAttribute('data-label', headers[i] || '');
-                            });
-                        });
-                    }
-
-                    carregarTabela();
-                </script>
+                carregarTabela();
+            </script>
 
 
 
-                <!-- 
+            <!-- 
                         https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/edit?usp=sharing
 
 
@@ -522,21 +562,21 @@
 
 
 
-                <div class="info">
-                    <div class="row"><span class="tag">📞 Contato:</span> <span>(22) 99862-6059</span></div>
-                    <div class="row"><span class="tag">💳 Pix (CNPJ):</span> <span class="pix">48.211.513/0001-78</span>
-                    </div>
+            <div class="info">
+                <div class="row"><span class="tag">📞 Contato:</span> <span>(22) 99862-6059</span></div>
+                <div class="row"><span class="tag">💳 Pix (CNPJ):</span> <span class="pix">48.211.513/0001-78</span>
                 </div>
+            </div>
 
-                <p class="muted" style="margin-top:16px">Com carinho,<br><strong>Equipe UPUP 💛</strong></p>
+            <p class="muted" style="margin-top:16px">Com carinho,<br><strong>Equipe UPUP 💛</strong></p>
 
-                <div class="cta" aria-hidden="true">
-                    <a class="btn btn-primary"
-                        href="https://wa.me/5522998626059?text=Quero%20doar%20para%20o%20Dia%20das%20Crian%C3%A7as%20da%20UPUP"
-                        target="_blank" rel="noopener">Quero Doar</a>
-                    <a class="btn btn-outline" href="#" onclick="window.print()">Imprimir/Salvar em PDF</a>
-                </div>
-            </article>
+            <div class="cta" aria-hidden="true">
+                <a class="btn btn-primary"
+                    href="https://wa.me/5522998626059?text=Quero%20doar%20para%20o%20Dia%20das%20Crian%C3%A7as%20da%20UPUP"
+                    target="_blank" rel="noopener">Quero Doar</a>
+                <a class="btn btn-outline" href="#" onclick="window.print()">Imprimir/Salvar em PDF</a>
+            </div>
+        </article>
         </div>
 
 

@@ -731,7 +731,7 @@ nav li:hover a {
 main{
   max-width: 1000px;
   margin: 3px auto;
-  padding: 20px;
+  padding: 0px;
   border-radius: 20px;
   background-color: white;
 }
@@ -783,6 +783,7 @@ main p {
   line-height: 1.6;
   text-align: justify;
   font-family: var(--font-padrao);
+   padding: 10px;
 }
 
 
