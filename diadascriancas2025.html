@@ -50,7 +50,8 @@
         .page {
             max-width: 1100px;
             margin: auto;
-            padding: 20px 18px 56px;
+            padding: 0px;
+            /* padding-inline: clamp(24px, 5vw, 44px); */
         }
 
         /* Banner 16:9 */
@@ -363,66 +364,67 @@
                 <p>🙏 <strong>Muito obrigado, de coração, pelo seu apoio e amor!</strong></p>
 
                 <h2>🎁 Lista de doações necessárias</h2>
-                <ul class="list">
+                <!-- <ul class="list"> -->
 
 
 
-                    <section class="tabela-doacoes-wrap">
-                        <h2 class="tabela-titulo">Dia das Crianças UPUP — Itens e Doações</h2>
+                <section class="tabela-doacoes-wrap">
+                    <h2 class="tabela-titulo">Dia das Crianças UPUP — Itens e Doações</h2>
 
-                        <div class="tabela-scroll">
-                            <table class="tabela-doacoes" id="tabela-doacoes" aria-describedby="legenda-doacoes">
-                                <thead>
-                                    <tr>
-                                        <th>Precisamos de</th>
-                                        <th>Valor</th>
-                                        <th>Responsável</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- O JS vai preencher -->
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="tabela-scroll">
+                        <table class="tabela-doacoes" id="tabela-doacoes" aria-describedby="legenda-doacoes">
+                            <thead>
+                                <tr>
+                                    <th>Precisamos de</th>
+                                    <th>Valor</th>
+                                    <th>Responsável</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- O JS vai preencher -->
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <p id="legenda-doacoes" class="tabela-legenda">
-                            <span class="badge ok">Assumido</span> = doação prometida &nbsp;•&nbsp;
-                            <span class="badge pendente">Pendente</span> = aguardando &nbsp;•&nbsp;
-                            <span class="badge quitado">Quitado</span> = doação confirmada &nbsp;•&nbsp;
-                        </p>
-                    </section>
+                    <div id="legenda-doacoes" class="tabela-legenda">
+                        <p><span class="badge ok">Assumido</span> = &nbsp;•&nbsp; doação prometida &nbsp;•&nbsp;</p>
+                        <p><span class="badge pendente">Pendente</span> = &nbsp;•&nbsp; aguardando &nbsp;•&nbsp;
+                        <p><span class="badge quitado">Quitado</span> = &nbsp;•&nbsp; doação confirmada
+                            &nbsp;•&nbsp;</p>
+                    </div>
+                </section>
 
 
-                    <script>
-                        async function carregarTabela() {
-                            const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
-                            const resposta = await fetch(url);
-                            const texto = await resposta.text();
+                <script>
+                    async function carregarTabela() {
+                        const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
+                        const resposta = await fetch(url);
+                        const texto = await resposta.text();
 
-                            const linhas = texto.trim().split("\n").map(l => l.split(","));
-                            const corpo = document.querySelector("#tabela-doacoes tbody");
-                            corpo.innerHTML = "";
+                        const linhas = texto.trim().split("\n").map(l => l.split(","));
+                        const corpo = document.querySelector("#tabela-doacoes tbody");
+                        corpo.innerHTML = "";
 
-                            // pula cabeçalho
-                            linhas.slice(1).forEach(celulas => {
-                                // remove aspas extras
-                                const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
+                        // pula cabeçalho
+                        linhas.slice(1).forEach(celulas => {
+                            // remove aspas extras
+                            const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
 
-                                const item = limpar(celulas[0]);
-                                const valor = limpar(celulas[1]);
-                                const responsavel = limpar(celulas[2]);
-                                const pagou = limpar(celulas[3]);
+                            const item = limpar(celulas[0]);
+                            const valor = limpar(celulas[1]);
+                            const responsavel = limpar(celulas[2]);
+                            const pagou = limpar(celulas[3]);
 
-                                let status = `<span class="badge pendente">Pendente</span>`;
-                                if (responsavel) {
-                                    status = `<span class="badge ok">Assumido</span>`;
-                                    if (pagou.toLowerCase() === "sim") {
-                                        status = `<span class="badge quitado">Quitado</span>`;
-                                    }
+                            let status = `<span class="badge pendente">Pendente</span>`;
+                            if (responsavel) {
+                                status = `<span class="badge ok">Assumido</span>`;
+                                if (pagou.toLowerCase() === "sim") {
+                                    status = `<span class="badge quitado">Quitado</span>`;
                                 }
+                            }
 
-                                const tr = `
+                            const tr = `
       <tr>
         <td>${item}</td>
         <td>${valor}</td>
@@ -430,16 +432,72 @@
         <td>${status}</td>
       </tr>
     `;
-                                corpo.insertAdjacentHTML("beforeend", tr);
+                            corpo.insertAdjacentHTML("beforeend", tr);
+                        });
+                    }
+
+                    carregarTabela();
+                </script>
+
+
+                <script>
+                    async function carregarTabela() {
+                        const url = "https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/export?format=csv";
+                        const resposta = await fetch(url);
+                        const texto = await resposta.text();
+
+                        const linhas = texto.trim().split("\n").map(l => l.split(","));
+                        const corpo = document.querySelector("#tabela-doacoes tbody");
+                        corpo.innerHTML = "";
+
+                        // pula cabeçalho do CSV
+                        linhas.slice(1).forEach(celulas => {
+                            const limpar = t => t ? t.replace(/^"(.*)"$/, "$1").trim() : "";
+
+                            const item = limpar(celulas[0]);
+                            const valor = limpar(celulas[1]);
+                            const responsavel = limpar(celulas[2]);
+                            const pagou = limpar(celulas[3]);
+
+                            let status = `<span class="badge pendente">Pendente</span>`;
+                            if (responsavel) {
+                                status = `<span class="badge ok">Assumido</span>`;
+                                if ((pagou || "").toLowerCase() === "sim") status = `<span class="badge quitado">Quitado</span>`;
+                            }
+
+                            const tr = `
+        <tr>
+          <td>${item}</td>
+          <td>${valor}</td>
+          <td>${responsavel || "—"}</td>
+          <td>${status}</td>
+        </tr>`;
+                            corpo.insertAdjacentHTML("beforeend", tr);
+                        });
+
+                        // 👇 aplica os rótulos com base no THEAD (sem mudar o HTML manualmente)
+                        aplicarLabelsResponsivos();
+                    }
+
+                    function aplicarLabelsResponsivos() {
+                        const tabela = document.getElementById('tabela-doacoes');
+                        if (!tabela) return;
+                        const headers = Array.from(tabela.querySelectorAll('thead th'))
+                            .map(th => th.textContent.trim());
+
+                        tabela.querySelectorAll('tbody tr').forEach(tr => {
+                            Array.from(tr.children).forEach((td, i) => {
+                                td.setAttribute('data-label', headers[i] || '');
                             });
-                        }
+                        });
+                    }
 
-                        carregarTabela();
-                    </script>
+                    carregarTabela();
+                </script>
 
 
 
-                    <!-- 
+                <!-- 
                         https://docs.google.com/spreadsheets/d/1vYMUmEhWO9zo2Q3ZXVC5TrxcNLg3zODhL0i3XNSDeaI/edit?usp=sharing
 
 
@@ -452,20 +510,20 @@
 
 
 
-                    <div class="info">
-                        <div class="row"><span class="tag">📞 Contato:</span> <span>(22) 99862-6059</span></div>
-                        <div class="row"><span class="tag">💳 Pix (CNPJ):</span> <span
-                                class="pix">48.211.513/0001-78</span></div>
+                <div class="info">
+                    <div class="row"><span class="tag">📞 Contato:</span> <span>(22) 99862-6059</span></div>
+                    <div class="row"><span class="tag">💳 Pix (CNPJ):</span> <span class="pix">48.211.513/0001-78</span>
                     </div>
+                </div>
 
-                    <p class="muted" style="margin-top:16px">Com carinho,<br><strong>Equipe UPUP 💛</strong></p>
+                <p class="muted" style="margin-top:16px">Com carinho,<br><strong>Equipe UPUP 💛</strong></p>
 
-                    <div class="cta" aria-hidden="true">
-                        <a class="btn btn-primary"
-                            href="https://wa.me/5522998626059?text=Quero%20doar%20para%20o%20Dia%20das%20Crian%C3%A7as%20da%20UPUP"
-                            target="_blank" rel="noopener">Quero Doar</a>
-                        <a class="btn btn-outline" href="#" onclick="window.print()">Imprimir/Salvar em PDF</a>
-                    </div>
+                <div class="cta" aria-hidden="true">
+                    <a class="btn btn-primary"
+                        href="https://wa.me/5522998626059?text=Quero%20doar%20para%20o%20Dia%20das%20Crian%C3%A7as%20da%20UPUP"
+                        target="_blank" rel="noopener">Quero Doar</a>
+                    <a class="btn btn-outline" href="#" onclick="window.print()">Imprimir/Salvar em PDF</a>
+                </div>
             </article>
         </div>
 

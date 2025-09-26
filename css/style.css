@@ -620,10 +620,11 @@ nav li:hover a {
   margin: 4px 0; padding: 12px;
   border-radius: 12px; border: 1px solid transparent;
   background: transparent; color: #fff;
-  font-size: 1.5rem; font-weight: 500; text-align: left;
+  /* font-size: 1.5rem; font-weight: 500; text-align: left; */
   cursor: pointer;
   transition: all .25s ease;
   box-sizing: border-box;
+  font-size: clamp(1.4rem, 7vw, 2rem);
 }
 
 /* Hover “vidro fosco” suave (apenas quando aponta) */
@@ -678,6 +679,7 @@ nav li:hover a {
   color: #ddd;
   text-decoration: none;
   transition: all .25s ease;
+  font-size: 1.5em;
 }
 
 .upup-sublink:hover {
@@ -1059,10 +1061,31 @@ footer.copyright {
   .upup-accordion {
     text-align: center;      /* centraliza texto e ícones */
     justify-content: center; /* se usar flex */
+  font-size: clamp(1.4rem, 7vw, 2rem);
   }
 
   .upup-sublink {
     text-align: center;
+    font-size: 3em;
+  }
+}
+
+
+
+
+/* MOBILE – submenu maior */
+@media (max-width: 768px){
+  /* mais específico que apenas .upup-sublink */
+  #app-drawer .upup-sublist a.upup-sublink{
+    font-size: clamp(2.25rem, 6.5vw, 1.9rem) !important; /* ~20–30px */
+    line-height: 1.25;
+    padding: 10px 16px;
+    text-decoration: none;
+  }
+
+  /* se quiser o título do grupo um pouco maior também */
+  #app-drawer .upup-accordion{
+    font-size: clamp(1.4rem, 7vw, 2rem);
   }
 }
 
@@ -1162,9 +1185,19 @@ footer.copyright {
 #                                              #
 ********************************************/
 
-.tabela-doacoes-wrap { --br: 12px; --borda: rgba(0,0,0,.08); --zebra: rgba(0,0,0,.03); --txt: #111; --muted:#666; }
+.tabela-doacoes-wrap { --br: 1px; --borda: rgba(0,0,0,.08); --zebra: rgba(0,0,0,.03); --txt: #111; --muted:#666; 
+/* Espaço lateral extra só na área da tabela */
+  /* padding-inline: clamp(14px, 4vw, 28px); */
+
+/* E um respiro interno ao container com scroll */
+
+
+}
   .tabela-titulo { margin: 0 0 .5rem 0; font-weight: 700; font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: var(--txt); }
-  .tabela-scroll { overflow:auto; border-radius: var(--br); }
+  .tabela-scroll { overflow:auto; border-radius: var(--br);
+  padding-inline: clamp(8px, 2.5vw, 16px);
+ }
+
   .tabela-doacoes { width:100%; border-collapse: collapse; border-spacing:0; }
   .tabela-doacoes thead th{
     position: sticky; top:0; background: rgba(255,255,255,.75); backdrop-filter: blur(6px);
@@ -1206,4 +1239,102 @@ footer.copyright {
   color:#1e40af;
   border-color: rgba(59,130,246,.35);
 }
+
+
+
+.tabela-legenda {
+  text-align: left;
+}
+
+/********************************************
+#                                              #
+#              MOBILE     TABELA               # 
+#                                              #
+********************************************/
+
+/* ===== Mobile: tabela vira "cards" legíveis ===== */
+@media (max-width: 850px){
+  /* some o cabeçalho, pois os rótulos irão em cada célula */
+  .tabela-doacoes thead{ display:none; }
+
+  /* estrutura em bloco */
+  .tabela-doacoes,
+  .tabela-doacoes tbody,
+  .tabela-doacoes tr,
+  .tabela-doacoes td{
+    display:block; width:100%;
+  }
+
+  /* cada linha vira um card */
+  .tabela-doacoes tr{
+    background:#fff;
+    margin:12px 0;
+    border:1px solid rgba(0,0,0,.06);
+    border-radius:14px;
+    box-shadow:0 8px 24px rgba(0,0,0,.06);
+    overflow:hidden;
+  }
+
+  .tabela-doacoes td{
+    display:flex;
+    gap:12px;
+    padding:10px 14px;
+    border:0;
+    border-top:1px solid rgba(0,0,0,.06);
+  }
+  .tabela-doacoes td:first-child{ border-top:0; }
+
+  /* rótulo do campo (vem do data-label que o JS vai aplicar) */
+  .tabela-doacoes td::before{
+    content: attr(data-label);
+    flex:0 0 44%;
+    color:#6b7280;                 /* cinza */
+    font-weight:700;
+  }
+
+  /* detalhes visuais opcionais */
+  .tabela-doacoes td:last-child{ align-items:center; }
+}
+
+/* Mobile: fazer a tabela usar 100% da largura do card */
+@media (max-width: 850px){
+  /* define a mesma medida de padding lateral usada no .card */
+  .page .card{ --padx-card: clamp(16px, 4vw, 36px); }
+
+  /* empurra a área da tabela até as bordas do card (bleed) */
+  .page .card .tabela-doacoes-wrap{
+    margin-left:  calc(-16 * var(--padx-card));
+    margin-right: calc(-1 * var(--padx-card));
+  }
+
+  /* opcional: um respiro interno para não colar no canto */
+  .page .card .tabela-scroll{
+    padding-inline: 10px;        /* ajuste fino */
+    border-radius: 14px;          /* mantém cantos bonitos */
+  }
+}
+
+
+
+/* Mobile: fazer a tabela usar toda a largura do card */
+@media (max-width: 640px){
+  /* mesmo valor do padding lateral do .card (no seu layout fica 16px na maioria dos celulares) */
+  .page .card{ --padx-card: clamp(16px, 4vw, 36px); }
+
+  /* remove o recuo do UL dessa seção, que empurra tudo para a direita */
+  .page .card .list{ padding-left: 0; }
+
+  /* faz a seção da tabela “sangrar” até as bordas do card */
+  .page .card .tabela-doacoes-wrap{
+    margin-left:  calc(-1 * var(--padx-card)) !important;
+    margin-right: calc(-1 * var(--padx-card)) !important;
+  }
+
+  /* sem acolchoamento extra dentro do scroller (para não sobrar de um lado) */
+  .page .card .tabela-scroll{
+    padding-inline: 0;
+    border-radius: 14px;
+  }
+}
+
 

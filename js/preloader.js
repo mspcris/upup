@@ -12,7 +12,7 @@
     `O cuidado nos une,<br>a esperança nos guia.<br><strong>UPUP é família</strong>`,
     `Mais que palavras,<br>nosso propósito é ação.<br><strong>UPUP — Amar é verbo</strong>`,
     `Quando cuidamos juntos,<br>a vida floresce.<br><strong>UPUP — Unidos para servir</strong>`,
-        `UPUP é cuidado em cada detalhe:<br>um gesto simples pode mudar vidas.<br><strong>Amor que transforma</strong>`,
+    `UPUP é cuidado em cada detalhe:<br>um gesto simples pode mudar vidas.<br><strong>Amor que transforma</strong>`,
     `Servir é nossa missão.<br>Cuidar é nossa alegria.<br><strong>UPUP é coração em ação</strong>`,
     `Onde há dor,<br>UPUP leva esperança.<br><strong>Amar é o nosso propósito</strong>`,
     `Com carinho e dedicação,<br>UPUP acolhe cada história.<br><strong>Família que cuida</strong>`,
@@ -73,9 +73,10 @@
   setTimeout(() => {
     preloader.classList.add("fade-out");
 
+    
     // remove de vez depois da transição
     setTimeout(() => {
       preloader.style.display = "none";
-    }, 1000); // tempo do transition
-  }, 3000); // tempo em que a frase fica visível
+    }, 20000); // tempo do transition
+  }, 5000); // tempo em que a frase fica visível
 });
