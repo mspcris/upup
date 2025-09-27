@@ -317,9 +317,9 @@ nav li:hover a {
 } */
 .carousel {
   position: relative;
-  width: 100%;
-  max-width: 1037px;
-  height: clamp(220px, 56.25vw, 620px); /* 56.25vw = 16:9 */
+  width: min(1037px, 100%);
+  /* height: clamp(220px, 56.25vw, 620px); 56.25vw ≈ 16:9; limita entre 220 e 620 */
+  height: auto;
   margin: 2px auto;
   overflow: hidden;
   border-radius: 10px;
@@ -1057,6 +1057,7 @@ footer.copyright {
     padding: 15px;
   }
 }
+
 
 /********************************************
 #                                              #
