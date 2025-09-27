@@ -1026,6 +1026,39 @@ footer.copyright {
 
 
 
+
+/********************************************
+#                                              #
+#         Formulário SEBRAE                    #
+#                                              #
+********************************************/
+.formulario-sebrae {
+  max-width: 900px;       
+  margin: 2rem auto;      
+  padding: 1rem;
+  background: #ffffffd9;  
+  border-radius: 16px;    
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.formulario-sebrae h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+.formulario-sebrae iframe {
+  width: 100%;
+  min-height: 1600px;   /* altura mínima para caber todo o form */
+  border: none;
+  border-radius: 12px;
+  display: block;
+}
+
+
+
+
 /********************************************
 #                                              #
 #               RESPONSIVIDADE                 #
