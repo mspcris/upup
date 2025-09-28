@@ -179,7 +179,7 @@ body {
 #h1_header {
   margin: 3px 0;
   padding-top: 10px;
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 400;
   color: var(--cor0);
   text-shadow: 2px 2px 2px var(--cor5);
