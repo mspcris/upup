@@ -168,22 +168,16 @@ body {
 #                   HEADER                     #
 #                                              #
 ********************************************/
-/* header {
-  color: white;
-  text-align: center;
-  font-family: var(--font-destaque);
-  background-image: linear-gradient(var(--cor0),var(--cor01),var(--cor01), var(--cor1), var(--cor2), var(--cor3));
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-} */
 
 #h1_header {
   margin: 3px 0;
   padding-top: 10px;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: 400;
   color: var(--cor0);
   text-shadow: 2px 2px 2px var(--cor5);
   text-align: center;
+  text-decoration: none;
   
 }
 #fundoheader{
@@ -192,7 +186,14 @@ body {
   font-family: var(--font-destaque);
   background-image: linear-gradient(var(--cor0),var(--cor01),var(--cor01), var(--cor1), var(--cor2), var(--cor3));
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  text-decoration: none;
 }
+
+#fundoheader a {
+  text-decoration: none;
+  color: inherit; /* mantém a cor do h1 */
+}
+
 
 #h4_1_header,
 #h4_2_header,
