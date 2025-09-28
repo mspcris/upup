@@ -76,6 +76,6 @@ setTimeout(() => {
   setTimeout(() => {
     preloader.style.display = "none";
   }, 1000); // tempo do fade-out final
-}, 8000); // frase visível por 8 segundos
+}, 6000); // frase visível por 8 segundos
 
 });

@@ -117,15 +117,15 @@
 .preloader-img {
   width: 120px;   /* ajuste conforme necessário */
   height: auto;
-  margin-bottom: 20px; /* espaço entre imagem e texto */
-  animation: fadeInOut 8s ease forwards;
+  margin-bottom: 40px; /* espaço entre imagem e texto */
+  animation: fadeInOut 6s ease forwards;
 }
 
 .preloader-text {
   font-family: var(--font-destaque);
   font-size: 1.2rem;
   color: #000; /* cor do texto */
-  /* animation: fadeInOut 2s ease forwards; */
+  /* animation: fadeInOut 2s ease forwards; (Coloquei no JS. Testar por um tempo*/ 
 }
 
 /* Animação do texto */
