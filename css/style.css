@@ -118,14 +118,14 @@
   width: 120px;   /* ajuste conforme necessário */
   height: auto;
   margin-bottom: 20px; /* espaço entre imagem e texto */
-  animation: fadeInOut 3s ease forwards;
+  animation: fadeInOut 8s ease forwards;
 }
 
 .preloader-text {
   font-family: var(--font-destaque);
   font-size: 1.2rem;
   color: #000; /* cor do texto */
-  animation: fadeInOut 3s ease forwards;
+  /* animation: fadeInOut 2s ease forwards; */
 }
 
 /* Animação do texto */
@@ -136,11 +136,10 @@
   100% { opacity: 0; transform: scale(1.05); }
 }
 
-/* Estado final ao remover (fade-out + blur no fundo) */
-#preloader.fade-out {
-  opacity: 0;
-  pointer-events: none;
+.preloader-text {
+  animation: fadeInOut 8s ease forwards; /* <- de 3s para 8s */
 }
+
 /* mesma animação que você usou no texto
 @keyframes fadeInOut {
   0%   { opacity: 0; }
@@ -305,190 +304,107 @@ nav li:hover a {
 #                 CARROSSEL                    #
 #                                              #
 ********************************************/
-/* ========== TRILHO ========== */
-.carousel {
+/* Estrutura base */
+.carousel1, .carousel2, .carousel3 {
   position: relative;
   width: min(1037px, 100%);
-  /* height: clamp(220px, 56.25vw, 620px); 56.25vw ≈ 16:9; limita entre 220 e 620 */
-  height: auto;
-  margin: 2px auto;
+  margin: 10px auto;
   overflow: hidden;
   border-radius: 10px;
   background: #000;
 }
 
-
-/* Trilho: 5x a largura do viewport */
-.carousel .slides{
+.slides1, .slides2, .slides3 {
   display: flex;
-  width: 500%;            /* 5 itens */
-  height: 100%;
-  transform: translateX(0);
+  width: 500%;
   transition: transform .8s ease;
 }
 
-/* Cada slide ocupa 1/5 do trilho */
-.carousel .slides > a{
-  flex: 0 0 20%;          /* 100/5 */
-  height: 100%;
-  display: block;
+.slides1 a, .slides2 a, .slides3 a {
+  flex: 0 0 20%;
 }
 
-/* Imagem preenche o slide sem deformar */
-.carousel .slides img{
+.slides1 img, .slides2 img, .slides3 img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;      /* não distorce; troque para 'fill' se quiser esticar */
 }
 
-/* Radios ocultos */
-.carousel input[type="radio"]{ display:none; }
+input[type="radio"] { display: none; }
 
-/* Bolinhas */
-.carousel .navigation{
+/* Navegação */
+.navigation1, .navigation2, .navigation3 {
   position: absolute;
   left: 50%;
   bottom: 10px;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
-  z-index: 2;
 }
-.carousel .bar{
-  width: 12px; height: 12px; border-radius: 50%;
-  background: #080808; border: 2px solid var(--cor5);
-  cursor: pointer; opacity: .2;
-  transition: background .3s, opacity .3s, transform .3s;
+
+.bar {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #000;         /* fundo preto */
+  border: 1px solid var(--cor6);   /* borda mínima */
+  opacity: 0.08;            /* quase invisível */
+  transition: opacity .3s ease, transform .2s ease;
+  cursor: pointer;
 }
-.carousel .bar:hover{ background: var(--cor5); opacity:.8; }
 
-/* ======= Lógica dos rádios (agora com transform) ======= */
-/* Atenção: como o trilho tem 500% de largura, -20% = -100% da viewport */
-#radio1:checked ~ .slides{ transform: translateX(  0%); }
-#radio2:checked ~ .slides{ transform: translateX(-20%); }
-#radio3:checked ~ .slides{ transform: translateX(-40%); }
-#radio4:checked ~ .slides{ transform: translateX(-60%); }
-#radio5:checked ~ .slides{ transform: translateX(-80%); }
+.bar:hover {
+  opacity: 0.4;             /* ao passar o mouse, fica um pouco mais visível */
+  transform: scale(1.2);
+}
 
-/* Destaque da bolinha ativa */
-#radio1:checked ~ .navigation label[for="radio1"],
-#radio2:checked ~ .navigation label[for="radio2"],
-#radio3:checked ~ .navigation label[for="radio3"],
-#radio4:checked ~ .navigation label[for="radio4"],
-#radio5:checked ~ .navigation label[for="radio5"]{
-  background: rgba(255,255,255,.35);
-  border-color: rgba(255,255,255,.85);
-  box-shadow: 0 0 0 4px rgba(255,255,255,.12) inset, 0 2px 6px rgba(0,0,0,.18);
-  transform: scale(1.06);
+
+/* Movimentos */
+
+#radio1-1:checked ~ .slides1 { transform: translateX(0%); }
+#radio1-2:checked ~ .slides1 { transform: translateX(-20%); }
+#radio1-3:checked ~ .slides1 { transform: translateX(-40%); }
+#radio1-4:checked ~ .slides1 { transform: translateX(-60%); }
+#radio1-5:checked ~ .slides1 { transform: translateX(-80%); }
+
+
+#radio2-1:checked ~ .slides2 { transform: translateX(0%); }
+#radio2-2:checked ~ .slides2 { transform: translateX(-20%); }
+#radio2-3:checked ~ .slides2 { transform: translateX(-40%); }
+#radio2-4:checked ~ .slides2 { transform: translateX(-60%); }
+#radio2-5:checked ~ .slides2 { transform: translateX(-80%); }
+
+
+/* Carrossel 3 */
+#radio3-1:checked ~ .slides3 { transform: translateX(0%); }
+#radio3-2:checked ~ .slides3 { transform: translateX(-20%); }
+#radio3-3:checked ~ .slides3 { transform: translateX(-40%); }
+#radio3-4:checked ~ .slides3 { transform: translateX(-60%); }
+#radio3-5:checked ~ .slides3 { transform: translateX(-80%); }
+
+
+/* Carrossel 1 */
+#radio1-1:checked ~ .navigation1 label[for="radio1-1"],
+#radio1-2:checked ~ .navigation1 label[for="radio1-2"],
+#radio1-3:checked ~ .navigation1 label[for="radio1-3"],
+#radio1-4:checked ~ .navigation1 label[for="radio1-4"],
+#radio1-5:checked ~ .navigation1 label[for="radio1-5"],
+/* Carrossel 2 */
+#radio2-1:checked ~ .navigation2 label[for="radio2-1"],
+#radio2-2:checked ~ .navigation2 label[for="radio2-2"],
+#radio2-3:checked ~ .navigation2 label[for="radio2-3"],
+#radio2-4:checked ~ .navigation2 label[for="radio2-4"],
+#radio2-5:checked ~ .navigation2 label[for="radio2-5"],
+/* Carrossel 3 */
+#radio3-1:checked ~ .navigation3 label[for="radio3-1"],
+#radio3-2:checked ~ .navigation3 label[for="radio3-2"],
+#radio3-3:checked ~ .navigation3 label[for="radio3-3"],
+#radio3-4:checked ~ .navigation3 label[for="radio3-4"],
+#radio3-5:checked ~ .navigation3 label[for="radio3-5"] {
   opacity: 1;
+  background: var(--cor3); /* amarelo */
+  transform: scale(1.4);
 }
-
-/* Acessibilidade */
-@media (prefers-reduced-motion: reduce){
-  .carousel .slides{ transition:none; }
-  .carousel .bar{ transition:none; transform:none; }
-}
-
-
-
-/********************************************
-#                                              #
-#                  CARROSSEL 2                 #
-#                                              #
-********************************************/
-
-/********************************************
-#                                              #
-#                 CARROSSEL                    #
-#                                              #
-********************************************/
-/* ========== TRILHO ========== */
-.carousel2 {
-  position: relative;
-  width: min(1037px, 100%);
-  /* height: clamp(220px, 56.25vw, 620px); 56.25vw ≈ 16:9; limita entre 220 e 620 */
-  height: auto;
-  margin: 2px auto;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #000;
-}
-
-
-/* Trilho: 5x a largura do viewport */
-.carousel2 .slides2{
-  display: flex;
-  width: 500%;            /* 5 itens */
-  height: 100%;
-  transform: translateX(0);
-  transition: transform .8s ease;
-}
-
-/* Cada slide ocupa 1/5 do trilho */
-.carousel2 .slides2 > a{
-  flex: 0 0 20%;          /* 100/5 */
-  height: 100%;
-  display: block;
-}
-
-/* Imagem preenche o slide sem deformar */
-.carousel2 .slides2 img{
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;      /* não distorce; troque para 'fill' se quiser esticar */
-}
-
-/* Radios ocultos */
-.carousel2 input[type="radio"]{ display:none; }
-
-/* Bolinhas */
-.carousel2 .navigation2{
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 2;
-}
-.carousel2 .bar{
-  width: 12px; height: 12px; border-radius: 50%;
-  background: #080808; border: 2px solid var(--cor5);
-  cursor: pointer; opacity: .2;
-  transition: background .3s, opacity .3s, transform .3s;
-}
-.carousel .bar:hover{ background: var(--cor5); opacity:.8; }
-
-/* ======= Lógica dos rádios (agora com transform) ======= */
-/* Atenção: como o trilho tem 500% de largura, -20% = -100% da viewport */
-#radio1:checked ~ .slides2{ transform: translateX(  0%); }
-#radio2:checked ~ .slides2{ transform: translateX(-20%); }
-#radio3:checked ~ .slides2{ transform: translateX(-40%); }
-#radio4:checked ~ .slides2{ transform: translateX(-60%); }
-#radio5:checked ~ .slides2{ transform: translateX(-80%); }
-
-/* Destaque da bolinha ativa */
-#radio1:checked ~ .navigation2 label[for="radio1"],
-#radio2:checked ~ .navigation2 label[for="radio2"],
-#radio3:checked ~ .navigation2 label[for="radio3"],
-#radio4:checked ~ .navigation2 label[for="radio4"],
-#radio5:checked ~ .navigation2 label[for="radio5"]{
-  background: rgba(255,255,255,.35);
-  border-color: rgba(255,255,255,.85);
-  box-shadow: 0 0 0 4px rgba(255,255,255,.12) inset, 0 2px 6px rgba(0,0,0,.18);
-  transform: scale(1.06);
-  opacity: 1;
-}
-
-/* Acessibilidade */
-@media (prefers-reduced-motion: reduce){
-  .carousel2 .slides2{ transition:none; }
-  .carousel2 .bar{ transition:none; transform:none; }
-}
-
-
 
 
 

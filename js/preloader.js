@@ -70,13 +70,12 @@
   preloaderText.innerHTML = fraseAleatoria;
 
   // Mostra o preloader e depois aplica fade-out
-  setTimeout(() => {
-    preloader.classList.add("fade-out");
+setTimeout(() => {
+  preloader.classList.add("fade-out");
 
-    
-    // remove de vez depois da transição
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 20000); // tempo do transition
-  }, 5000); // tempo em que a frase fica visível
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 1000); // tempo do fade-out final
+}, 8000); // frase visível por 8 segundos
+
 });
