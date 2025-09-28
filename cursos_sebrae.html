@@ -152,31 +152,31 @@
 
 
     <main>
-        <!-- 
-        <div class="formulario-sebrae">
-            <iframe width="640px" height="800px"
-                src="https://forms.office.com/Pages/ResponsePage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&embed=true"
-                frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width: 100%; height: 100vh;"
-                allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
-            </iframe>
+        <p>O formulário abaixo é externo, caso não consiga ver ou preencher, <a
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&embed=true">clique
+                aqui</a> para abrir ele direto no servidor do SEBRAE.</p>
 
-        </div> -->
-
-
-        <main>
-            <div class="formulario-sebrae">
-                <h2>Formulário de Cadastro / Sebrae</h2>
-                <iframe
-                    src="https://forms.office.com/Pages/ResponsePage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&embed=true"
-                    width="100%" height="1600" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen
-                    msallowfullscreen>
-                </iframe>
-            </div>
-        </main>
+        <iframe
+            src="https://forms.office.com/Pages/ResponsePage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&embed=true"
+            width="100%" height="1200" frameborder="0" marginwidth="0" marginheight="0"
+            style="border: none; max-width: 100%; min-height: 500px;" allowfullscreen webkitallowfullscreen
+            mozallowfullscreen msallowfullscreen>
+        </iframe>
 
 
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const iframe = document.querySelector(".formulario-sebrae iframe");
 
+                function ajustarAltura() {
+                    // força o iframe a ocupar a altura total da tela
+                    iframe.style.height = window.innerHeight * 2 + "px";
+                }
 
+                ajustarAltura();
+                window.addEventListener("resize", ajustarAltura);
+            });
+        </script>
 
 
     </main>
