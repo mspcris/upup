@@ -102,19 +102,28 @@
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial
         }
 
-        .page {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0px;
-            /* padding-inline: clamp(24px, 5vw, 44px); */
+        main {
+            padding: 0;
         }
 
-        /* Banner 16:9 */
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            /* centraliza igual aos cards */
+            padding: 0;
+            height: auto;
+        }
+
+
+        /* Banner */
         .hero {
             position: relative;
-            width: 100%;
-            aspect-ratio: 16/9;
-            /* mantém 16x9 em qualquer tela */
+            max-width: 1100px;
+            /* mesmo limite dos cards */
+            margin: 5px auto;
+            /* centraliza e dá espaçamento em cima e embaixo */
+            height: 200px;
+            /* altura reduzida */
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -125,11 +134,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 24px;
+            padding: 3px;
             color: #fff;
             text-align: center;
             isolation: isolate;
         }
+
 
         .hero::after {
             /* suave textura/realce */
@@ -166,10 +176,20 @@
             border: 1px solid rgba(0, 0, 0, .06);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            margin-top: 22px;
-            padding: 26px clamp(16px, 4vw, 36px);
+            /* margin-top: 22px; */
+            padding: 6px clamp(16px, 4vw, 36px);
             color: var(--ink);
+            margin-top: 6px;
+            margin-bottom: 6px;
+            /* 🔥 garante espaço antes do carrossel */
         }
+
+        .card p {
+            color: var(--ink);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
 
         .kicker {
             display: inline-flex;
@@ -300,6 +320,27 @@
     </style>
 
 
+    <style>
+        #overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1s ease, visibility 0s linear;
+        }
+
+        #overlay.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease, visibility 0s linear 1s;
+        }
+    </style>
 
 
 
@@ -377,7 +418,11 @@
 
 
 
+
+
     <main>
+
+
 
 
         <!-- Banner 16:9 -->
@@ -387,10 +432,24 @@
                 <div>
                     <h1>Doe para o melhor Dia das Crianças da UPUP 💛</h1>
                 </div>
-
-                <!-- <p>Cada doação é uma semente de esperança que floresce em ações concretas.</p> -->
             </section>
         </div>
+
+        <!-- 🔥 Mensagem em cartão acima do carrossel -->
+        <div>
+            <section class="card">
+                <h2 class="kicker">📢 Atenção</h2>
+                <p>
+                    Cada doação é uma semente de esperança 🌱
+                    que se transforma em um <strong>Dia das Crianças inesquecível</strong>.
+                    Confira abaixo alguns registros e participe com a sua contribuição 💛.
+                </p>
+            </section>
+        </div>
+
+
+
+
 
 
 
@@ -408,21 +467,22 @@
             <div class="slides1">
                 <a href="#">
                     <img
-                        src="images/upup_cca_contamos_com_vc_ChatGPT Image 26 de set. de 2025, 19_01_17_1449x1024.png ">
+                        src="images/carrossel1/upup_cca_contamos_com_vc_ChatGPT Image 26 de set. de 2025, 19_01_17_1449x1024.png ">
                 </a>
                 <a href="#">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_1_1449x1024.jpg"
+                    <img src="images/carrossel1/upup_festa_dia_das_criancas_carrossel2_1_1449x1024.jpg"
                         alt="Curso Bombeiro Mirim - UPUP">
                 </a>
                 <a href="#">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_5_1449x1024.jpg"
+                    <img src="images/carrossel1/upup_festa_dia_das_criancas_carrossel2_5_1449x1024.jpg"
                         alt="Curso Preparatório TJ-RJ - UPUP">
                 </a>
                 <a href="#">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_10_1449x1024.jpg" alt="Curso Sebrae - UPUP">
+                    <img src="images/carrossel1/upup_festa_dia_das_criancas_carrossel2_10_1449x1024.jpg"
+                        alt="Curso Sebrae - UPUP">
                 </a>
                 <a href="#">
-                    <img src="images/upup_festa_dia_das_criancas_carrossel2_11_1449x1024.jpg"
+                    <img src="images/carrossel1/upup_festa_dia_das_criancas_carrossel2_11_1449x1024.jpg"
                         alt="Passeata Centro de Natividade - UPUP">
                 </a>
 
@@ -697,26 +757,26 @@
             <button class="btn btn-destaque" onclick="copyText('pixKey')">💛 Quero doar agora</button>
         </section>
 
-    </main>
+        <!-- </main> -->
 
-    <script>
-        function copyText(elementId) {
-            const text = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("✅ Copiado com sucesso! Agora abra seu app do banco e cole.");
-            });
-        }
-    </script>
+        <script>
+            function copyText(elementId) {
+                const text = document.getElementById(elementId).innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    alert("✅ Copiado com sucesso! Agora abra seu app do banco e cole.");
+                });
+            }
+        </script>
 
 
-    <!-- <script>
+        <!-- <script>
         function copyPix() {
             const pixKey = document.getElementById("pixKey").innerText;
             navigator.clipboard.writeText(pixKey).then(() => {
                 alert("✅ Chave Pix copiada! Agora abra seu app do banco e cole.");
             });
         } -->
-    </script>
+        </script>
 
     </main>
 

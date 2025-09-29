@@ -26,7 +26,7 @@
 
     <!-- CSS -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Social -->
     <!-- facebook -->
@@ -87,7 +87,34 @@
     <!-- no <head> de todas as páginas -->
     <!-- <base href="/upup/"> ME ATRAPALHA A USAR LOCAL, MAS, RESOLVE NO GIT -->
 
+
+    <style>
+        #overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1s ease, visibility 0s linear;
+        }
+
+        #overlay.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease, visibility 0s linear 1s;
+        }
+    </style>
+
+
 </head>
+
+
+
 
 <body>
 
@@ -177,23 +204,23 @@
         <!-- 2) TRILHO DOS SLIDES -->
         <div class="slides2">
             <a href="diadascriancas2025.html">
-                <img src="images/ChatGPT Image 26 de set. de 2025, 14_24_07_clique_aqui_para_doar_2.png"
-                    alt="Clique_para_doar-UPUP">
+                <img src="images/carrossel2/upup_clique_aqui_para_doar_res30.png" alt="Clique_para_doar-UPUP">
             </a>
             <a href="cursos_bombeiromirim.html">
-                <img src="../images/upup_curso_bombeiro_mirim_16x9_res_40_876x574px.png"
+                <img src="../images/carrossel2/upup_curso_bombeiro_mirim_16x9_res_40_876x574px.png"
                     alt="Curso Bombeiro Mirim - UPUP">
             </a>
             <a href="cursos_preparatoriotjrj.html">
-                <img src="../images/upup_curso_preparatorio_tjrj_16x9_1037x583_res_40.png"
+                <img src="../images/carrossel2/upup_curso_preparatorio_tjrj_16x9_1037x583_res_40.png"
                     alt="Curso Preparatório TJ-RJ - UPUP">
             </a>
             <a href="https://forms.office.com/pages/responsepage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&route=shorturl"
                 target="_blank">
-                <img src="../images/upup_sebrae_trilha_capacitacao.png" alt="Curso Sebrae - UPUP">
+                <img src="../images/carrossel2/upup_sebrae_trilha_capacitacao.png" alt="Curso Sebrae - UPUP">
             </a>
             <a href="https://www.instagram.com/p/C_tYlRUB63i/?img_index=1">
-                <img src="../images/upup_evento_passeata_16x9_1536x1024.png" alt="Passeata Centro de Natividade - UPUP">
+                <img src="../images/carrossel2/upup_evento_passeata_16x9_1536x1024.png"
+                    alt="Passeata Centro de Natividade - UPUP">
             </a>
         </div>
 
