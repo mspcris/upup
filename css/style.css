@@ -68,85 +68,82 @@
   --upup-speed: .35s;
 }
 
-#drawerClose {
-  background: transparent;   /* sem fundo amarelo */
-  border: none;              /* remove borda */
-  color: white;              /* cor do X */
-  font-size: 1.5rem;          /* tamanho do X */
-  cursor: pointer;
-  line-height: 1;            /* centraliza melhor */
-  width: auto;               
-  height: auto;
-  padding: 0 8px;
-}
-
-#drawerClose:hover {
-  color: var(--cor3);        /* muda cor no hover */
-}
 
 
 /********************************************
 #                                              #
-#         Tela de pré-carregamento             #
+#                  overlay                     #
 #                                              #
 ********************************************/
 
-/* Tela de pré-carregamento */
-#preloader {
+
+/* Overlay inicial (vidro fosco) */
+/* Overlay inicial (vidro fosco) */
+#overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: #F2B705;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
   z-index: 9999;
   opacity: 1;
-  transition: opacity 1s ease;
+  transition: opacity 1s ease; /* controla a animação de saída */
 }
 
-.preloader-content {
-  display: flex;
-  flex-direction: column; /* coloca imagem em cima e texto embaixo */
-  align-items: center;    /* centraliza horizontalmente */
+/* Estado de saída */
+#overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s linear 1s; 
+  /* visibilidade some só após 1s, dando tempo pro fade */
+}
+
+.overlay-content {
   text-align: center;
-}
-
-
-.preloader-img {
-  width: 120px;   /* ajuste conforme necessário */
-  height: auto;
-  margin-bottom: 40px; /* espaço entre imagem e texto */
-  animation: fadeInOut 6s ease forwards;
-}
-
-.preloader-text {
+  color: #111;
   font-family: var(--font-destaque);
+  font-size: 1.5rem;
+  max-width: 380px;       /* limite fixo de largura */
+  padding: 30px 40px;     /* mais respiro nas laterais */
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 1.2s ease;
+  display: flex;
+  flex-direction: column; /* força a imagem em cima e texto embaixo */
+  align-items: center;    /* centraliza horizontalmente */
+  justify-content: center;
+}
+
+.overlay-img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease;
+}
+
+.overlay-text {
   font-size: 1.2rem;
-  color: #000; /* cor do texto */
-  /* animation: fadeInOut 2s ease forwards; (Coloquei no JS. Testar por um tempo*/ 
+  line-height: 1.6;
+  color: #111;
+  animation: fadeIn 1.2s ease;
+  text-align: center;
+  margin: 0; /* remove espaços extras */
 }
 
-/* Animação do texto */
-@keyframes fadeInOut {
-  0%   { opacity: 0; transform: scale(0.95); }
-  20%  { opacity: 1; transform: scale(1); }
-  80%  { opacity: 1; }
-  100% { opacity: 0; transform: scale(1.05); }
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.preloader-text {
-  animation: fadeInOut 8s ease forwards; /* <- de 3s para 8s */
-}
-
-/* mesma animação que você usou no texto
-@keyframes fadeInOut {
-  0%   { opacity: 0; }
-  20%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { opacity: 0; }
-} */
 
 /********************************************
 #                                              #
