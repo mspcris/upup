@@ -609,6 +609,7 @@ input[type="radio"] { display: none; }
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   transform: translateY(-1px);
+  color: #2a2000;
 }
 
 
