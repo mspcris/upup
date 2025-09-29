@@ -591,12 +591,14 @@ input[type="radio"] { display: none; }
   display: block; width: 100%;
   margin: 4px 0; padding: 12px;
   border-radius: 12px; border: 1px solid transparent;
-  background: transparent; color: #fff;
+  background: transparent; color: #2a2000;
   /* font-size: 1.5rem; font-weight: 500; text-align: left; */
   cursor: pointer;
   transition: all .25s ease;
   box-sizing: border-box;
-  font-size: clamp(1.4rem, 7vw, 2rem);
+  /* font-size: clamp(1.4rem, 7vw, 2rem); */
+ font-size: 1.2rem;
+
 }
 
 /* Hover “vidro fosco” suave (apenas quando aponta) */
@@ -648,14 +650,14 @@ input[type="radio"] { display: none; }
   margin: 6px;
   padding: 8px 12px;
   border-radius: 8px;
-  color: #ddd;
+  color: #2a2000;
   text-decoration: none;
   transition: all .25s ease;
   font-size: 1.3em;
 }
 
 .upup-sublink:hover {
-  color: #fff;
+  color: #2a2000;
   background: rgba(255,255,255,0.15);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -996,10 +998,13 @@ form button:hover {
 #                                              #
 ********************************************/
 footer.copyright {
-  background: var(--cor7) !important;
-  color: var(--cor3) !important;
-  text-align: center;
-  padding: 10px;
+  opacity: 1 !important;
+  isolation: auto !important;
+  mix-blend-mode: normal !important;
+  z-index: 100 !important;
+  position: relative;
+  background-color: #221c02 !important; /* cor7 */
+  color: #F2B705 !important;           /* cor3 */
 }
 
 
@@ -1373,3 +1378,244 @@ footer.copyright {
 
 
 
+  :root {
+            --upup-yellow: #F5C400;
+            /* amarelo gema de ovo */
+            --upup-yellow-dark: #D8AE00;
+            /* para sombras/contraste */
+            --upup-blue: #0A4C9A;
+            /* cor de apoio */
+            --ink: #1A1A1A;
+            --muted: #5b5b5b;
+            --card: #fffaf0;
+            /* leve tom quente pro fundo do card */
+            --radius: 18px;
+            --shadow: 0 8px 28px rgba(0, 0, 0, .15);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            background: #fff;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial
+        }
+
+        main {
+            padding: 0;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            /* centraliza igual aos cards */
+            padding: 0;
+            height: auto;
+        }
+
+
+        /* Banner */
+        .hero {
+            position: relative;
+            max-width: 1100px;
+            /* mesmo limite dos cards */
+            margin: 5px auto;
+            /* centraliza e dá espaçamento em cima e embaixo */
+            height: 200px;
+            /* altura reduzida */
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background:
+                radial-gradient(110% 120% at 10% 10%, #fff8cc 0, #ffe066 25%, transparent 60%),
+                radial-gradient(120% 140% at 90% 90%, #ffd84d 0, #ffcc00 35%, transparent 70%),
+                var(--upup-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3px;
+            color: #fff;
+            text-align: center;
+            isolation: isolate;
+        }
+
+
+        .hero::after {
+            /* suave textura/realce */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .25), rgba(255, 204, 0, .15) 45%, rgba(0, 0, 0, .08));
+            mix-blend-mode: soft-light;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: Poppins, Inter, system-ui;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: .2px;
+            margin: 0;
+            font-size: clamp(28px, 5vw, 52px);
+            text-shadow: 0 3px 16px rgba(0, 0, 0, .28);
+        }
+
+        .hero p {
+            margin: 14px 0 0;
+            font-size: clamp(14px, 2.3vw, 18px);
+            font-weight: 600;
+            opacity: .95;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, .22);
+            text-align: center;
+        }
+
+        /* Cartão do texto */
+        .card {
+            background: var(--card);
+            border: 1px solid rgba(0, 0, 0, .06);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            /* margin-top: 22px; */
+            padding: 6px clamp(16px, 4vw, 36px);
+            color: var(--ink);
+            margin-top: 6px;
+            margin-bottom: 6px;
+            /* 🔥 garante espaço antes do carrossel */
+        }
+
+        .card p {
+            color: var(--ink);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+
+        .kicker {
+            display: inline-flex;
+            gap: .6rem;
+            align-items: center;
+            background: linear-gradient(90deg, var(--upup-yellow), #ffe57a);
+            color: #3b2d00;
+            padding: .4rem .8rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-family: Poppins, Inter;
+            letter-spacing: .2px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(245, 196, 0, .35);
+        }
+
+        h2 {
+            font-family: Poppins, Inter, system-ui;
+            font-weight: 800;
+            margin: 10px 0 14px;
+            color: #2a2000;
+            letter-spacing: .2px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 1.04rem;
+            color: #2b2b2b;
+            margin: .6rem 0
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .list {
+            margin: 12px 0 18px;
+            padding-left: 1rem;
+        }
+
+        .list li {
+            margin: .4rem 0;
+            line-height: 1.6;
+        }
+
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            appearance: none;
+            border: 0;
+            cursor: pointer;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            transition: transform .06s ease, filter .2s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+            text-decoration: none;
+        }
+
+        .btn:active {
+            transform: translateY(1px)
+        }
+
+        .btn-primary {
+            background: linear-gradient(180deg, #ffdd33, var(--upup-yellow-dark));
+            color: #2b2100;
+        }
+
+        .btn-outline {
+            background: #fff;
+            color: var(--upup-blue);
+            border: 2px solid var(--upup-blue);
+        }
+
+        .info {
+            display: grid;
+            gap: 8px;
+            grid-template-columns: 1fr;
+            margin-top: 12px;
+        }
+
+        .info .row {
+            background: #fff;
+            border: 1px dashed rgba(0, 0, 0, .12);
+            padding: 12px 14px;
+            border-radius: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .tag {
+            font-family: Poppins;
+            font-weight: 800;
+            color: var(--upup-blue)
+        }
+
+        .pix {
+            font-variant-numeric: tabular-nums;
+            letter-spacing: .4px
+        }
+
+        /* Ajudinhas de impressão */
+        @media print {
+            .hero {
+                box-shadow: none
+            }
+
+            .card {
+                box-shadow: none
+            }
+
+            .btn {
+                display: none
+            }
+
+            body {
+                background: #fff
+            }
+        }

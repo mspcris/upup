@@ -182,38 +182,42 @@
 
 
     <main>
-        <p>O formulário abaixo é externo, caso não consiga ver ou preencher, <a
-                href="https://forms.office.com/Pages/ResponsePage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&embed=true">clique
-                aqui</a> para abrir ele direto no servidor do SEBRAE.</p>
+        <div class="card">
+            <h2 class="kicker">AVISO!</h2>
+            <p>No formulário abaixo, desça a barra de rolagem, marque a opção: 'Declaro que li e estou de acordo com a
+                Política de Privacidade do Sebrae.' e clique em NEXT. Após preencha o formulário.
+            <p>Este documento é externo, não pertence a UPUP caso não consiga ver ou preencher, <a
+                    href="https://forms.office.com/Pages/ResponsePage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&embed=true">clique
+                    aqui</a> para abrir ele direto no servidor do SEBRAE.</p>
 
-        <iframe
-            src="https://forms.office.com/Pages/ResponsePage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&embed=true"
-            width="100%" height="1200" frameborder="0" marginwidth="0" marginheight="0"
-            style="border: none; max-width: 100%; min-height: 500px;" allowfullscreen webkitallowfullscreen
-            mozallowfullscreen msallowfullscreen>
-        </iframe>
-
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const iframe = document.querySelector(".formulario-sebrae iframe");
-
-                function ajustarAltura() {
-                    // força o iframe a ocupar a altura total da tela
-                    iframe.style.height = window.innerHeight * 2 + "px";
-                }
-
-                ajustarAltura();
-                window.addEventListener("resize", ajustarAltura);
-            });
-        </script>
+            <iframe
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=cYIpl9cbxUqTW4it3vY2zNkMv3hrupNPscLX3zOkw4lUNU9DMVhKNU1DQ1paMThBMDM2UUk3WDZGNC4u&embed=true"
+                width="100%" height="1200" frameborder="0" marginwidth="0" marginheight="0"
+                style="border: none; max-width: 100%; min-height: 500px;" allowfullscreen webkitallowfullscreen
+                mozallowfullscreen msallowfullscreen>
+            </iframe>
 
 
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const iframe = document.querySelector(".formulario-sebrae iframe");
+
+                    function ajustarAltura() {
+                        // força o iframe a ocupar a altura total da tela
+                        iframe.style.height = window.innerHeight * 2 + "px";
+                    }
+
+                    ajustarAltura();
+                    window.addEventListener("resize", ajustarAltura);
+                });
+            </script>
+
+        </div>
     </main>
 
 
     <section class="card">
-        <h2 class="subtitulos">Conecte-se com a UPUP</h2>
+        <h2 class="kicker">Conecte-se com a UPUP</h2>
         <p>Acompanhe, participe e compartilhe nossas iniciativas nas redes oficiais:</p>
         <div class="cta">
             <a class="btn btn--ig" href="https://www.instagram.com/upupoficial/" target="_blank" rel="noopener">
@@ -256,7 +260,7 @@
     </section>
 
     <section class="card">
-        <h2 class="subtitulos">Como se juntar ao nosso propósito?</h2>
+        <h2 class="kicker">Como se juntar ao nosso propósito?</h2>
         <p>
             Seja <strong>voluntário</strong>, <strong>parceiro</strong> ou <strong>doador</strong>. Cada
             gesto conta e faz diferença na vida de muitas pessoas.
