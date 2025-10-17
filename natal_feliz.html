@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPUP - Natal Solidário 2025 | Doe e transforme histórias</title>
+    <link rel="shortcut icon" href="images/upup_logomarca_somente_nome_up_favicon.png" type="image/x-icon" />
+
+    <!-- Fonts / Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Rounded:wght@800&display=swap" rel="stylesheet" />
+
+    <!-- JS -->
+    <script src="js/menu.js" defer></script>
+    <script src="js/carrossel.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/footer.js" defer></script>
+    <script src="js/overlay.js" defer></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css?v=6" />
+
+    <!-- Social -->
+    <meta property="og:title" content="UPUP — Natal Solidário 2025" />
+    <meta property="og:description"
+        content="Neste Natal, seu gesto acende luzes onde a noite é mais longa. Doe e transforme histórias." />
+    <meta property="og:image" content="https://upup.ong.br/images/natal_hero.jpg" />
+    <meta property="og:url" content="https://upup.ong.br/natal_feliz.html" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UPUP — Natal Solidário 2025" />
+    <meta name="twitter:description" content="Doe agora. Cada gesto vira mesa posta, abraço e esperança." />
+    <meta name="twitter:image" content="https://upup.ong.br/images/natal_hero.jpg" />
+
+    <meta name="description" content="Natal Solidário UPUP 2025. Doe e acenda esperança em Natividade-RJ." />
+    <meta name="author" content="UPUP" />
+    <link rel="canonical" href="https://upup.ong.br/natal_feliz.html" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Natal Solidário UPUP 2025",
+    "startDate": "2025-12-20T09:00",
+    "endDate": "2025-12-20T18:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "UPUP - Natividade",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Natividade",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      }
+    },
+    "image": ["https://upup.ong.br/images/natal_hero.jpg"],
+    "description": "Campanha de Natal para crianças e famílias do Cantinho Fiorello e bairros vizinhos.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "UPUP — Unidos Por Um Propósito",
+      "url": "https://upup.ong.br"
+    }
+  }
+  </script>
+
+    <style>
+        /* Ajustes locais pontuais */
+        .hero-natal {
+            background: url('images/natal_hero.jpg') center/cover no-repeat;
+            min-height: 48vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 16px;
+        }
+
+        .hero-natal .hero-copy {
+            background: rgba(0, 0, 0, .45);
+            color: #fff;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            max-width: 920px;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .btn-primary {
+            background: #c2152c;
+            color: #fff;
+            border-radius: 10px;
+            padding: .8rem 1.2rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .btn-outline {
+            border: 2px solid #c2152c;
+            color: #c2152c;
+            border-radius: 10px;
+            padding: .8rem 1.2rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .grid-2 {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 900px) {
+            .grid-2 {
+                grid-template-columns: 1.2fr .8fr;
+            }
+        }
+
+        .pix-box {
+            background: #fff6f7;
+            border: 1px solid #ffd4da;
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        .kicker {
+            margin-bottom: .5rem;
+        }
+
+        .list-check li::marker {
+            content: "✔ ";
+            color: #2b8a3e;
+            font-weight: 700;
+        }
+
+        .badge {
+            background: #ffe9a8;
+            color: #7a4d00;
+            padding: .25rem .5rem;
+            border-radius: 8px;
+            font-size: .85rem;
+        }
+
+        .card figure {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Menu -->
+    <button id="menuToggle" class="upup-menu-btn" aria-label="Abrir menu" aria-controls="app-drawer"
+        aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path>
+        </svg>
+    </button>
+    <div id="drawerOverlay" class="upup-overlay" hidden></div>
+
+    <aside id="app-drawer" class="upup-drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+        <div class="upup-splash">AMAR SERVIR</div>
+        <header class="upup-drawer-header">
+            <h2 id="drawerTitle">Menu UPUP</h2>
+            <button id="drawerClose" class="upup-icon-btn" aria-label="Fechar menu">✖</button>
+        </header>
+        <nav class="upup-nav" aria-label="Menu principal">
+            <ul class="upup-list">
+                <li><a class="upup-link" href="index.html">🏠 Início</a></li>
+                <li><a class="upup-link" href="doeparaupup.html">💖 Doe por amor</a></li>
+                <li><a class="upup-link" href="quemsomos_leiamais.html">ℹ️ Quem Somos</a></li>
+    
+                  
+                  
+                <li class="upup-group">
+                    <button class="upup-accordion" aria-controls="grp-atividades" aria-expanded="false">
+                        📌 Atividades</button>
+                    <ul id="grp-atividades" class="upup-sublist">
+                        <li><a class="upup-sublink" href="diadascriancas2025_prestacao_de_contas.html">Dia das
+                                crianças 2025</a>
+                        </li>
+                        <li><a class="upup-sublink" href="natal_feliz.html">Natal Feliz 2025</a>
+                        </li>
+                    </ul>
+                    <!-- <ul class="upup-list"> -->
+                    <!-- <li><a class="upup-link" href="contato.html">✉️ Contato</a></li></ul> -->
+
+        </nav>
+
+
+
+        <div class="upup-splash">AMAR SERVIR</div>
+        <div class="upup-brand">UPUP</div>
+    </aside>
+
+    <div id="header"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="card hero-natal" aria-label="Natal Solidário UPUP">
+            <div class="hero-copy">
+                <h1 class="h1main">🎄 Natal Solidário 2025</h1>
+                <p>
+                    O Natal chega como promessa de mesa posta, casa aquecida e abraço que acolhe.
+                    Seu gesto acende luzes onde a noite é mais longa. Quando você doa, a esperança senta à mesa.
+                </p>
+                <div class="cta-row">
+                    <a class="btn-primary" href="#doar" aria-label="Ir para seção de doação">QUERO DOAR AGORA</a>
+                    <a class="btn-outline" href="#transparencia" aria-label="Ver prestação de contas">TRANSPARÊNCIA</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROPÓSITO -->
+        <section class="card">
+            <h2 class="kicker">Por que este Natal importa</h2>
+            <div class="grid-2">
+                <div>
+                    <p>
+                        Em Natividade, especialmente no <strong>Cantinho Fiorello</strong>, existem famílias para quem
+                        dezembro é mais silêncio que canção. A UPUP entra com o que a fome não tem:
+                        cuidado, dignidade e presença. Seu apoio vira cesta, brinquedo, gás, material escolar
+                        e o convite para recomeçar.
+                    </p>
+                    <ul class="list-check">
+                        <li>Alimentação de Natal para crianças e famílias.</li>
+                        <li>Brinquedos e kits de afeto para a infância.</li>
+                        <li>Suporte básico para o início do ano (cadernos, lápis, uniforme solidário).</li>
+                    </ul>
+                    <p class="badge" aria-label="Compromisso de integridade">Integridade e prestação de contas 100%
+                        públicas.</p>
+                </div>
+                <figure>
+                    <picture>
+                        <source media="(max-width: 750px)" srcset="./" type="image/png" />
+                        <img src="../images/Natal2024/natal_criancas.png"
+                            alt="Entrega solidária de Natal da UPUP em Natividade-RJ" />
+                    </picture>
+                </figure>
+            </div>
+        </section>
+
+        <!-- COMO DOAR -->
+        <section id="doar" class="card">
+            <h2 class="kicker">Como doar</h2>
+            <div class="grid-2">
+                <div class="pix-box">
+                    <h3>PIX</h3>
+                    <p>Use o QR Code, Copia e Cola ou nossa chave:</p>
+                    <ul>
+                        <li><strong>Chave PIX:</strong> upupoficial@gmail.com</li>
+                        <li><strong>Favorecido:</strong> UPUP — Unidos Por Um Propósito</li>
+                        <li><strong>Banco:</strong> Banco do Brasil</li>
+                    </ul>
+                    <p><img src="/images/upup_qr_pix_200px.png" alt="QR Code PIX UPUP"
+                            style="max-width:280px;width:100%;border-radius:12px;border:1px solid #ffd4da" /></p>
+                    <a class="btn-primary" target="_blank" rel="noopener"
+                        href="https://wa.me/5522998626059?text=Olá%20UPUP!%20Fiz%20uma%20doação%20para%20o%20Natal%20Solidário.">Confirmar
+                        pelo WhatsApp</a>
+                </div>
+                <div>
+                    <h3>Itens prioritários</h3>
+                    <ul>
+                        <li>Cestas básicas e panetones.</li>
+                        <li>Brinquedos novos (faixa etária 3–12 anos).</li>
+                        <li>Kits de material escolar para janeiro.</li>
+                    </ul>
+                    <p>
+                        Prefere doar itens? Fale conosco e combinamos a entrega. Seu cuidado chega inteiro a quem
+                        precisa.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARROSSEL / REGISTROS -->
+        <section class="card">
+            <h2 class="kicker">Registros que falam por si</h2>
+            <p>
+                Cada foto não é pose, é prova. Onde há doação, há vida reerguida.
+                Role as imagens e veja o que sua generosidade sustenta.
+            </p>
+
+            <div class="carousel2" aria-label="Carrossel do Natal">
+                <input type="radio" name="radio-btn-2" id="radio2-1" checked>
+                <input type="radio" name="radio-btn-2" id="radio2-2">
+                <input type="radio" name="radio-btn-2" id="radio2-3">
+                <input type="radio" name="radio-btn-2" id="radio2-4">
+                <input type="radio" name="radio-btn-2" id="radio2-5">
+
+                <div class="slides2">
+                    <img src="images/carrossel5/natal_1.png" alt="Entrega de cestas e brinquedos — UPUP">
+                    <img src="images/carrossel5/natal_2.png" alt="Crianças brincando na ação de Natal — UPUP">
+                    <img src="images/carrossel5/natal_3.jpg" alt="Mesa de Natal solidário — UPUP">
+                    <img src="images/carrossel5/natal_4.jpg" alt="Equipe de voluntários — UPUP">
+                    <img src="images/carrossel5/natal_5.jpg" alt="Abraço de gratidão — UPUP">
+                </div>
+
+                <div class="navigation2">
+                    <label for="radio2-1" class="bar"></label>
+                    <label for="radio2-2" class="bar"></label>
+                    <label for="radio2-3" class="bar"></label>
+                    <label for="radio2-4" class="bar"></label>
+                    <label for="radio2-5" class="bar"></label>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRANSPARÊNCIA -->
+        <section id="transparencia" class="card">
+            <h2 class="kicker">Transparência que honra sua confiança</h2>
+            <p>
+                Doar é um ato sagrado. Prestamos contas com números e nomes, respeitando a privacidade das famílias.
+                Você doa, nós registramos, auditamos e publicamos.
+            </p>
+            <ul>
+                <li>Relatório de entradas (PIX/itens) e saídas por categoria.</li>
+                <li>Quantitativo de crianças e famílias atendidas.</li>
+                <li>Notas fiscais e comprovantes quando aplicável.</li>
+            </ul>
+            <p>
+                Acesse a <a href="natal_2025_prestacao_de_contas.html">Prestação de Contas do Natal 2025</a>.
+            </p>
+        </section>
+
+        <!-- CONVITE FINAL -->
+        <section class="card">
+            <h2 class="kicker">Convite</h2>
+            <p>
+                O Natal passa, o compromisso fica. Quando o pão é partilhado, ninguém fica para trás.
+                Doe hoje. Seja presença. O amor, aqui, vira estrutura.
+            </p>
+            <div class="cta-row">
+                <a class="btn-primary" href="#doar">DOAR AGORA</a>
+                <a class="btn-outline"
+                    href="mailto:upupoficial@gmail.com?subject=Quero%20apoiar%20o%20Natal%20UPUP">Quero ser parceiro</a>
+            </div>
+        </section>
+
+        <!-- REDES -->
+        <section class="card">
+            <h2 class="kicker">Conecte-se</h2>
+            <p>Acompanhe, participe e compartilhe nossas iniciativas:</p>
+            <div class="cta">
+                <a class="btn btn--ig" href="https://www.instagram.com/upupoficial/" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram"></i> <strong>Instagram</strong> <span
+                        class="pill">@upupoficial</span>
+                </a>
+                <a class="btn btn--fb" href="https://www.facebook.com/upupoficial" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-facebook"></i> <strong>Facebook</strong> <span
+                        class="pill">/upupoficial</span>
+                </a>
+                <a class="btn btn--wa"
+                    href="https://wa.me/5522998626059?text=Olá%20UPUP!%20Quero%20doar%20para%20o%20Natal%20Solidário."
+                    target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp</strong> <span class="pill">+55 (22)
+                        99862-6059</span>
+                </a>
+                <a class="btn btn--mail" href="mailto:upupoficial@gmail.com?subject=Contato%20-%20Natal%20UPUP"
+                    rel="noopener" aria-label="E-mail da UPUP">
+                    <i class="fa-solid fa-envelope"></i> <strong>E-mail</strong> <span
+                        class="pill">upupoficial@gmail.com</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script src="js/footer.js" defer></script>
+</body>
+
+</html>
