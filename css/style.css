@@ -164,12 +164,12 @@ body {
 ********************************************/
 
 #h1_header {
-  margin: 3px 0;
-  padding-top: 10px;
-  font-size: 3em;
+  margin: 1px 0;
+  padding-top: 0px;
+  font-size: 2em;
   font-weight: 400;
-  color: var(--cor0);
-  text-shadow: 2px 2px 2px var(--cor5);
+  color: #55555c;
+  text-shadow: 1px 1px 1px var(--cor2);
   text-align: center;
   text-decoration: none;
   
@@ -179,10 +179,21 @@ body {
   text-align: center;
   font-family: var(--font-destaque);
   background-image: linear-gradient(var(--cor0),var(--cor01),var(--cor01), var(--cor1), var(--cor2), var(--cor3));
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 0px 0px rgba(0,0,0,0.3);
   text-decoration: none;
 }
-
+#li1{
+  text-align: right;
+  font-size: small;
+}
+#li2{
+  text-align: right;
+  font-size: small;
+}
+#li4{
+  text-align: right;
+  font-size: small;
+}
 #fundoheader a {
   text-decoration: none;
   color: inherit; /* mantém a cor do h1 */
@@ -291,6 +302,53 @@ nav li:hover a {
   box-shadow: 0 2px 4px rgba(217,26,42,0.315);
 }
 
+
+
+
+
+
+/* AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII */
+
+.topbar{
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:72px;
+  padding:8px 16px;
+}
+
+#h1_header{
+  position:absolute;            /* mantém o centro absoluto */
+  left:50%;
+  transform:translateX(-50%);
+  margin:0;
+  text-align:center;
+  white-space:nowrap;
+}
+
+.social{
+  margin-left:auto;             /* empurra para a direita */
+  display:flex;
+  gap:16px;
+  list-style:none;
+  padding:0;
+  align-items:center;
+}
+
+.social a{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  text-decoration:none;
+}
+
+.social img{ width:24px; height:24px; }
+
+/* responsivo */
+@media (max-width:720px){
+  #h1_header{ font-size:1.25rem; }
+  .social{ gap:10px; }
+}
 
 
 

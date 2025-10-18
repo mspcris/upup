@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPUP - Dia das crianças 2025 - Prestação de contas - Projetos sociais em Nativiadde - RJ</title>
+    <title>UPUP - Dia das crianças 2025 - Campanha de doação - Projetos sociais em Nativiadde - RJ</title>
     <link rel="shortcut icon" href="images/upup_logomarca_somente_nome_up_favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -16,6 +16,83 @@
     <script src="js/footer.js" defer></script>
     <script src="js/overlay.js" defer></script>
 
+    <!-- no <head> de todas as páginas -->
+    <!-- <base href="/upup/"> -->
+
+
+    <!-- Social -->
+    <!-- facebook -->
+    <meta property="og:title" content="UP - Dia das Crianças 2025">
+    <meta property="og:description" content="Participe e doe para transformar a vida de muitas crianças.">
+    <meta property="og:image" content="https://upup.ong.br/images/doe_UPUP.jpg">
+    <meta property="og:url" content="https://upup.ong.br/diadascriancas2025.html">
+    <meta property="og:type" content="website">
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UP - Dia das Crianças 2025">
+    <meta name="twitter:description" content="Participe e doe para transformar a vida de muitas crianças.">
+    <meta name="twitter:image" content="https://upup.ong.br/images/doe_UPUP.jpg">
+
+
+
+    <!-- google -->
+    <meta name="description" content="Participe e doe para transformar a vida de muitas crianças.">
+    <meta name="author" content="UPUP">
+    <link rel="canonical" href="https://upup.ong.br/diadascriancas2025.html">
+    <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "UPUP - Dia das Crianças 2025",
+  "startDate": "2025-10-12T09:00",
+  "endDate": "2025-10-12T18:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "UPUP - Natividade - RJ",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Dr Antônio de Carvalho Cavalcanti 248 Cantinho Fiorello",
+      "addressLocality": "Natividade",
+      "addressRegion": "RJ",
+      "postalCode": "28380-000",
+      "addressCountry": "BR"
+    }
+  },
+  "image": [
+    "https://upup.ong.br/images/doe_UPUP.jpg"
+  ],
+  "description": "Participe e doe para transformar a vida de muitas crianças.",
+  "organizer": {
+    "@type": "Organization",
+    "name": "UPUP",
+    "url": "https://upup.ong.br"
+  },
+  "performer": {
+    "@type": "Organization",
+    "name": "Voluntários da UPUP",
+    "url": "https://upup.ong.br"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://upup.ong.br/doeparaupup.html",
+    "price": "0",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2025-09-01T00:00",
+    "description": "Entrada gratuita. Doações opcionais de brinquedos, roupas ou alimentos são bem-vindas."
+  }
+}
+
+
+
+</script>
+
+
+    <!-- /Social -->
 
     <style>
         :root {
@@ -259,7 +336,10 @@
                 background: #fff
             }
         }
+    </style>
 
+
+    <style>
         #overlay {
             position: fixed;
             inset: 0;
@@ -279,7 +359,9 @@
             visibility: hidden;
             transition: opacity 1s ease, visibility 0s linear 1s;
         }
+    </style>
 
+    <style>
         footer.copyright {
             opacity: 1 !important;
             isolation: auto !important;
@@ -344,6 +426,7 @@
                             <!-- <li><a class="upup-sublink" href="cursos_sebrae.html">Sebrae - Trilha da Capacitação</a></li> -->
                     </ul>
                 </li>
+
                 <li class="upup-group">
                     <button class="upup-accordion" aria-controls="grp-atividades" aria-expanded="false">
                         📌 Atividades</button>
@@ -351,14 +434,13 @@
                         <li><a class="upup-sublink" href="diadascriancas2025_prestacao_de_contas.html">Dia das
                                 crianças 2025</a>
                         </li>
-                        <li><a class="upup-sublink" href="natal_feliz.html">Natal Feliz 2025</a>
+                        <li><a class="upup-sublink" href="natal_feliz.html">Natal Solidário 2025</a>
                         </li>
                     </ul>
                     <!-- <ul class="upup-list"> -->
                     <!-- <li><a class="upup-link" href="contato.html">✉️ Contato</a></li></ul> -->
 
         </nav>
-
 
 
         <div class="upup-splash">AMAR SERVIR</div> <!-- Splash central -->
@@ -383,44 +465,33 @@
         <div class="page">
             <section class="hero" role="img" aria-label="Campanha UPUP - Dia das Crianças">
                 <div>
-                    <h1>💛OBRIGADO💛</h1>
+                    <h1>A UPUP agradece a sua doação! 💛</h1>
                 </div>
             </section>
         </div>
 
         <!-- 🔥 Mensagem em cartão acima do carrossel -->
-        <section class="card">
-            <h2 class="kicker">Depois do grande dia</h2>
+        <div>
+            <section class="card">
+                <h2 class="kicker">📢 Atenção</h2>
+                <p>
+                    Cada doação é uma semente de esperança 🌱 que floresceu em sorrisos e se transformaram em um Dia das
+                    Crianças verdadeiramente inesquecível! ✨
+                    💛 Você pode fazer parte dessa história de amor! 💛
+                    Deslize a tela com carinho e descubra os registros emocionantes de quem já plantou essa semente
+                    conosco. Cada foto, cada momento capturado é a prova viva de que juntos somos mais fortes e capazes
+                    de transformar vidas!
+                </p>
+                <p>
+                    👇 Role para baixo e apaixone-se! 👇
+                    Lá embaixo, você encontrará a lista especial de itens que foram doados.
+                </p>
 
-            <p>
-                No <strong>Cantinho Fiorello</strong>, em <strong>Natividade</strong>, celebramos um <strong>Dia das
-                    Crianças</strong> que ficará na memória.
-                Graças às doações, <strong>128 crianças</strong> viveram um momento seguro, organizado e cheio de afeto.
-                Entregamos o essencial com responsabilidade e transparência. Gratidão a cada pessoa que viabilizou este
-                resultado.
-            </p>
-
-            <p>
-                A seguir, registros que traduzem o impacto real do evento. Cada imagem comprova o compromisso contínuo
-                com a infância
-                e nos lembra que resultados consistentes nascem de cuidado, governança e presença.
-            </p>
-
-            <h3>📷 Destaques do evento</h3>
-            <ul class="photo-notes">
-                <li><strong>Foto 1</strong> — Acolhimento das crianças e brincadeiras.</li>
-                <li><strong>Foto 2</strong> — Brincadeiras em grupo e integração das idades.</li>
-                <li><strong>Foto 3</strong> — Oba! Brinquedos!</li>
-                <li><strong>Foto 4</strong> — Nosso bolo de comemoração.</li>
-                <li><strong>Foto 5</strong> — Entrega de lembranças e despedida com mensagens.</li>
-            </ul>
-
-            <p>
-                Seguimos juntos. O evento terminou, mas o compromisso permanece: manter portas abertas, ampliar
-                oportunidades e sustentar
-                sorrisos com constância e ética.
-            </p>
-        </section>
+                <p>Sua generosidade transforma o mundo! Cada gesto, por menor que pareça, é gigante no coração de uma
+                    criança. Fizemos juntos esse Dia das Crianças brilhar! 🌟💛
+                </p>
+            </section>
+        </div>
 
 
 
@@ -441,19 +512,19 @@
             <!-- 2) TRILHO DOS SLIDES -->
             <div class="slides1">
                 <a href="#">
-                    <img src="images/carrossel4/upup_carrossel_4_img1.jpg" alt="Prestação de contas - UPUP">
+                    <img src="images/carrossel1/upup_carrossel_1_img1.jpg">
                 </a>
                 <a href="#">
-                    <img src="images/carrossel4/upup_carrossel_4_img2.jpg" alt="Prestação de contas - UPUP">
+                    <img src="images/carrossel1/upup_carrossel_1_img2.jpg" alt="Curso Bombeiro Mirim - UPUP">
                 </a>
                 <a href="#">
-                    <img src="images/carrossel4/upup_carrossel_4_img3.jpg" alt="Prestação de contas - UPUP">
+                    <img src="images/carrossel1/upup_carrossel_1_img3.jpg" alt="Curso Preparatório TJ-RJ - UPUP">
                 </a>
                 <a href="#">
-                    <img src="images/carrossel4/upup_carrossel_4_img4.jpg" alt="Prestação de contas - UPUP">
+                    <img src="images/carrossel1/upup_carrossel_1_img4.jpg" alt="Curso Sebrae - UPUP">
                 </a>
                 <a href="#">
-                    <img src="images/carrossel4/upup_carrossel_4_img5.jpg" alt="Prestação de contas - UPUP">
+                    <img src="images/carrossel1/upup_carrossel_1_img5_2.png" alt="Contamos com vocês! - UPUP">
                 </a>
 
             </div>
@@ -483,31 +554,28 @@
 
         <!-- Texto revisado -->
         <article class="card">
+
             <h2 class="kicker">Querido amigo,</h2>
 
-            <p>
-                No <strong>Dia das Crianças</strong>, você esteve presente. Segue a prestação de contas da <strong>ONG
-                    UPUP</strong>, no
-                <strong>Cantinho Fiorello</strong>, em <strong>Natividade</strong>. Com sua ajuda, tornamos o dia de
-                <strong>128 crianças</strong> inesquecível.
+            <p>O <strong>Dia das Crianças</strong> chegou e a <strong>ONG UPUP</strong>, situada no
+                bairro
+                <strong>Cantinho Fiorello</strong> em <strong>Natividade</strong>, pode, com a sua colaboração, alcançar
+                mais de uma centena de crianças que celebraram conosco em um evento marcante e inesquecível. Nossas
+                crianças também participam das oficinas de <strong>artesanato</strong>,
+                <strong>inglês</strong> e tantas outras atividades transformadoras, venha nos visitar, seja voluntário,
+                doe seu tempo! Venha fazer a diferença na vida de muitas famílias <strong>em situação de
+                    vulnerabilidade</strong>.
             </p>
 
-            <p>
-                Não tivemos patrocínio para os brinquedos que planejamos. Ainda assim, com simplicidade, foco e
-                responsabilidade,
-                entregamos um dia de sonho. Sem excessos. Com afeto. Com o essencial que importa.
-            </p>
+            <p>Com a sua generosidade, <strong>construiremos juntos um espaço onde nossas crianças poderão se
+                    desenvolver e buscar um espaço neste mundo, com capacitação, cursos, atividades, eventos
+                    sociais.</strong>.</p>
 
-            <p>
-                Sua generosidade mostrou caminho e deu rumo. <strong>Que esse cuidado não seja só de um dia</strong>:
-                a presença contínua mantém portas abertas, cadernos cheios e sorrisos inteiros. Seguimos juntos, porque
-                cada
-                pequeno gesto sustenta futuros maiores.
-            </p>
+            <p>🙏 <strong>Muito obrigado, de coração, pelo seu apoio e amor!</strong></p>
 
-            <p>🙏 <strong>Obrigado, de coração, pelo apoio e pela confiança.</strong></p>
+            <h2>🎁 PRESTAÇÃO DE CONTAS - Lista de doações realizadas</h2>
+            <!-- <ul class="list"> -->
 
-            <h2>🎁 Lista de doações executadas</h2>
 
             <section class="tabela-doacoes-wrap">
                 <h2 class="tabela-titulo">Dia das Crianças UPUP — Itens e Doações</h2>
@@ -515,8 +583,10 @@
 
 
                 <div id="legenda-doacoes" class="tabela-legenda">
-                    <p><span class="badge pendente">Não doado</span> = &nbsp;•&nbsp; Não foi desta vez &nbsp;•&nbsp;
-                    <p><span class="badge quitado">Doado</span> = &nbsp;•&nbsp; doação confirmada
+                    <!-- <p><span class="badge ok">Assumido</span> = &nbsp;•&nbsp; doação prometida &nbsp;•&nbsp;</p> -->
+                    <p><span class="badge pendente">Pendente</span> = &nbsp;•&nbsp; Não houve doação, vamos lutar juntos
+                        para conseguir na próxima &nbsp;•&nbsp;
+                    <p><span class="badge quitado">Quitado</span> = &nbsp;•&nbsp; doação confirmada
                         &nbsp;•&nbsp;</p>
                 </div>
 
@@ -525,7 +595,7 @@
                     <table class="tabela-doacoes" id="tabela-doacoes" aria-describedby="legenda-doacoes">
                         <thead>
                             <tr>
-                                <th>Precisávamos de</th>
+                                <th>Precisamos de</th>
                                 <th>Valor</th>
                                 <th>Responsável</th>
                                 <th>Status</th>
@@ -538,8 +608,11 @@
                 </div>
 
                 <div id="legenda-doacoes" class="tabela-legenda">
-                    <p><span class="badge pendente">Não doado</span> = &nbsp;•&nbsp; Não foi desta vez &nbsp;•&nbsp;
-                    <p><span class="badge quitado">Doado</span> = &nbsp;•&nbsp; doação confirmada
+                    <!-- <p><span class="badge ok">Assumido</span> = &nbsp;•&nbsp; doação prometida &nbsp;•&nbsp;</p> -->
+                    <p><span class="badge pendente">Pendente</span> = &nbsp;•&nbsp; Não houve doação, vamos lutar juntos
+                        para conseguir na próxima &nbsp;•&nbsp;
+                    <p><span class="badge quitado">Quitado</span> = &nbsp;•&nbsp; doação confirmada
+                        &nbsp;•&nbsp;</p>
                 </div>
             </section>
 
@@ -564,9 +637,9 @@
                         const responsavel = limpar(celulas[2]);
                         const pagou = limpar(celulas[3]);
 
-                        let status = `<span class="badge pendente">Não doado</span>`;
+                        let status = `<span class="badge pendente">Pendente</span>`;
                         if (responsavel) {
-                            status = `<span class="badge ok">Não doado</span>`;
+                            status = `<span class="badge ok">Assumido</span>`;
                             if (pagou.toLowerCase() === "sim") {
                                 status = `<span class="badge quitado">Quitado</span>`;
                             }
@@ -607,7 +680,7 @@
                         const responsavel = limpar(celulas[2]);
                         const pagou = limpar(celulas[3]);
 
-                        let status = `<span class="badge pendente">Não doado</span>`;
+                        let status = `<span class="badge pendente">Pendente</span>`;
                         if (responsavel) {
                             status = `<span class="badge ok">Assumido</span>`;
                             if ((pagou || "").toLowerCase() === "sim") status = `<span class="badge quitado">Quitado</span>`;
@@ -682,7 +755,7 @@
 
         <!-- Título e chamada emocional -->
         <section class="card">
-            <h1 class="h1main">💛 Sua doação transformou vidas!</h1>
+            <h1 class="h1main">💛 Sua doação transforma vidas!</h1>
             <p>
                 A UPUP acredita que <strong>cada gesto de amor multiplica esperança</strong>.
                 Com sua ajuda, conseguimos oferecer refeições, cursos gratuitos e apoio a famílias inteiras.
