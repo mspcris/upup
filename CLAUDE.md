@@ -148,6 +148,33 @@ docker compose exec upup python3 admin/seed_pascoa2026.py
 
 ---
 
+## Pendências para executar na VM (após git pull)
+
+```bash
+git pull
+
+# 1. Copiar config (só na primeira vez — não está no git)
+cp admin/config.example.php admin/config.php
+
+# 2. Gerar hash da senha e editar o config.php
+#    (usar o comando abaixo DEPOIS que o container estiver no ar)
+docker compose exec upup php -r "echo password_hash('SUA_SENHA', PASSWORD_BCRYPT);"
+nano admin/config.php   # colar o hash em ADMIN_PASS_HASH
+
+# 3. Subir o Docker
+docker compose up -d --build
+
+# 4. Rodar o seed para popular o banco (46 itens da Páscoa 2026)
+docker compose exec upup python3 admin/seed_pascoa2026.py
+# ou direto no host se python3 disponível:
+python3 admin/seed_pascoa2026.py
+
+# 5. Ajustar permissões (se necessário)
+sudo chown -R www-data:www-data admin/data/ images/pascoa2026/
+```
+
+---
+
 ## Git
 
 ```bash
@@ -157,6 +184,13 @@ git push          # (credenciais já salvas em ~/.git-credentials)
 ```
 
 Repositório: `https://github.com/mspcris/upup.git` — branch: `main`
+
+---
+
+## PIX — atenção
+
+A única chave PIX válida é o **CNPJ: 48.211.513/0001-78**.
+O e-mail upupoficial@gmail.com é apenas contato, não é chave PIX.
 
 ---
 
