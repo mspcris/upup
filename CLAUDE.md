@@ -59,92 +59,91 @@ upup/
 
 ---
 
-## Deploy completo na VM (passo a passo)
+## Deploy na VM — via Docker (recomendado)
 
-### 1. Instalar dependências (se ainda não tiver)
+Docker isola tudo e não instala nada diretamente no host.
 
-```bash
-# PHP + extensões necessárias
-sudo apt update
-sudo apt install -y php8.2-fpm php8.2-sqlite3 php8.2-mbstring
-
-# Verificar versão
-php -v
-```
-
-### 2. Configurar nginx para servir o site com PHP
-
-Editar (ou criar) o arquivo de site do nginx, ex: `/etc/nginx/sites-available/upup`:
-
-```nginx
-server {
-    listen 80;
-    server_name upup.ong.br www.upup.ong.br;
-
-    root /CAMINHO/PARA/upup;   # ← ajustar para o caminho real do repositório
-    index index.html index.php;
-
-    # Arquivos estáticos (HTML, CSS, JS, imagens)
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    # PHP via PHP-FPM
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include fastcgi_params;
-    }
-
-    # Bloquear acesso direto ao banco SQLite e config
-    location ~* \.(db|sqlite|sqlite3)$ { deny all; }
-    location = /admin/config.php { deny all; }
-    location = /admin/auth.php   { deny all; }
-
-    # HTTPS — se usar Certbot, ele adiciona automaticamente
-}
-```
+### 1. Instalar Docker na VM (uma vez só)
 
 ```bash
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+# Fazer logout e login novamente para o grupo surtir efeito
+```
+
+### 2. Clonar e subir o site
+
+```bash
+git clone https://github.com/mspcris/upup.git
+cd upup
+
+# Subir o container (build + start)
+docker compose up -d --build
+```
+
+O entrypoint já:
+- Cria as pastas necessárias com permissões corretas
+- Roda o seed automaticamente se o banco não existir
+- Inicia PHP-FPM + nginx
+
+### 3. Verificar se está no ar
+
+```bash
+docker compose ps          # deve mostrar upup-site running
+docker compose logs -f     # acompanhar logs em tempo real
+curl -I http://localhost    # deve retornar 200
+```
+
+### 4. Atualizar o site após git push
+
+```bash
+cd upup
+git pull
+docker compose up -d --build   # reconstrói e reinicia
+```
+
+### 5. HTTPS com Certbot (no host, não no container)
+
+O Certbot roda no host e faz proxy reverso para o container na porta 80.
+
+```bash
+# Instalar nginx no host só como proxy reverso
+sudo apt install -y nginx certbot python3-certbot-nginx
+
+# Criar config mínima em /etc/nginx/sites-available/upup:
+# server { listen 80; server_name upup.ong.br; location / { proxy_pass http://localhost:80; } }
 sudo ln -sf /etc/nginx/sites-available/upup /etc/nginx/sites-enabled/
-sudo nginx -t          # testar configuração
-sudo systemctl reload nginx
-sudo systemctl restart php8.2-fpm
-```
+sudo nginx -t && sudo systemctl reload nginx
 
-### 3. Permissões
-
-```bash
-# Dentro do diretório do repositório:
-chmod 755 admin/data/
-chmod 755 images/pascoa2026/
-
-# O usuário do nginx (www-data) precisa escrever no admin/data/
-sudo chown -R www-data:www-data admin/data/
-sudo chown -R www-data:www-data images/pascoa2026/
-```
-
-### 4. Popular o banco de dados
-
-```bash
-# Sem venv — usa apenas sqlite3 da stdlib do Python3
-python3 admin/seed_pascoa2026.py
-```
-
-Saída esperada: `✅ 46 itens inseridos em .../admin/data/upup.db`
-
-Se o banco precisar ser acessado pelo nginx (www-data):
-```bash
-sudo chown www-data:www-data admin/data/upup.db
-chmod 664 admin/data/upup.db
-```
-
-### 5. HTTPS com Certbot (recomendado)
-
-```bash
-sudo apt install -y certbot python3-certbot-nginx
+# Gerar certificado SSL
 sudo certbot --nginx -d upup.ong.br -d www.upup.ong.br
+```
+
+> Alternativa mais simples: usar Caddy ou Traefik como proxy com SSL automático.
+
+### Volumes persistidos fora do container
+
+```
+admin/data/        ← banco SQLite (não some ao rebuildar)
+images/pascoa2026/ ← fotos do carrossel
+```
+
+### Comandos úteis
+
+```bash
+docker compose down            # parar
+docker compose restart upup    # reiniciar sem rebuild
+docker compose exec upup sh    # entrar no container
+docker compose exec upup python3 admin/seed_pascoa2026.py  # rodar seed manualmente
+```
+
+### Seed manual (se precisar repovoar o banco)
+
+```bash
+# Sem venv — usa apenas sqlite3 da stdlib
+python3 admin/seed_pascoa2026.py
+# ou dentro do container:
+docker compose exec upup python3 admin/seed_pascoa2026.py
 ```
 
 ---

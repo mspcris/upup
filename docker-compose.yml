@@ -1,0 +1,11 @@
+services:
+  upup:
+    build: .
+    container_name: upup-site
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      # Persiste banco SQLite e fotos do carrossel fora do container
+      - ./admin/data:/var/www/html/admin/data
+      - ./images/pascoa2026:/var/www/html/images/pascoa2026
