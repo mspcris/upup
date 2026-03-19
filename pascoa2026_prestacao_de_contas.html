@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPUP - Páscoa 2026 - Prestação de Contas - Doações</title>
+    <link rel="shortcut icon" href="images/upup_logomarca_somente_nome_up_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="js/menu.js" defer></script>
+    <script src="js/preloader.js" defer></script>
+    <script src="js/carrossel.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/footer.js" defer></script>
+    <script src="js/overlay.js" defer></script>
+
+    <!-- Social -->
+    <meta property="og:title" content="UPUP - Páscoa 2026 - Prestação de Contas">
+    <meta property="og:description" content="Transparência total: veja como cada doação foi utilizada na Páscoa Solidária 2026 da UPUP.">
+    <meta property="og:image" content="https://upup.ong.br/images/doe_UPUP.jpg">
+    <meta property="og:url" content="https://upup.ong.br/pascoa2026_prestacao_de_contas.html">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Prestação de contas da Páscoa Solidária 2026 da UPUP. Transparência total nas doações.">
+    <meta name="author" content="UPUP">
+    <link rel="canonical" href="https://upup.ong.br/pascoa2026_prestacao_de_contas.html">
+
+    <style>
+        :root {
+            --pascoa-purple:       #6B3FA0;
+            --pascoa-purple2:      #9B59B6;
+            --pascoa-purple-light: #EDE7F6;
+            --pascoa-yellow:       #F5C400;
+            --pascoa-card-bg:      #FAF5FF;
+            --ink:    #1A1A1A;
+            --muted:  #5b5b5b;
+            --radius: 20px;
+            --shadow: 0 8px 28px rgba(107,63,160,.12);
+        }
+
+        * { box-sizing: border-box; }
+        html, body { margin: 0; background: #f8f4ff; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial; }
+
+        main { padding: 0; }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            max-width: 1100px;
+            margin: 8px auto;
+            height: 200px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: linear-gradient(135deg, #4A148C 0%, #7B1FA2 50%, #AB47BC 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 280px; height: 280px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            top: -80px; right: -60px;
+        }
+
+        .hero h1 {
+            font-family: Poppins, system-ui;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0;
+            font-size: clamp(1.4rem, 4vw, 2.4rem);
+            text-shadow: 0 3px 16px rgba(0,0,0,.3);
+            position: relative;
+        }
+
+        /* ===== CARD ===== */
+        .card {
+            background: var(--pascoa-card-bg);
+            border: 1px solid rgba(107,63,160,.1);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 8px clamp(16px, 4vw, 36px);
+            color: var(--ink);
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--ink);
+            font-size: 1rem;
+            line-height: 1.6;
+            text-indent: 0;
+            text-align: left;
+            padding: 4px 0;
+        }
+
+        /* ===== KICKER ===== */
+        .kicker {
+            display: inline-flex;
+            gap: .6rem;
+            align-items: center;
+            background: linear-gradient(90deg, var(--pascoa-purple), var(--pascoa-purple2));
+            color: #fff;
+            padding: .4rem .9rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-family: Poppins, system-ui;
+            letter-spacing: .2px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 14px rgba(107,63,160,.35);
+        }
+
+        h2 {
+            font-family: Poppins, system-ui;
+            font-weight: 800;
+            margin: 10px 0 14px;
+            color: var(--pascoa-purple);
+            letter-spacing: .2px;
+        }
+
+        p { line-height: 1.7; font-size: 1.02rem; color: #2b2b2b; margin: .5rem 0; }
+        .muted { color: var(--muted); }
+
+        /* ===== BOTÕES ===== */
+        .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+
+        .btn {
+            appearance: none; border: 0; cursor: pointer;
+            padding: 12px 18px; border-radius: 12px;
+            font-weight: 700; letter-spacing: .2px;
+            transition: transform .06s ease, filter .2s ease;
+            box-shadow: 0 6px 18px rgba(0,0,0,.12);
+            text-decoration: none; display: inline-flex; align-items: center; gap: .4rem;
+        }
+        .btn:active { transform: translateY(1px); }
+
+        .btn-primary {
+            background: linear-gradient(180deg, var(--pascoa-purple2), var(--pascoa-purple));
+            color: #fff;
+        }
+        .btn-outline {
+            background: #fff;
+            color: var(--pascoa-purple);
+            border: 2px solid var(--pascoa-purple);
+        }
+        .btn-pix {
+            background: var(--pascoa-purple-light);
+            color: var(--pascoa-purple);
+            border: 1px solid rgba(107,63,160,.3);
+            margin: 6px 6px 6px 0;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* ===== INFO ROWS ===== */
+        .info { display: grid; gap: 8px; grid-template-columns: 1fr; margin-top: 12px; }
+        .info .row {
+            background: #fff;
+            border: 1px dashed rgba(107,63,160,.2);
+            padding: 12px 14px;
+            border-radius: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 600;
+        }
+        .tag { font-family: Poppins; font-weight: 800; color: var(--pascoa-purple); }
+        .pix { font-variant-numeric: tabular-nums; letter-spacing: .4px; }
+
+        /* ===== PIX / QR ===== */
+        .qrcode { max-width: 180px; border-radius: 10px; border: 2px solid rgba(107,63,160,.2); margin: 8px 0; }
+
+        /* ===== BOTÕES REDES SOCIAIS ===== */
+        .btn--ig { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; }
+        .btn--fb { background: #1877f2; color: #fff; }
+        .btn--wa { background: #25d366; color: #fff; }
+        .btn--mail { background: #ea4335; color: #fff; }
+        .btn:hover { filter: brightness(1.07); }
+        .pill { background: rgba(255,255,255,.25); border-radius: 999px; padding: .1rem .5rem; font-size:.82rem; }
+
+        /* ===== CARROSSEL (reusa classes do style.css) ===== */
+        /* Carrossel 3 já está no style.css global */
+
+        /* ===== CARREGANDO / ERRO ===== */
+        #tabela-loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--pascoa-purple);
+            font-weight: 600;
+        }
+        #tabela-erro {
+            display: none;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            color: #b91c1c;
+            font-weight: 600;
+        }
+
+        /* ===== OVERLAY PRELOADER ===== */
+        #overlay {
+            position: fixed; inset: 0;
+            background: rgba(255,255,255,.2);
+            backdrop-filter: blur(12px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 9999; opacity: 1; visibility: visible;
+            transition: opacity 1s ease, visibility 0s linear;
+        }
+        #overlay.fade-out {
+            opacity: 0; visibility: hidden;
+            transition: opacity 1s ease, visibility 0s linear 1s;
+        }
+
+        footer.copyright {
+            opacity: 1 !important;
+            position: relative;
+            background-color: #1a0a2e !important;
+            color: #F2B705 !important;
+        }
+
+        @media print {
+            .hero { box-shadow: none; }
+            .card { box-shadow: none; }
+            .btn { display: none; }
+            body { background: #fff; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay"></div>
+
+    <!-- Menu -->
+    <button id="menuToggle" class="upup-menu-btn" aria-label="Abrir menu" aria-controls="app-drawer" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path>
+        </svg>
+    </button>
+    <div id="drawerOverlay" class="upup-overlay" hidden></div>
+
+    <aside id="app-drawer" class="upup-drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+        <div class="upup-splash">AMAR SERVIR</div>
+        <header class="upup-drawer-header">
+            <h2 id="drawerTitle">Menu UPUP</h2>
+            <button id="drawerClose" class="upup-icon-btn" aria-label="Fechar menu">✖</button>
+        </header>
+        <nav class="upup-nav" aria-label="Menu principal">
+            <ul class="upup-list">
+                <li><a class="upup-link" href="index.html">🏠 Início</a></li>
+                <li><a class="upup-link" href="doeparaupup.html">💖 Doe por amor</a></li>
+                <li><a class="upup-link" href="quemsomos_leiamais.html">ℹ️ Quem Somos</a></li>
+
+                <li class="upup-group">
+                    <button class="upup-accordion" aria-controls="grp-cursos" aria-expanded="false">🎓 Cursos</button>
+                    <ul id="grp-cursos" class="upup-sublist">
+                        <li><a class="upup-sublink" href="cursos_artesanato.html">Curso de Artesanato</a></li>
+                        <li><a class="upup-sublink" href="cursos_ingles.html">Curso de Inglês</a></li>
+                        <li><a class="upup-sublink" href="cursos_preparatoriotjrj.html">Curso Preparatório TJ-RJ</a></li>
+                    </ul>
+                </li>
+
+                <li class="upup-group">
+                    <button class="upup-accordion" aria-controls="grp-atividades" aria-expanded="false">📌 Atividades</button>
+                    <ul id="grp-atividades" class="upup-sublist">
+                        <li><a class="upup-sublink" href="diadascriancas2025_prestacao_de_contas.html">Dia das Crianças 2025</a></li>
+                        <li><a class="upup-sublink" href="natal_feliz.html">Natal Solidário 2025</a></li>
+                        <li><a class="upup-sublink" href="pascoa2026.html">🐣 Páscoa 2026</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="upup-splash">AMAR SERVIR</div>
+        <div class="upup-brand">UPUP</div>
+    </aside>
+
+    <div id="header"></div>
+
+    <main>
+        <div class="page">
+            <!-- HERO -->
+            <section class="hero" role="img" aria-label="Páscoa Solidária UPUP 2026 - Prestação de Contas">
+                <div>
+                    <h1>🐣 Páscoa Solidária 2026<br><span style="font-size:.65em;opacity:.9;">Prestação de Contas</span></h1>
+                </div>
+            </section>
+        </div>
+
+        <!-- MENSAGEM DE AGRADECIMENTO -->
+        <div>
+            <section class="card">
+                <h2 class="kicker">📢 A UPUP agradece!</h2>
+                <p>
+                    Cada doação é uma semente de amor 🌸 que floresce em sorrisos e se transforma em uma
+                    Páscoa verdadeiramente inesquecível! Você pode fazer parte dessa história.
+                    Deslize a tela com carinho e descubra os registros de quem já plantou essa semente conosco.
+                </p>
+                <p>
+                    👇 Role para baixo e veja a lista de itens, quem doou e o status de cada doação.
+                </p>
+                <p>
+                    Sua generosidade transforma o mundo! Cada gesto, por menor que pareça, é gigante no
+                    coração de uma criança. Vamos juntos fazer esta Páscoa brilhar! 🌟💜
+                </p>
+            </section>
+        </div>
+
+        <!-- CARROSSEL DE FOTOS DO EVENTO -->
+        <div class="carousel3" aria-label="Fotos da Páscoa Solidária 2026">
+            <input type="radio" name="radio-btn-3" id="radio3-1" checked>
+            <input type="radio" name="radio-btn-3" id="radio3-2">
+            <input type="radio" name="radio-btn-3" id="radio3-3">
+            <input type="radio" name="radio-btn-3" id="radio3-4">
+            <input type="radio" name="radio-btn-3" id="radio3-5">
+
+            <div class="slides3">
+                <a href="#"><img src="images/pascoa2026/slot_1.jpg" alt="Páscoa UPUP 2026 - Foto 1"
+                    onerror="this.parentElement.parentElement.style.display='none'"></a>
+                <a href="#"><img src="images/pascoa2026/slot_2.jpg" alt="Páscoa UPUP 2026 - Foto 2"
+                    onerror="this.src='images/doe_UPUP.jpg'"></a>
+                <a href="#"><img src="images/pascoa2026/slot_3.jpg" alt="Páscoa UPUP 2026 - Foto 3"
+                    onerror="this.src='images/doe_UPUP.jpg'"></a>
+                <a href="#"><img src="images/pascoa2026/slot_4.jpg" alt="Páscoa UPUP 2026 - Foto 4"
+                    onerror="this.src='images/doe_UPUP.jpg'"></a>
+                <a href="#"><img src="images/pascoa2026/slot_5.jpg" alt="Páscoa UPUP 2026 - Foto 5"
+                    onerror="this.src='images/doe_UPUP.jpg'"></a>
+            </div>
+
+            <div class="navigation3">
+                <label for="radio3-1" class="bar"></label>
+                <label for="radio3-2" class="bar"></label>
+                <label for="radio3-3" class="bar"></label>
+                <label for="radio3-4" class="bar"></label>
+                <label for="radio3-5" class="bar"></label>
+            </div>
+        </div>
+
+        <!-- TABELA DE DOAÇÕES -->
+        <article class="card">
+            <h2 class="kicker">Querido amigo,</h2>
+            <p>
+                A <strong>Páscoa Solidária 2026</strong> chegou e a <strong>ONG UPUP</strong>, situada no bairro
+                <strong>Cantinho Fiorello</strong> em <strong>Natividade</strong>, pode, com a sua colaboração,
+                alcançar dezenas de crianças e famílias em situação de vulnerabilidade.
+                Nossas crianças também participam das oficinas de <strong>artesanato</strong>, <strong>inglês</strong>
+                e tantas outras atividades transformadoras. Venha nos visitar, seja voluntário, doe seu tempo!
+            </p>
+            <p>
+                Com a sua generosidade, <strong>construiremos juntos um espaço onde nossas crianças podem
+                se desenvolver e buscar um futuro melhor</strong>.
+            </p>
+            <p>🙏 <strong>Muito obrigado, de coração, pelo seu apoio e amor!</strong></p>
+
+            <h2>🐣 PRESTAÇÃO DE CONTAS — Lista de Doações</h2>
+
+            <section class="tabela-doacoes-wrap">
+                <h2 class="tabela-titulo">Páscoa Solidária UPUP 2026 — Itens e Doações</h2>
+
+                <div id="legenda-doacoes-top" class="tabela-legenda">
+                    <p>
+                        <span class="badge pendente">Pendente</span> = Ainda não houve doação para este item.
+                        &nbsp;|&nbsp;
+                        <span class="badge ok">Assumido</span> = Doação prometida, aguardando confirmação.
+                        &nbsp;|&nbsp;
+                        <span class="badge quitado">Quitado</span> = Doação confirmada e recebida.
+                    </p>
+                </div>
+
+                <!-- Estado de carregamento -->
+                <div id="tabela-loading">
+                    <i class="fa-solid fa-spinner fa-spin"></i> Carregando lista de doações...
+                </div>
+
+                <!-- Mensagem de erro -->
+                <div id="tabela-erro" class="tabela-legenda">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Não foi possível carregar a lista de doações. Tente novamente mais tarde.
+                </div>
+
+                <div class="tabela-scroll" style="display:none" id="tabela-container">
+                    <table class="tabela-doacoes" id="tabela-doacoes" aria-describedby="legenda-doacoes-top">
+                        <thead>
+                            <tr>
+                                <th>Precisamos de</th>
+                                <th>Valor / Qtd</th>
+                                <th>Responsável</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-corpo">
+                            <!-- Preenchido via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="legenda-doacoes-bottom" class="tabela-legenda" style="display:none">
+                    <p>
+                        <span class="badge pendente">Pendente</span> = Ainda não houve doação.
+                        &nbsp;|&nbsp;
+                        <span class="badge ok">Assumido</span> = Prometido, aguardando.
+                        &nbsp;|&nbsp;
+                        <span class="badge quitado">Quitado</span> = Confirmado.
+                    </p>
+                </div>
+            </section>
+
+            <script>
+                async function carregarTabelaPascoa() {
+                    const loading   = document.getElementById('tabela-loading');
+                    const erro      = document.getElementById('tabela-erro');
+                    const container = document.getElementById('tabela-container');
+                    const legBottom = document.getElementById('legenda-doacoes-bottom');
+                    const corpo     = document.getElementById('tabela-corpo');
+
+                    try {
+                        const res = await fetch('admin/api/donations.php?event=pascoa2026');
+                        if (!res.ok) throw new Error('Erro HTTP ' + res.status);
+                        const dados = await res.json();
+
+                        corpo.innerHTML = '';
+
+                        if (!dados.length) {
+                            corpo.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:2rem;color:#888;">Nenhuma doação registrada ainda. Seja o primeiro a contribuir! 💜</td></tr>';
+                        } else {
+                            dados.forEach(d => {
+                                let statusHtml = '<span class="badge pendente">Pendente</span>';
+                                if (d.responsavel && d.responsavel.trim()) {
+                                    statusHtml = '<span class="badge ok">Assumido</span>';
+                                    if ((d.pagou || '').toLowerCase() === 'sim') {
+                                        statusHtml = '<span class="badge quitado">Quitado</span>';
+                                    }
+                                }
+                                corpo.insertAdjacentHTML('beforeend', `
+                                    <tr>
+                                        <td>${escHtml(d.item)}</td>
+                                        <td>${escHtml(d.valor || '—')}</td>
+                                        <td>${escHtml(d.responsavel || '—')}</td>
+                                        <td>${statusHtml}</td>
+                                    </tr>`);
+                            });
+                        }
+
+                        aplicarLabelsResponsivos();
+                        loading.style.display  = 'none';
+                        container.style.display = '';
+                        legBottom.style.display = '';
+
+                    } catch (e) {
+                        loading.style.display = 'none';
+                        erro.style.display    = '';
+                        console.error('Erro ao carregar tabela:', e);
+                    }
+                }
+
+                function escHtml(str) {
+                    return String(str)
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/"/g, '&quot;');
+                }
+
+                function aplicarLabelsResponsivos() {
+                    const tabela = document.getElementById('tabela-doacoes');
+                    if (!tabela) return;
+                    const headers = Array.from(tabela.querySelectorAll('thead th'))
+                        .map(th => th.textContent.trim());
+                    tabela.querySelectorAll('tbody tr').forEach(tr => {
+                        Array.from(tr.children).forEach((td, i) => {
+                            td.setAttribute('data-label', headers[i] || '');
+                        });
+                    });
+                }
+
+                carregarTabelaPascoa();
+            </script>
+
+            <!-- Contato e PIX -->
+            <div class="info" style="margin-top:20px;">
+                <div class="row"><span class="tag">📞 Contato:</span> <span>(22) 99862-6059</span></div>
+                <div class="row"><span class="tag">💳 Pix (CNPJ):</span> <span class="pix">48.211.513/0001-78</span></div>
+            </div>
+
+            <p class="muted" style="margin-top:16px">Com carinho,<br><strong>Equipe UPUP 💜</strong></p>
+
+            <div class="cta">
+                <a class="btn btn-primary"
+                   href="https://wa.me/5522998626059?text=Quero%20doar%20para%20a%20P%C3%A1scoa%20Solid%C3%A1ria%202026%20da%20UPUP"
+                   target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> Quero Doar
+                </a>
+                <button class="btn btn-outline" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Imprimir / Salvar em PDF
+                </button>
+            </div>
+        </article>
+
+        <!-- DOAÇÃO VIA PIX -->
+        <section class="card">
+            <h2 class="kicker">💜 Sua doação transforma vidas!</h2>
+            <p>
+                A UPUP acredita que <strong>cada gesto de amor multiplica esperança</strong>.
+                Com sua ajuda, conseguimos oferecer ovos de Páscoa, cestas básicas, cursos gratuitos
+                e apoio a famílias inteiras. Junte-se a nós nessa missão!
+            </p>
+        </section>
+
+        <section class="card">
+            <h2 class="kicker">Contribua pelo Pix</h2>
+
+            <p>Chave Pix (CNPJ): <strong id="pixKey">48.211.513/0001-78</strong></p>
+            <button class="btn-pix" onclick="copyText('pixKey')">📋 Copiar Chave Pix</button>
+
+            <p style="margin-top:1rem">Pix Copia e Cola:</p>
+            <p id="pixCopyPaste" style="word-break:break-all;background:#f4eeff;padding:10px;border-radius:8px;font-size:.88rem;border:1px solid rgba(107,63,160,.15);">
+                00020126430014br.gov.bcb.pix0114482115130001780203Pix5204000053039865802BR5923UNIDOS POR UM PROPOSITO6014RIO DE JANEIRO62290525ORStQ4lype1d7FthMjQ4wBEU76304184F
+            </p>
+            <button class="btn-pix" onclick="copyText('pixCopyPaste')">📋 Copiar Pix Copia e Cola</button>
+
+            <h3 style="color:var(--pascoa-purple);margin-top:1.25rem;">Ou aponte sua câmera:</h3>
+            <img src="images/upup_qr_pix_200px.png" alt="QR Code para doação via Pix" class="qrcode">
+        </section>
+
+        <!-- IMPACTO -->
+        <section class="card">
+            <h2 class="kicker">🌱 O impacto da sua doação</h2>
+            <ul>
+                <li>🐣 Ovos de Páscoa e doces para crianças em vulnerabilidade.</li>
+                <li>🍲 Cestas básicas para famílias do Cantinho Fiorello.</li>
+                <li>📚 Cursos de inglês, artesanato e cidadania para crianças.</li>
+                <li>🎁 Apoio em datas especiais como Natal, Páscoa e Dia das Crianças.</li>
+            </ul>
+            <p><em>Com pouco, fazemos muito. Com você, podemos fazer ainda mais.</em></p>
+        </section>
+
+        <script>
+            function copyText(elementId) {
+                const text = document.getElementById(elementId).innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('✅ Copiado com sucesso! Agora abra seu app do banco e cole.');
+                });
+            }
+        </script>
+    </main>
+
+    <!-- REDES SOCIAIS -->
+    <section class="card" style="max-width:1037px;margin:8px auto;">
+        <h2 class="kicker">Conecte-se com a UPUP</h2>
+        <p>Acompanhe, participe e compartilhe nossas iniciativas nas redes oficiais:</p>
+        <div class="cta">
+            <a class="btn btn--ig" href="https://www.instagram.com/upupoficial/" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i> <strong>Instagram</strong>
+                <span class="pill">@upupoficial</span>
+            </a>
+            <a class="btn btn--fb" href="https://www.facebook.com/upupoficial" target="_blank" rel="noopener">
+                <i class="fa-brands fa-facebook"></i> <strong>Facebook</strong>
+                <span class="pill">/upupoficial</span>
+            </a>
+            <a class="btn btn--wa"
+               href="https://wa.me/5522998626059?text=Ol%C3%A1%20UPUP!%20Vim%20pelo%20site%20e%20quero%20ajudar."
+               target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp</strong>
+                <span class="pill">+55 (22) 99862-6059</span>
+            </a>
+            <a class="btn btn--mail"
+               href="mailto:upupoficial@gmail.com?subject=Contato%20via%20site%20UPUP&body=Ol%C3%A1%2C%20UPUP!%20Vim%20pelo%20site..."
+               rel="noopener" aria-label="E-mail da UPUP">
+                <i class="fa-solid fa-envelope"></i> <strong>E-mail</strong>
+                <span class="pill">upupoficial@gmail.com</span>
+            </a>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+</body>
+
+</html>

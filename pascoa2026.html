@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPUP - Páscoa Solidária 2026 | Doe e transforme histórias</title>
+    <link rel="shortcut icon" href="images/upup_logomarca_somente_nome_up_favicon.png" type="image/x-icon" />
+
+    <!-- Fonts / Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- JS -->
+    <script src="js/menu.js" defer></script>
+    <script src="js/preloader.js" defer></script>
+    <script src="js/carrossel.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/footer.js" defer></script>
+    <script src="js/overlay.js" defer></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=7" />
+
+    <!-- Social -->
+    <meta property="og:title" content="UPUP — Páscoa Solidária 2026" />
+    <meta property="og:description" content="Nesta Páscoa, seu gesto semeia vida e esperança. Doe e transforme histórias em Natividade-RJ." />
+    <meta property="og:image" content="https://upup.ong.br/images/doe_UPUP.jpg" />
+    <meta property="og:url" content="https://upup.ong.br/pascoa2026.html" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UPUP — Páscoa Solidária 2026" />
+    <meta name="twitter:description" content="Doe agora. Cada gesto vira ovo de chocolate, abraço e esperança." />
+    <meta name="twitter:image" content="https://upup.ong.br/images/doe_UPUP.jpg" />
+
+    <meta name="description" content="Páscoa Solidária UPUP 2026. Doe e semeia esperança em Natividade-RJ." />
+    <meta name="author" content="UPUP" />
+    <link rel="canonical" href="https://upup.ong.br/pascoa2026.html" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Páscoa Solidária UPUP 2026",
+      "startDate": "2026-04-05T09:00",
+      "endDate": "2026-04-05T18:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "UPUP - Natividade",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Natividade",
+          "addressRegion": "RJ",
+          "addressCountry": "BR"
+        }
+      },
+      "image": ["https://upup.ong.br/images/doe_UPUP.jpg"],
+      "description": "Campanha de Páscoa para crianças e famílias do Cantinho Fiorello e bairros vizinhos.",
+      "organizer": {
+        "@type": "Organization",
+        "name": "UPUP — Unidos Por Um Propósito",
+        "url": "https://upup.ong.br"
+      }
+    }
+    </script>
+
+    <style>
+        /* =============================================
+           PÁSCOA 2026 — Estilos da página de evento
+           ============================================= */
+        :root {
+            --pascoa-purple:  #6B3FA0;
+            --pascoa-purple2: #9B59B6;
+            --pascoa-purple-light: #EDE7F6;
+            --pascoa-yellow:  #F5C400;
+            --pascoa-green:   #2E7D32;
+            --pascoa-pink:    #E91E8C;
+            --pascoa-card-bg: #FAF5FF;
+        }
+
+        /* Hero com gradiente roxo/lilás */
+        .hero-pascoa {
+            position: relative;
+            min-height: 52vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg,
+                #4A148C 0%,
+                #6A1B9A 30%,
+                #8E24AA 60%,
+                #AB47BC 100%);
+            box-shadow: 0 12px 40px rgba(106, 27, 154, 0.35);
+        }
+
+        /* Bolinhas decorativas */
+        .hero-pascoa::before {
+            content: "";
+            position: absolute;
+            width: 320px; height: 320px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            top: -80px; right: -80px;
+            pointer-events: none;
+        }
+        .hero-pascoa::after {
+            content: "";
+            position: absolute;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            bottom: -60px; left: -40px;
+            pointer-events: none;
+        }
+
+        .hero-pascoa .hero-copy {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            max-width: 820px;
+        }
+
+        .hero-pascoa h1 {
+            font-family: Poppins, 'Baloo 2', system-ui;
+            font-weight: 800;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            line-height: 1.15;
+            margin: 0 0 .8rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.35);
+        }
+
+        .hero-pascoa p {
+            font-size: clamp(.95rem, 2.2vw, 1.15rem);
+            opacity: .92;
+            margin: 0 0 1.2rem;
+            text-indent: 0;
+            text-align: center;
+            padding: 0;
+        }
+
+        /* Botões hero */
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            justify-content: center;
+            margin-top: .75rem;
+        }
+
+        .btn-hero-primary {
+            background: var(--pascoa-yellow);
+            color: #2a1a00;
+            border-radius: 12px;
+            padding: .85rem 1.6rem;
+            text-decoration: none;
+            font-weight: 800;
+            font-family: Poppins, system-ui;
+            letter-spacing: .3px;
+            box-shadow: 0 6px 20px rgba(245,196,0,.4);
+            transition: filter .2s, transform .1s;
+        }
+        .btn-hero-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+
+        .btn-hero-outline {
+            border: 2px solid rgba(255,255,255,.75);
+            color: #fff;
+            border-radius: 12px;
+            padding: .85rem 1.6rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: Poppins, system-ui;
+            backdrop-filter: blur(6px);
+            transition: background .2s, transform .1s;
+        }
+        .btn-hero-outline:hover { background: rgba(255,255,255,.15); transform: translateY(-1px); }
+
+        /* Kicker – etiqueta roxa */
+        .kicker-pascoa {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: linear-gradient(90deg, var(--pascoa-purple), var(--pascoa-purple2));
+            color: #fff;
+            padding: .35rem .85rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-family: Poppins, system-ui;
+            font-size: .95rem;
+            margin-bottom: .75rem;
+            box-shadow: 0 4px 14px rgba(107,63,160,.35);
+        }
+
+        /* Card com fundo lilás suave */
+        .card-pascoa {
+            background: var(--pascoa-card-bg);
+            border: 1px solid rgba(107,63,160,.1);
+            border-radius: 20px;
+            padding: 1.5rem clamp(1rem, 4vw, 2.25rem);
+            box-shadow: 0 6px 24px rgba(107,63,160,.08);
+            margin: 8px auto;
+            max-width: 1037px;
+        }
+
+        .card-pascoa h2 {
+            font-family: Poppins, system-ui;
+            font-weight: 800;
+            color: var(--pascoa-purple);
+            margin: .25rem 0 .75rem;
+        }
+
+        .card-pascoa p {
+            line-height: 1.7;
+            color: #2b2b2b;
+            font-size: 1.02rem;
+            margin: .5rem 0;
+            text-indent: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .card-pascoa ul {
+            padding-left: 1.25rem;
+        }
+
+        .card-pascoa li {
+            margin: .45rem 0;
+            line-height: 1.6;
+            color: #2b2b2b;
+        }
+
+        /* Grid 2 colunas */
+        .grid-2 {
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 860px) {
+            .grid-2 { grid-template-columns: 1.2fr .8fr; }
+        }
+
+        /* Box PIX */
+        .pix-box {
+            background: #fff;
+            border: 1px solid rgba(107,63,160,.2);
+            border-radius: 16px;
+            padding: 1.25rem;
+        }
+        .pix-box h3 {
+            color: var(--pascoa-purple);
+            font-family: Poppins, system-ui;
+            margin: 0 0 .75rem;
+        }
+
+        /* Botões de ação */
+        .btn-pascoa {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--pascoa-purple);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: .8rem 1.4rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: Poppins, system-ui;
+            cursor: pointer;
+            transition: filter .2s, transform .1s;
+            box-shadow: 0 6px 18px rgba(107,63,160,.35);
+        }
+        .btn-pascoa:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+        .btn-pascoa-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: transparent;
+            color: var(--pascoa-purple);
+            border: 2px solid var(--pascoa-purple);
+            border-radius: 12px;
+            padding: .75rem 1.4rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: Poppins, system-ui;
+            cursor: pointer;
+            transition: background .2s, color .2s;
+        }
+        .btn-pascoa-outline:hover {
+            background: var(--pascoa-purple);
+            color: #fff;
+        }
+
+        /* Badge de destaque */
+        .badge-pascoa {
+            display: inline-block;
+            background: var(--pascoa-purple-light);
+            color: var(--pascoa-purple);
+            border: 1px solid rgba(107,63,160,.25);
+            padding: .3rem .75rem;
+            border-radius: 8px;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        /* Check list */
+        .list-check { padding-left: 1rem; }
+        .list-check li { margin: .5rem 0; line-height: 1.6; }
+        .list-check li::marker { color: var(--pascoa-green); font-weight: 700; }
+
+        /* Seção conecte-se */
+        .btn { appearance: none; display: inline-flex; align-items: center; gap: .5rem;
+               padding: .75rem 1.1rem; border-radius: 10px; font-weight: 700;
+               text-decoration: none; transition: filter .2s; border: none; cursor: pointer; }
+        .btn--ig { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; }
+        .btn--fb { background: #1877f2; color: #fff; }
+        .btn--wa { background: #25d366; color: #fff; }
+        .btn--mail { background: #ea4335; color: #fff; }
+        .btn:hover { filter: brightness(1.08); }
+        .pill { background: rgba(255,255,255,.25); border-radius: 999px; padding: .1rem .5rem; font-size:.82rem; }
+
+        /* Footer da página */
+        footer.copyright {
+            opacity: 1 !important;
+            position: relative;
+            background-color: #1a0a2e !important;
+            color: #F2B705 !important;
+        }
+
+        @media print {
+            .hero-pascoa { box-shadow: none; }
+            .btn-pascoa, .btn-hero-primary { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Menu hamburguer -->
+    <button id="menuToggle" class="upup-menu-btn" aria-label="Abrir menu" aria-controls="app-drawer" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path>
+        </svg>
+    </button>
+    <div id="drawerOverlay" class="upup-overlay" hidden></div>
+
+    <aside id="app-drawer" class="upup-drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+        <div class="upup-splash">AMAR SERVIR</div>
+        <header class="upup-drawer-header">
+            <h2 id="drawerTitle">Menu UPUP</h2>
+            <button id="drawerClose" class="upup-icon-btn" aria-label="Fechar menu">✖</button>
+        </header>
+        <nav class="upup-nav" aria-label="Menu principal">
+            <ul class="upup-list">
+                <li><a class="upup-link" href="index.html">🏠 Início</a></li>
+                <li><a class="upup-link" href="doeparaupup.html">💖 Doe por amor</a></li>
+                <li><a class="upup-link" href="quemsomos_leiamais.html">ℹ️ Quem Somos</a></li>
+
+                <li class="upup-group">
+                    <button class="upup-accordion" aria-controls="grp-cursos" aria-expanded="false">🎓 Cursos</button>
+                    <ul id="grp-cursos" class="upup-sublist">
+                        <li><a class="upup-sublink" href="cursos_artesanato.html">Curso de Artesanato</a></li>
+                        <li><a class="upup-sublink" href="cursos_ingles.html">Curso de Inglês</a></li>
+                        <li><a class="upup-sublink" href="cursos_preparatoriotjrj.html">Curso Preparatório TJ-RJ</a></li>
+                    </ul>
+                </li>
+
+                <li class="upup-group">
+                    <button class="upup-accordion" aria-controls="grp-atividades" aria-expanded="false">📌 Atividades</button>
+                    <ul id="grp-atividades" class="upup-sublist">
+                        <li><a class="upup-sublink" href="diadascriancas2025_prestacao_de_contas.html">Dia das Crianças 2025</a></li>
+                        <li><a class="upup-sublink" href="natal_feliz.html">Natal Solidário 2025</a></li>
+                        <li><a class="upup-sublink" href="pascoa2026.html" aria-current="page">🐣 Páscoa 2026</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="upup-splash">AMAR SERVIR</div>
+        <div class="upup-brand">UPUP</div>
+    </aside>
+
+    <div id="header"></div>
+
+    <main>
+        <!-- ===== HERO ===== -->
+        <section class="card-pascoa hero-pascoa" aria-label="Páscoa Solidária UPUP 2026">
+            <div class="hero-copy">
+                <h1>🐣 Páscoa Solidária 2026</h1>
+                <p>
+                    A Páscoa é tempo de renovação, de semear esperança e partilhar o que temos.
+                    Quando você doa, a alegria da Páscoa chega a quem mais precisa.
+                    Seu gesto transforma ovos em sorrisos e amor em estrutura.
+                </p>
+                <div class="cta-row">
+                    <a class="btn-hero-primary" href="#doar" aria-label="Ir para seção de doação">🤍 QUERO DOAR AGORA</a>
+                    <a class="btn-hero-outline" href="pascoa2026_prestacao_de_contas.html" aria-label="Ver prestação de contas">📋 PRESTAÇÃO DE CONTAS</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== POR QUE IMPORTA ===== -->
+        <section class="card-pascoa">
+            <span class="kicker-pascoa">🌸 Por que esta Páscoa importa</span>
+            <div class="grid-2">
+                <div>
+                    <p>
+                        Em Natividade, no <strong>Cantinho Fiorello</strong>, muitas crianças e famílias vivem em
+                        situação de vulnerabilidade. Para elas, a Páscoa pode passar em silêncio — sem chocolate,
+                        sem festa, sem lembrança de que alguém se importa.
+                    </p>
+                    <p>
+                        A <strong>UPUP</strong> entra com cuidado, dignidade e presença. Seu apoio se transforma
+                        em ovos de chocolate, cestas, kits de afeto e o convite de que <strong>ninguém precisa
+                        passar essa data sozinho</strong>.
+                    </p>
+                    <ul class="list-check">
+                        <li>Ovos de Páscoa e doces para crianças de 0 a 12 anos.</li>
+                        <li>Cestas básicas para famílias em situação de vulnerabilidade.</li>
+                        <li>Kits de higiene e afeto para as famílias atendidas.</li>
+                        <li>Atividades lúdicas e recreativas na data do evento.</li>
+                    </ul>
+                    <span class="badge-pascoa">Transparência e prestação de contas 100% públicas.</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;">
+                    <img src="images/doe_UPUP.jpg"
+                         alt="Crianças e famílias atendidas pela UPUP em Natividade-RJ"
+                         style="border-radius:16px;max-width:100%;box-shadow:0 8px 28px rgba(107,63,160,.2);" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COMO DOAR ===== -->
+        <section id="doar" class="card-pascoa">
+            <span class="kicker-pascoa">💜 Como doar</span>
+            <div class="grid-2">
+                <div class="pix-box">
+                    <h3>PIX</h3>
+                    <p style="margin:0 0 .75rem;">Use o QR Code, Copia e Cola ou nossa chave:</p>
+                    <ul style="margin:0 0 1rem;">
+                        <li><strong>Chave PIX (e-mail):</strong> upupoficial@gmail.com</li>
+                        <li><strong>Chave PIX (CNPJ):</strong> 48.211.513/0001-78</li>
+                        <li><strong>Favorecido:</strong> UPUP — Unidos Por Um Propósito</li>
+                        <li><strong>Banco:</strong> Banco do Brasil</li>
+                    </ul>
+                    <img src="images/upup_qr_pix_200px.png" alt="QR Code PIX UPUP"
+                         style="max-width:200px;width:100%;border-radius:12px;border:1px solid rgba(107,63,160,.2);margin-bottom:1rem;" />
+                    <br>
+                    <a class="btn-pascoa" target="_blank" rel="noopener"
+                       href="https://wa.me/5522998626059?text=Ol%C3%A1%20UPUP!%20Fiz%20uma%20doa%C3%A7%C3%A3o%20para%20a%20P%C3%A1scoa%20Solid%C3%A1ria%202026.">
+                        <i class="fa-brands fa-whatsapp"></i> Confirmar pelo WhatsApp
+                    </a>
+                </div>
+                <div>
+                    <h3 style="color:var(--pascoa-purple);font-family:Poppins,system-ui;margin:0 0 .75rem;">Itens prioritários</h3>
+                    <ul class="list-check">
+                        <li>Ovos de Páscoa de qualquer tamanho.</li>
+                        <li>Chocolates, balas e doces infantis.</li>
+                        <li>Cestas básicas.</li>
+                        <li>Itens de higiene (sabonete, shampoo, pasta).</li>
+                    </ul>
+                    <p>
+                        Prefere <strong>doar itens físicos</strong>? Fale conosco e combinamos a entrega.
+                        Seu carinho chega inteiro a quem precisa. 💜
+                    </p>
+                    <a class="btn-pascoa-outline" target="_blank" rel="noopener"
+                       href="https://wa.me/5522998626059?text=Ol%C3%A1%20UPUP!%20Quero%20doar%20itens%20para%20a%20P%C3%A1scoa%202026.">
+                        <i class="fa-brands fa-whatsapp"></i> Combinar entrega de itens
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TRANSPARÊNCIA ===== -->
+        <section id="transparencia" class="card-pascoa">
+            <span class="kicker-pascoa">📊 Transparência</span>
+            <p>
+                Toda doação é registrada, auditada e publicada. Prestamos contas com números e nomes,
+                respeitando a privacidade das famílias. Você doa, nós registramos e tornamos público.
+            </p>
+            <ul class="list-check">
+                <li>Relatório de entradas (PIX / itens) e saídas por categoria.</li>
+                <li>Quantitativo de crianças e famílias atendidas.</li>
+                <li>Comprovantes e notas fiscais quando aplicável.</li>
+            </ul>
+            <p>
+                Acesse a <a href="pascoa2026_prestacao_de_contas.html" style="color:var(--pascoa-purple);font-weight:700;">
+                Prestação de Contas da Páscoa 2026</a> e acompanhe em tempo real.
+            </p>
+        </section>
+
+        <!-- ===== CONVITE FINAL ===== -->
+        <section class="card-pascoa" style="text-align:center;">
+            <span class="kicker-pascoa">🌱 Junte-se a nós</span>
+            <p style="text-align:center;font-size:1.1rem;max-width:680px;margin:0 auto 1.25rem;">
+                A Páscoa passa, o amor fica. Quando partilhamos o que temos, ninguém fica para trás.
+                Doe hoje. Seja presença. O carinho, aqui, vira estrutura e dignidade.
+            </p>
+            <div class="cta-row">
+                <a class="btn-pascoa" href="#doar">🤍 DOAR AGORA</a>
+                <a class="btn-pascoa-outline" href="pascoa2026_prestacao_de_contas.html">📋 Ver prestação de contas</a>
+            </div>
+        </section>
+
+        <!-- ===== REDES SOCIAIS ===== -->
+        <section class="card-pascoa">
+            <span class="kicker-pascoa">📲 Conecte-se</span>
+            <p>Acompanhe, participe e compartilhe nossas iniciativas:</p>
+            <div class="cta" style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.75rem;">
+                <a class="btn btn--ig" href="https://www.instagram.com/upupoficial/" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram"></i> <strong>Instagram</strong>
+                    <span class="pill">@upupoficial</span>
+                </a>
+                <a class="btn btn--fb" href="https://www.facebook.com/upupoficial" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-facebook"></i> <strong>Facebook</strong>
+                    <span class="pill">/upupoficial</span>
+                </a>
+                <a class="btn btn--wa"
+                   href="https://wa.me/5522998626059?text=Ol%C3%A1%20UPUP!%20Quero%20apoiar%20a%20P%C3%A1scoa%20Solid%C3%A1ria%202026."
+                   target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp</strong>
+                    <span class="pill">+55 (22) 99862-6059</span>
+                </a>
+                <a class="btn btn--mail"
+                   href="mailto:upupoficial@gmail.com?subject=P%C3%A1scoa%20Solid%C3%A1ria%20UPUP%202026"
+                   rel="noopener" aria-label="E-mail da UPUP">
+                    <i class="fa-solid fa-envelope"></i> <strong>E-mail</strong>
+                    <span class="pill">upupoficial@gmail.com</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+# Protege arquivos sensíveis do admin
+<FilesMatch "\.(db|sqlite|sqlite3|log|sh|env)$">
+    Deny from all
+</FilesMatch>
+
+# Impede listagem de diretório
+Options -Indexes
+
+# Protege config.php de acesso direto
+<Files "config.php">
+    Deny from all
+</Files>
+
+# Protege auth.php de acesso direto
+<Files "auth.php">
+    Deny from all
+</Files>
