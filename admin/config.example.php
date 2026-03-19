@@ -6,11 +6,14 @@
  * Altere ADMIN_PASS_HASH usando: password_hash('sua_senha', PASSWORD_BCRYPT)
  */
 
-define('ADMIN_USER',      'admin');
+// Troque para o usuário desejado
+define('ADMIN_USER', 'admin');
 
-// Senha padrão: upup@2026  — troque em produção!
-// Para gerar novo hash: php -r "echo password_hash('sua_nova_senha', PASSWORD_BCRYPT);"
-define('ADMIN_PASS_HASH', '$2y$10$wDJDQRDiWP/MdrRWdhnVCubbavdvTmbPgDXLVfIy8525B5yYClhZ.');
+// Gere o hash da sua senha com um destes comandos:
+//   docker compose exec upup php -r "echo password_hash('SUA_SENHA', PASSWORD_BCRYPT);"
+//   python3 -c "import bcrypt; print(bcrypt.hashpw(b'SUA_SENHA', bcrypt.gensalt(10)).decode())"
+// Cole o resultado abaixo:
+define('ADMIN_PASS_HASH', 'COLE_O_HASH_AQUI');
 
 define('DB_PATH',         __DIR__ . '/data/upup.db');
 define('UPLOAD_DIR',      __DIR__ . '/../images/');

@@ -3,6 +3,9 @@ admin/data/*.db
 admin/data/*.db-shm
 admin/data/*.db-wal
 
+# Config com credenciais (cada ambiente tem o seu)
+admin/config.php
+
 # Arquivos temporários
 *.zip
 *.log
