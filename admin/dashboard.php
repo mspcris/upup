@@ -339,6 +339,7 @@ $donations = $stmt->fetchAll();
                             <th>Item / Descrição</th>
                             <th>Valor / Qtd</th>
                             <th>Responsável</th>
+                            <th>Forma</th>
                             <th>Status</th>
                             <th style="width:1%;white-space:nowrap">Ações</th>
                         </tr>
@@ -354,11 +355,18 @@ $donations = $stmt->fetchAll();
                             $badgeClass = 'badge-pendente'; $badgeLabel = 'Pendente';
                         }
                         ?>
+                        <?php
+                        $tipo = $d['tipo_doacao'] ?? 'produto';
+                        $tipoBadge = $tipo === 'dinheiro'
+                            ? '<span class="badge" style="background:rgba(16,185,129,.15);color:#065f46">💵 Dinheiro</span>'
+                            : '<span class="badge" style="background:rgba(107,63,160,.12);color:#4c1d95">📦 Produto</span>';
+                        ?>
                         <tr id="row-<?= (int)$d['id'] ?>">
                             <td><small class="text-muted"><?= (int)$d['ordem'] ?></small></td>
                             <td class="fw-semibold"><?= h($d['item']) ?></td>
                             <td><?= h($d['valor'] ?: '—') ?></td>
                             <td><?= h($d['responsavel'] ?: '—') ?></td>
+                            <td><?= $tipoBadge ?></td>
                             <td><span class="badge <?= $badgeClass ?>"><?= $badgeLabel ?></span></td>
                             <td>
                                 <div class="d-flex gap-1">
@@ -480,6 +488,14 @@ $donations = $stmt->fetchAll();
                     </div>
 
                     <div class="mb-3">
+                        <label for="doacaoTipo" class="form-label fw-semibold">Forma de doação</label>
+                        <select class="form-select" id="doacaoTipo" name="tipo_doacao">
+                            <option value="produto">📦 Produto</option>
+                            <option value="dinheiro">💵 Dinheiro</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
                         <label class="form-label fw-semibold">Status do pagamento</label>
                         <div class="d-flex gap-3">
                             <div class="form-check">
@@ -542,6 +558,7 @@ function abrirModalEdicao(d) {
     document.getElementById('doacaoValor').value       = d.valor || '';
     document.getElementById('doacaoResponsavel').value = d.responsavel || '';
     document.getElementById('doacaoOrdem').value       = d.ordem || 0;
+    document.getElementById('doacaoTipo').value        = d.tipo_doacao || 'produto';
     if (d.pagou === 'sim') {
         document.getElementById('pagouSim').checked = true;
     } else {

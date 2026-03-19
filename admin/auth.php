@@ -76,17 +76,25 @@ function getDB(): PDO {
 
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS donations (
-            id          INTEGER PRIMARY KEY AUTOINCREMENT,
-            event       TEXT    NOT NULL DEFAULT 'pascoa2026',
-            item        TEXT    NOT NULL,
-            valor       TEXT,
-            responsavel TEXT,
-            pagou       TEXT    NOT NULL DEFAULT 'nao',
-            ordem       INTEGER NOT NULL DEFAULT 0,
-            created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
-            updated_at  DATETIME DEFAULT CURRENT_TIMESTAMP
+            id           INTEGER PRIMARY KEY AUTOINCREMENT,
+            event        TEXT    NOT NULL DEFAULT 'pascoa2026',
+            item         TEXT    NOT NULL,
+            valor        TEXT,
+            responsavel  TEXT,
+            pagou        TEXT    NOT NULL DEFAULT 'nao',
+            tipo_doacao  TEXT    NOT NULL DEFAULT 'produto',
+            ordem        INTEGER NOT NULL DEFAULT 0,
+            created_at   DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at   DATETIME DEFAULT CURRENT_TIMESTAMP
         );
     ");
+
+    // Migração: adiciona coluna se banco já existia sem ela
+    try {
+        $pdo->exec("ALTER TABLE donations ADD COLUMN tipo_doacao TEXT NOT NULL DEFAULT 'produto'");
+    } catch (PDOException) {
+        // Coluna já existe — ignorar
+    }
 
     return $pdo;
 }

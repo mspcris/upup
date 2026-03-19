@@ -33,7 +33,7 @@ if ($method === 'GET') {
     try {
         $pdo  = getDB();
         $stmt = $pdo->prepare(
-            "SELECT id, event, item, valor, responsavel, pagou, ordem
+            "SELECT id, event, item, valor, responsavel, pagou, tipo_doacao, ordem
              FROM donations WHERE event = ?
              ORDER BY ordem ASC, id ASC"
         );
@@ -56,12 +56,13 @@ $body = json_decode(file_get_contents('php://input'), true) ?? [];
 
 // ===== POST — criar =====
 if ($method === 'POST') {
-    $item       = trim($body['item'] ?? '');
-    $evento     = sanitizeSlug($body['evento'] ?? '');
-    $valor      = trim($body['valor'] ?? '');
+    $item        = trim($body['item'] ?? '');
+    $evento      = sanitizeSlug($body['evento'] ?? '');
+    $valor       = trim($body['valor'] ?? '');
     $responsavel = trim($body['responsavel'] ?? '');
-    $pagou      = in_array($body['pagou'] ?? '', ['sim','nao']) ? $body['pagou'] : 'nao';
-    $ordem      = (int)($body['ordem'] ?? 0);
+    $pagou       = in_array($body['pagou'] ?? '', ['sim','nao']) ? $body['pagou'] : 'nao';
+    $tipo        = in_array($body['tipo_doacao'] ?? '', ['produto','dinheiro']) ? $body['tipo_doacao'] : 'produto';
+    $ordem       = (int)($body['ordem'] ?? 0);
 
     if (!$item) jsonError('O campo "item" é obrigatório.', 422);
     if (!$evento) jsonError('Evento inválido.', 422);
@@ -69,10 +70,10 @@ if ($method === 'POST') {
     try {
         $pdo  = getDB();
         $stmt = $pdo->prepare(
-            "INSERT INTO donations (event, item, valor, responsavel, pagou, ordem)
-             VALUES (?, ?, ?, ?, ?, ?)"
+            "INSERT INTO donations (event, item, valor, responsavel, pagou, tipo_doacao, ordem)
+             VALUES (?, ?, ?, ?, ?, ?, ?)"
         );
-        $stmt->execute([$evento, $item, $valor, $responsavel, $pagou, $ordem]);
+        $stmt->execute([$evento, $item, $valor, $responsavel, $pagou, $tipo, $ordem]);
         $id = $pdo->lastInsertId();
         http_response_code(201);
         echo json_encode(['ok' => true, 'id' => $id]);
@@ -89,6 +90,7 @@ if ($method === 'PUT') {
     $valor       = trim($body['valor'] ?? '');
     $responsavel = trim($body['responsavel'] ?? '');
     $pagou       = in_array($body['pagou'] ?? '', ['sim','nao']) ? $body['pagou'] : 'nao';
+    $tipo        = in_array($body['tipo_doacao'] ?? '', ['produto','dinheiro']) ? $body['tipo_doacao'] : 'produto';
     $ordem       = (int)($body['ordem'] ?? 0);
 
     if (!$id)   jsonError('ID inválido.', 422);
@@ -98,11 +100,11 @@ if ($method === 'PUT') {
         $pdo  = getDB();
         $stmt = $pdo->prepare(
             "UPDATE donations
-             SET item = ?, valor = ?, responsavel = ?, pagou = ?, ordem = ?,
+             SET item = ?, valor = ?, responsavel = ?, pagou = ?, tipo_doacao = ?, ordem = ?,
                  updated_at = CURRENT_TIMESTAMP
              WHERE id = ?"
         );
-        $stmt->execute([$item, $valor, $responsavel, $pagou, $ordem, $id]);
+        $stmt->execute([$item, $valor, $responsavel, $pagou, $tipo, $ordem, $id]);
         echo json_encode(['ok' => true]);
     } catch (Throwable $e) {
         jsonError('Erro ao atualizar.', 500);

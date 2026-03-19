@@ -400,6 +400,7 @@
                                 <th>Precisamos de</th>
                                 <th>Valor / Qtd</th>
                                 <th>Responsável</th>
+                                <th>Doado em</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -446,11 +447,16 @@
                                         statusHtml = '<span class="badge quitado">Quitado</span>';
                                     }
                                 }
+                                const tipoHtml = (d.tipo_doacao === 'dinheiro')
+                                    ? '<span class="badge quitado" style="background:rgba(16,185,129,.12);color:#065f46;border-color:rgba(16,185,129,.3)">💵 Dinheiro</span>'
+                                    : '<span class="badge" style="background:rgba(107,63,160,.1);color:#4c1d95;border:1px solid rgba(107,63,160,.25)">📦 Produto</span>';
+
                                 corpo.insertAdjacentHTML('beforeend', `
                                     <tr>
                                         <td>${escHtml(d.item)}</td>
                                         <td>${escHtml(d.valor || '—')}</td>
                                         <td>${escHtml(d.responsavel || '—')}</td>
+                                        <td>${tipoHtml}</td>
                                         <td>${statusHtml}</td>
                                     </tr>`);
                             });
