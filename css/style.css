@@ -346,8 +346,26 @@ nav li:hover a {
 
 /* responsivo */
 @media (max-width:720px){
-  #h1_header{ font-size:1.25rem; }
-  .social{ gap:10px; }
+  .topbar{
+    flex-direction: column;
+    align-items: center;
+    min-height: unset;
+    padding: 10px 12px;
+    gap: 6px;
+  }
+  #h1_header{
+    position: static;
+    transform: none;
+    font-size: 1.25rem;
+    white-space: normal;
+    text-align: center;
+  }
+  .social{
+    margin-left: 0;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 
