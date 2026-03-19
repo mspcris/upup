@@ -1,0 +1,10 @@
+# Banco de dados SQLite (não versionar — cada ambiente tem o seu)
+admin/data/*.db
+admin/data/*.db-shm
+admin/data/*.db-wal
+
+# Arquivos temporários
+*.zip
+*.log
+.DS_Store
+Thumbs.db
