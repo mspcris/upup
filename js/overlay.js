@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(html => {
       overlayContainer.innerHTML = html;
 
+      /* ============================================================
+         === Mensagem aleatória — DESATIVADO ===
+         Substituído temporariamente pelo flyer de recrutamento do(a)
+         professor(a) de capoeira (ver overlay.html).
+         Para reativar:
+           1) Restaurar o bloco original em overlay.html.
+           2) Descomentar este bloco abaixo.
+
       // 2. Preenche o texto sorteado
       const overlayText = overlayContainer.querySelector(".overlay-text");
       if (overlayText) {
@@ -80,14 +88,20 @@ document.addEventListener("DOMContentLoaded", () => {
         ];
         overlayText.innerHTML = frases[Math.floor(Math.random() * frases.length)];
       }
+         === Fim do bloco desativado ===
+         ============================================================ */
 
-      // 3. Inicia fade-out após 5s
-      setTimeout(() => {
+      // 3. Fecha em 5s ou ao clicar em qualquer lugar do overlay
+      function closeOverlay() {
         overlayContainer.classList.add("fade-out");
-
         // 4. Remove do DOM depois da animação
         setTimeout(() => overlayContainer.remove(), 1000);
-      }, 5000);
+      }
+      const autoCloseId = setTimeout(closeOverlay, 5000);
+      overlayContainer.addEventListener("click", () => {
+        clearTimeout(autoCloseId);
+        closeOverlay();
+      });
     })
     .catch(err => console.error("Erro ao carregar overlay:", err));
     window.addEventListener("pageshow", () => {
