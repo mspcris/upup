@@ -17,6 +17,29 @@ Repositório: **https://github.com/mspcris/upup.git** (branch: main)
 
 ---
 
+## Servidor de produção (VM 154)
+
+- **SSH**: `ssh root@154.38.172.227`
+- **Diretório do projeto**: `/opt/upup`
+- **Container Docker**: `upup-site` (gerenciado por `docker compose` em `/opt/upup`)
+- **Domínio**: https://upup.ong.br (DNS aponta pra esta VM)
+
+### Fluxo de deploy após `git push`
+
+```bash
+ssh root@154.38.172.227
+cd /opt/upup
+git pull
+docker compose up -d --build    # rebuild se mudou conteúdo estático/PHP
+# ou apenas reiniciar se mudou só HTML/CSS/JS (volume montado):
+# docker compose restart
+```
+
+> Importante: o `git push` para o GitHub **NÃO** dispara deploy automático.
+> O site só atualiza após `git pull` + (build/restart) na VM.
+
+---
+
 ## Estrutura de pastas
 
 ```
