@@ -142,6 +142,141 @@
 }
 
 
+/********************************************
+#                                              #
+#       BANNER — RECRUTAMENTO CAPOEIRA         #
+#                                              #
+********************************************/
+.capoeira-banner {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+  cursor: pointer;
+  opacity: 1;
+  animation: bannerFadeIn 0.5s ease;
+}
+
+.capoeira-banner[hidden] { display: none; }
+
+.capoeira-banner.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.capoeira-banner__card {
+  background: #fff;
+  border-radius: 18px;
+  max-width: 460px;
+  width: 100%;
+  padding: 28px 28px 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  position: relative;
+  font-family: var(--font-destaque, "Baloo 2", system-ui, sans-serif);
+  cursor: default;
+  border-top: 8px solid #f5b400;
+}
+
+.capoeira-banner__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: 0;
+  font-size: 1.1rem;
+  color: #555;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  line-height: 1;
+}
+.capoeira-banner__close:hover { background: #f0f0f0; color: #111; }
+
+.capoeira-banner__heart {
+  font-size: 2.2rem;
+  color: #e63946;
+  line-height: 1;
+}
+
+.capoeira-banner__title {
+  font-size: 1.9rem;
+  margin: 6px 0 10px;
+  color: #111;
+  line-height: 1.1;
+  font-weight: 800;
+}
+.capoeira-banner__title em {
+  color: #e63946;
+  font-style: normal;
+  display: block;
+}
+
+.capoeira-banner__lead {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 14px;
+  line-height: 1.4;
+}
+.capoeira-banner__lead strong { color: #c4970a; }
+
+.capoeira-banner__call {
+  background: #fff7d6;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 8px 0 16px;
+  border: 2px dashed #f5b400;
+}
+.capoeira-banner__call p { margin: 2px 0; font-size: 0.95rem; color: #222; }
+.capoeira-banner__call strong { color: #c4970a; }
+
+.capoeira-banner__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25d366;
+  color: #fff !important;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.98rem;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.capoeira-banner__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 211, 102, 0.45);
+}
+.capoeira-banner__cta svg { fill: currentColor; }
+
+.capoeira-banner__hint {
+  margin: 14px 0 0;
+  font-size: 0.78rem;
+  color: #777;
+  font-style: italic;
+}
+
+@keyframes bannerFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 520px) {
+  .capoeira-banner__card { padding: 22px 18px 18px; }
+  .capoeira-banner__title { font-size: 1.55rem; }
+  .capoeira-banner__lead { font-size: 0.92rem; }
+  .capoeira-banner__cta { font-size: 0.88rem; padding: 11px 16px; }
+}
+
 
 /********************************************
 #                                              #
@@ -488,6 +623,25 @@ input[type="radio"] { display: none; }
 #radio2-4:checked ~ .slides2 { transform: translateX(-60%); }
 #radio2-5:checked ~ .slides2 { transform: translateX(-80%); }
 
+/* Carrossel 2 — variante com 6 slides */
+.carousel2--6 .slides2 { width: 600%; }
+.carousel2--6 .slides2 a { flex: 0 0 16.6667%; }
+.carousel2--6 #radio2-1:checked ~ .slides2 { transform: translateX(0%); }
+.carousel2--6 #radio2-2:checked ~ .slides2 { transform: translateX(-16.6667%); }
+.carousel2--6 #radio2-3:checked ~ .slides2 { transform: translateX(-33.3333%); }
+.carousel2--6 #radio2-4:checked ~ .slides2 { transform: translateX(-50%); }
+.carousel2--6 #radio2-5:checked ~ .slides2 { transform: translateX(-66.6667%); }
+.carousel2--6 #radio2-6:checked ~ .slides2 { transform: translateX(-83.3333%); }
+
+/* Slide com flyer em retrato: mostra inteiro, fundo claro pra combinar */
+.slides2 a.slide-capoeira {
+  background: #fff;
+}
+.slides2 a.slide-capoeira img {
+  object-fit: contain;
+  background: #fff;
+}
+
 
 /* Carrossel 3 */
 #radio3-1:checked ~ .slides3 { transform: translateX(0%); }
@@ -509,6 +663,7 @@ input[type="radio"] { display: none; }
 #radio2-3:checked ~ .navigation2 label[for="radio2-3"],
 #radio2-4:checked ~ .navigation2 label[for="radio2-4"],
 #radio2-5:checked ~ .navigation2 label[for="radio2-5"],
+#radio2-6:checked ~ .navigation2 label[for="radio2-6"],
 /* Carrossel 3 */
 #radio3-1:checked ~ .navigation3 label[for="radio3-1"],
 #radio3-2:checked ~ .navigation3 label[for="radio3-2"],
