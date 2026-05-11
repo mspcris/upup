@@ -533,16 +533,6 @@ input[type="radio"] { display: none; }
 .carousel2--6 #radio2-5:checked ~ .slides2 { transform: translateX(-66.6667%); }
 .carousel2--6 #radio2-6:checked ~ .slides2 { transform: translateX(-83.3333%); }
 
-/* Slide com flyer em retrato: mostra inteiro, fundo claro pra combinar */
-.slides2 a.slide-capoeira {
-  background: #fff;
-}
-.slides2 a.slide-capoeira img {
-  object-fit: contain;
-  background: #fff;
-}
-
-
 /* Carrossel 3 */
 #radio3-1:checked ~ .slides3 { transform: translateX(0%); }
 #radio3-2:checked ~ .slides3 { transform: translateX(-20%); }

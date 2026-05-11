@@ -91,14 +91,17 @@ document.addEventListener("DOMContentLoaded", () => {
          === Fim do bloco desativado ===
          ============================================================ */
 
-      // 3. Fecha em 5s ou ao clicar em qualquer lugar do overlay
+      // 3. Auto-fecha em 5s. Clique também fecha, mas só depois de 1s
+      //    (evita fechar por clique/scroll acidental durante o load).
       function closeOverlay() {
         overlayContainer.classList.add("fade-out");
         // 4. Remove do DOM depois da animação
         setTimeout(() => overlayContainer.remove(), 1000);
       }
+      const openedAt = Date.now();
       const autoCloseId = setTimeout(closeOverlay, 5000);
       overlayContainer.addEventListener("click", () => {
+        if (Date.now() - openedAt < 1000) return; // janela de proteção
         clearTimeout(autoCloseId);
         closeOverlay();
       });
